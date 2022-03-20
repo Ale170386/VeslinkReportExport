@@ -1,0 +1,18 @@
+VeslinkReportExport.exe Information: 0 : Test message.
+VeslinkReportExport.exe Information: 0 : 20-03-2022 17:51:19 - An error occurred while generating the excel file: C:\Desarrollos\Veslink\Repos\ReportExport\VeslinkReportExport\bin\Debug\Veslink.Business.dll\..\..\Resources\ReportTemplate.xlsx
+VeslinkReportExport.exe Information: 0 : 20-03-2022 19:33:27 - An error occurred while generating the excel file: El proceso no puede obtener acceso al archivo 'C:\Desarrollos\Veslink\Repos\ReportExport\VeslinkReportExport\bin\Debug\sample.xlsx' porque está siendo utilizado en otro proceso.
+VeslinkReportExport.exe Information: 0 : 20-03-2022 19:34:22 - An error occurred while generating the excel file: El proceso no puede obtener acceso al archivo 'C:\Desarrollos\Veslink\Repos\ReportExport\VeslinkReportExport\bin\Debug\sample.xlsx' porque está siendo utilizado en otro proceso.
+VeslinkReportExport.exe Information: 0 : 20-03-2022 20:07:39 - Vessel Report Generator has started successfully
+VeslinkReportExport.exe Information: 0 : 20-03-2022 20:08:06 - Generating report for the following parameters Vessel: GGPA - Voyage: 71
+VeslinkReportExport.exe Information: 0 : 20-03-2022 20:08:08 - Report has been generated successfully - FileName: VesselReport20220320080808.xlsx
+VeslinkReportExport.exe Information: 0 : 20-03-2022 20:11:09 - Vessel Report Generator has started successfully
+VeslinkReportExport.exe Information: 0 : 20-03-2022 20:11:49 - Generating report for the following parameters Vessel: GGPA - Voyage: 71
+VeslinkReportExport.exe Information: 0 : 20-03-2022 20:11:51 - Report has been generated successfully - FileName: VesselReport_20220320081151.xlsx
+VeslinkReportExport.exe Information: 0 : 20-03-2022 20:16:58 - Vessel Report Generator has started successfully
+VeslinkReportExport.exe Information: 0 : 20-03-2022 20:21:19 - Vessel Report Generator has started successfully
+VeslinkReportExport.exe Information: 0 : 20-03-2022 20:22:05 - Vessel Report Generator has started successfully
+VeslinkReportExport.exe Information: 0 : 20-03-2022 20:23:43 - Vessel Report Generator has started successfully
+VeslinkReportExport.exe Information: 0 : 20-03-2022 20:24:13 - Generating report for the following parameters Vessel: GGPA - Voyage: 71
+VeslinkReportExport.exe Information: 0 : 20-03-2022 20:24:15 - Report has been generated successfully - FileName: VesselReport_20220320082414.xlsx
+VeslinkReportExport.exe Information: 0 : 20-03-2022 20:32:23 - Vessel Report Generator has started successfully
+VeslinkReportExport.exe Information: 0 : 20-03-2022 20:32:24 - Successfully logged in

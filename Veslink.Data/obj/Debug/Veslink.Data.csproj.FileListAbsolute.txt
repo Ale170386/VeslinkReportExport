@@ -1,0 +1,13 @@
+C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Data\bin\Debug\Veslink.Data.dll
+C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Data\bin\Debug\Veslink.Data.pdb
+C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Data\bin\Debug\Newtonsoft.Json.dll
+C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Data\bin\Debug\System.Net.Http.Formatting.dll
+C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Data\bin\Debug\Veslink.Entities.dll
+C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Data\bin\Debug\Veslink.Entities.pdb
+C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Data\bin\Debug\Newtonsoft.Json.xml
+C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Data\bin\Debug\System.Net.Http.Formatting.xml
+C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Data\obj\Debug\Veslink.Data.csproj.AssemblyReference.cache
+C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Data\obj\Debug\Veslink.Data.csproj.CoreCompileInputs.cache
+C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Data\obj\Debug\Veslink.Data.csproj.CopyComplete
+C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Data\obj\Debug\Veslink.Data.dll
+C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Data\obj\Debug\Veslink.Data.pdb
