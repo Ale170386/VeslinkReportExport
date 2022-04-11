@@ -14,7 +14,7 @@ namespace Veslink.Entities
 
         [JsonProperty("VoyageCargoHandlings.CPUnit")]
         public string CPUnit { get; set; }
-        public string CargoCounterpartyShortNames { get; set; }
+        [JsonProperty("VoyageCargoHandlings.Cargo.Counterparty.ShortName")]
         public string CounterpartyShortName { get; set; }
 
         [JsonProperty("VoyageCargoHandlings.PortNo")]
@@ -24,7 +24,7 @@ namespace Veslink.Entities
         public string PortName { get; set; }
 
         [JsonProperty("VoyageCargoHandlings.CargoID")]
-        public int CargoID { get; set; }
+        public int CargoID { get; set; }                
 
         [JsonProperty("VoyageCargoHandlings.OrdNo")]
         public int OrdNo { get; set; }
@@ -34,5 +34,10 @@ namespace Veslink.Entities
 
         [JsonProperty("VoyageCargoHandlings.VoyageSeqNo")]
         public int VoyageSeqNo { get; set; }
+
+        [JsonProperty("VoyageCargoHandlings.FunctionCode")]
+        public string FunctionCode { get; set; }
+        [JsonProperty("VoyageCargoHandlings.VoyageItinerary.EtaGmt")]
+        public DateTime EtaGmt { get; set; }
     }
 }

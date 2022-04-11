@@ -18,7 +18,7 @@ namespace Veslink.Entities
         public double DWT { get; set; }
         public int CargoID { get; set; }
         public string CargoShortName { get; set; }
-        public string FullName { get; set; }        
+        public string ShortName { get; set; }        
         public int LSMiles { get; set; }
         public int Seq { get; set; }
         public string FixtureNo { get; set; }
@@ -29,6 +29,11 @@ namespace Veslink.Entities
         public int Miles { get; set; }
         public DateTime? EtaGmt { get; set; }
         public string EstimateID { get; set; }
+        public double CPQty { get; set; }
+        public string CounterpartyShortName { get; set; }
+        public int VoyageSeqNo { get; set; }
+        public string FunctionCode { get; set; }
+        public double BLQuantity { get; set; }
     }
 
     public class DataSource2

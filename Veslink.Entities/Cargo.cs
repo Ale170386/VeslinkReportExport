@@ -10,5 +10,6 @@ namespace Veslink.Entities
     {
         public int CargoID { get; set; }
         public string CargoShortName { get; set; }
+        public double CargoQty { get; set; }
     }
 }

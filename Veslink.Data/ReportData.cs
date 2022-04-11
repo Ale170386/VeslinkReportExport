@@ -18,6 +18,7 @@ namespace Veslink.Data
         static string uriVoyageItineraries = ConfigurationManager.AppSettings["uriVoyageItineraries"];
         static string uriVoyage = ConfigurationManager.AppSettings["uriVoyage"];
         static string uriCargo = ConfigurationManager.AppSettings["uriCargo"];
+        static string uriContact = ConfigurationManager.AppSettings["uriContact"];
 
         public static List<string> GetCompanies()
         {
@@ -25,49 +26,148 @@ namespace Veslink.Data
         }
 
         //Report 0
-        public static async Task<List<Root>> GetVesselReportAsync(string startDate, string endDate, string company)
+        public static List<Root> GetVesselReportAsync(string startDate, string endDate, string company)
         {
             List<Root> roots = null;
             string uri = $"{uriVessels}&filter[0]=Vessel.CompanyCode==%22{company}%22&filter[1]=CommenceDateGmt%3E=%22{startDate}%22&filter[2]=CommenceDateGmt%3C=%22{endDate}%22&format=doc";
-            HttpResponseMessage response = await client.GetAsync(uri).ConfigureAwait(false);
+            HttpResponseMessage response = client.GetAsync(uri).ConfigureAwait(false).GetAwaiter().GetResult();
             if (response.IsSuccessStatusCode)
-                roots = await response.Content.ReadAsAsync<List<Root>>();
+                roots = response.Content.ReadAsAsync<List<Root>>().GetAwaiter().GetResult();
 
             return roots;
         }
 
         //Report 1
-        public static Root GetItinerariesReportAsync(string vesselCode, string voyageNo)
+        public static List<VoyageItinerary> GetItinerariesReportAsync(string vesselCode, string voyageNo, string chartererId, string cargoId)
         {
-            Root root = null;
-            string uri = $"{uriVoyageItineraries}&filter[0]=VesselCode==%22{vesselCode}%22&filter[1]=VoyageNo==%22{voyageNo}%22&format=doc";
-            HttpResponseMessage response = client.GetAsync(uri).GetAwaiter().GetResult();
+            List<VoyageItinerary> itineraries = null;
+            string uri = $"{uriVoyageItineraries}&filter[0]=VesselCode==%22{vesselCode}%22&filter[1]=VoyageNo==%22{voyageNo}%22&filter[2]=Cargos.Counterparty.ShortName==%22{chartererId}%22";
+
+            if (!(String.IsNullOrEmpty(cargoId)))
+                uri += $"&filter[3]=Cargos.CargoID==%22{cargoId}%22";
+
+            HttpResponseMessage response = client.GetAsync($"{uri}&format=json").GetAwaiter().GetResult();
             if (response.IsSuccessStatusCode)
-                root = response.Content.ReadAsAsync<List<Root>>().GetAwaiter().GetResult().FirstOrDefault();
+                itineraries = response.Content.ReadAsAsync<List<VoyageItinerary>>().GetAwaiter().GetResult();
 
-            return root;
-        }
+            itineraries = itineraries
+                            .Where(w => w.PortFunc != "P")
+                            .GroupBy(g => new
+                                            {
+                                                g.Seq,
+                                                g.Order,
+                                                g.FixtureNo,
+                                                g.EtaGmt,
+                                                g.PortName,
+                                                g.PortFunc,
+                                                g.Miles,
+                                                g.LSMiles,
+                                                g.EtdGmt
+                                            }).Select(s => new VoyageItinerary()
+                                            {
+                                                Seq = s.Key.Seq,
+                                                Order = s.Key.Order,
+                                                FixtureNo = s.Key.FixtureNo,
+                                                EtaGmt = s.Key.EtaGmt,
+                                                PortName = s.Key.PortName,
+                                                PortFunc = s.Key.PortFunc,
+                                                Miles = s.Key.Miles,
+                                                LSMiles = s.Key.LSMiles,
+                                                EtdGmt = s.Key.EtdGmt                                                        
+                                            }).ToList();
 
-        //Report 3
-        public static async Task<List<VoyageLegSummary>> GetVoyageReportAsync()
-        {
-            List<VoyageLegSummary> voyage = null;
-            HttpResponseMessage response = await client.GetAsync($"{uriVoyage}&format=json");
-            if (response.IsSuccessStatusCode)
-                voyage = await response.Content.ReadAsAsync<List<VoyageLegSummary>>();
-
-            return voyage;
+            return itineraries.OrderBy(o => o.Order).ToList();
         }
 
         //Report 4
-        public static async Task<List<VoyageCargo>> GetCargoReportAsync()
+        public static List<VoyageCargo> GetCargoReportAsync(string vesselCode, string voyageNo, string chartererId, string cargoId)
         {
-            List<VoyageCargo> voyage = null;
-            HttpResponseMessage response = await client.GetAsync($"{uriCargo}&format=json");
-            if (response.IsSuccessStatusCode)
-                voyage = await response.Content.ReadAsAsync<List<VoyageCargo>>();
+            List <VoyageCargo> cargoList = null;
+            //string uri = $"{uriCargo}&filter[0]=VesselCode==%22{vesselCode}%22&filter[1]=VoyageNo==%22{voyageNo}%22&filter[2]=VoyageCargoHandlings.Cargo.Counterparty.ShortName==%22{chartererId}%22";
 
-            return voyage;
+            //if (!(String.IsNullOrEmpty(cargoId)))
+            //    uri += $"&filter[3]=VoyageCargoHandlings.CargoID==%22{cargoId}%22";
+
+            string uri = $"{uriCargo}&filter[0]=VesselCode==%22{vesselCode}%22&filter[1]=VoyageNo==%22{voyageNo}%22";
+
+            HttpResponseMessage response = client.GetAsync($"{uri}&format=json").GetAwaiter().GetResult();
+            if (response.IsSuccessStatusCode)
+                cargoList = response.Content.ReadAsAsync<List<VoyageCargo>>().GetAwaiter().GetResult();
+
+            return cargoList;
+        }
+
+        //Report 3
+        public static List<VoyageLegSummary> GetVoyageSummaryReportAsync(string vesselCode, string voyageNo, string chartererId, string cargoId)
+        {
+            List<VoyageLegSummary> voyage = null;
+
+            string uri = $"{uriVoyage}&filter[0]=VesselCode==%22{vesselCode}%22&filter[1]=VoyageNo==%22{voyageNo}%22&filter[2]=Cargos.CounterpartyShortName==%22{chartererId}%22";
+
+            if (!(String.IsNullOrEmpty(cargoId)))
+                uri += $"&filter[3]=Cargos.CargoID==%22{cargoId}%22";
+
+            HttpResponseMessage response = client.GetAsync($"{uri}&format=json").GetAwaiter().GetResult();
+            if (response.IsSuccessStatusCode)
+                voyage = response.Content.ReadAsAsync<List<VoyageLegSummary>>().GetAwaiter().GetResult();
+
+            var summary = voyage.GroupBy(g => new
+            {
+                g.Bnkr1FuelType,
+                g.Bnkr2FuelType,
+                g.Bnkr3FuelType,
+                g.Bnkr4FuelType,
+                g.Bnkr5FuelType,
+                g.Bnkr6FuelType,
+                g.Bnkr1Total,
+                g.Bnkr2Total,
+                g.Bnkr3Total,
+                g.Bnkr4Total,
+                g.Bnkr5Total,
+                g.Bnkr6Total,
+                g.FromPortName,
+                g.FromPortSeq,
+                g.FromPortFunc,
+                g.ToPortName,
+                g.Distance,
+                g.FromGMT,
+                g.ToGMT
+            });
+
+            return summary.Select(s => new VoyageLegSummary()
+            {
+                Bnkr1FuelType = s.Key.Bnkr1FuelType.ToString(),
+                Bnkr2FuelType = s.Key.Bnkr2FuelType.ToString(),
+                Bnkr3FuelType = s.Key.Bnkr3FuelType.ToString(),
+                Bnkr4FuelType = s.Key.Bnkr4FuelType.ToString(),
+                Bnkr5FuelType = s.Key.Bnkr5FuelType.ToString(),
+                Bnkr6FuelType = s.Key.Bnkr6FuelType.ToString(),
+                Bnkr1Total = s.Key.Bnkr1Total,
+                Bnkr2Total = s.Key.Bnkr2Total,
+                Bnkr3Total = s.Key.Bnkr3Total,
+                Bnkr4Total = s.Key.Bnkr4Total,
+                Bnkr5Total = s.Key.Bnkr5Total,
+                Bnkr6Total = s.Key.Bnkr6Total,
+                FromPortName = s.Key.FromPortName,
+                FromPortSeq = s.Key.FromPortSeq,
+                ToPortName = s.Key.ToPortName,
+                Distance = s.Key.Distance,
+                FromGMT = s.Key.FromGMT,
+                ToGMT = s.Key.ToGMT
+            }).OrderBy(o => o.FromGMT).ToList();
+
+        }
+
+        //Report 5
+        public static ContactInformation GetVoyageContactAsync(string vesselCode, string voyageNo)
+        {
+            ContactInformation contactInformation = null;
+            string uri = $"{uriContact}&filter[0]=VesselCode==%22{vesselCode}%22&filter[1]=VoyageNo==%22{voyageNo}%22";
+            HttpResponseMessage response = client.GetAsync($"{uri}&format=json").ConfigureAwait(false).GetAwaiter().GetResult();
+            if (response.IsSuccessStatusCode)
+                contactInformation = response.Content.ReadAsAsync<List<ContactInformation>>().GetAwaiter().GetResult().FirstOrDefault();
+
+            return contactInformation;
         }
     }
 }

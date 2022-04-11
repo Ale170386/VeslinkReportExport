@@ -19,7 +19,5 @@ namespace Veslink.Entities
         public string VesselType { get; set; }
         public Voyage VoyageSelected { get; set; }
         public List<Voyage> Voyages { get; set; }
-        public List<VoyageLegSummary> VoyageLegSummaries { get; set; }
-        public List<VoyageCargo> VoyageCargos { get; set; }
     }
 }

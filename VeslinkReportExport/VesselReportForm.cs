@@ -24,6 +24,7 @@ namespace VeslinkReportExport
 
             dtFrom.Format = DateTimePickerFormat.Custom;
             dtFrom.CustomFormat = "dd-MM-yyyy";
+            dtFrom.Value = DateTime.Now.AddMonths(-6);
 
             dtTo.Format = DateTimePickerFormat.Custom;
             dtTo.CustomFormat = "dd-MM-yyyy";
@@ -46,31 +47,88 @@ namespace VeslinkReportExport
 
         private void btnExcel_Click(object sender, EventArgs e)
         {
+            ComboItem comboVessel = ddlVessel.SelectedItem as ComboItem;
+            ComboItem comboVoyage = ddlVoyage.SelectedItem as ComboItem;
+            ComboItem comboCharterer = ddlCharterer.SelectedItem as ComboItem;
+            ComboItem comboCargo = ddlCargo.SelectedItem as ComboItem;
+
             try
             {
-                ComboItem comboVessel = ddlVessel.SelectedItem as ComboItem;
-                ComboItem comboVoyage = ddlVoyage.SelectedItem as ComboItem;
-
                 Trace.TraceInformation($"{ DateTime.Now } - Generating report for the following parameters Vessel: { comboVessel.Value } - Voyage: { comboVoyage.Value }");
                 Trace.Flush();
 
                 Cursor = Cursors.WaitCursor;
-                string fileGenerated = reportBusiness.GenerateExcel(comboVessel.Value.ToString(), comboVoyage.Value.ToString());
-                Cursor = Cursors.Default;
+                byte[] fileGenerated = reportBusiness.GenerateExcel(comboVessel.Value.ToString(),
+                                                                    comboVoyage.Value.ToString(),
+                                                                    comboCharterer.Value.ToString(),
+                                                                    comboCargo != null ? comboCargo.Value.ToString() : "");
 
-                Trace.TraceInformation($"{ DateTime.Now } - Report has been generated successfully - FileName: { fileGenerated }");
-                Trace.Flush();
+                if (fileGenerated != null)
+                {
+                    // Displays a SaveFileDialog so the user can save Excel
+                    SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+                    saveFileDialog1.Filter = "Excel |*.xlsx"; ;
+                    saveFileDialog1.Title = "Save an Excel File";
+                    saveFileDialog1.FileName = $"{comboVessel.Value.ToString()}_{comboVoyage.Value.ToString()}_{comboCharterer.Value.ToString()}";
+                    saveFileDialog1.ShowDialog();
+
+                    // If the file name is not an empty string open it for saving.
+                    if (saveFileDialog1.FileName != "")
+                    {
+                        // Saves the Excel via a FileStream created by the OpenFile method.
+                        System.IO.FileStream fs =
+                            (System.IO.FileStream)saveFileDialog1.OpenFile();
+
+                        fs.Write(fileGenerated, 0, fileGenerated.Length);
+
+                        fs.Close();
+                    }
+
+                    MessageBox.Show("The report has been generated successfully");
+
+                    Trace.TraceInformation($"{ DateTime.Now } - Report has been generated successfully - FileName: { saveFileDialog1.FileName }");
+                    Trace.Flush();
+                }
+                else
+                {                    
+                    MessageBox.Show("There are no data for the selected parameters");
+                }
+
+                Cursor = Cursors.Default;
             }
             catch (Exception ex)
             {
-                Trace.TraceError($"{ DateTime.Now } - An error occurred while generating the excel file: { ex.Message }");
+                string cargo = "";
+                if (comboCargo != null)
+                    cargo = comboCargo.Value.ToString();
+
+                Trace.TraceError($"{ DateTime.Now } - An error occurred while generating the excel file \n" +
+                    $"Parameters:\n" +
+                    $"DateFrom: {dtFrom.Value} - DateTo: {dtTo.Value} - Company: {ddlCompany.Text} - Vessel: {comboVessel.Value} - Voyage: {comboVoyage.Value} - Charterer: {comboCharterer.Value} - Cargo: {cargo}\n" +
+                    $"Error: { ex.StackTrace }");
                 Trace.Flush();
+
+                Cursor = Cursors.Default;
+
+                MessageBox.Show("The report could not be generated, for more details check the application log");
             }            
         }
 
         private void dtFrom_ValueChanged(object sender, EventArgs e)
         {
+            cleanControls("All");
             GetVessels();
+        }
+
+        private void dtFrom_DropDown(object sender, EventArgs e)
+        {
+            dtFrom.ValueChanged -= dtFrom_ValueChanged;
+        }
+
+        private void dtFrom_CloseUp(object sender, EventArgs e)
+        {
+            dtFrom.ValueChanged += dtFrom_ValueChanged;
+            dtFrom_ValueChanged(sender, e);
         }
 
         private void GetVessels()
@@ -98,7 +156,10 @@ namespace VeslinkReportExport
             }
             catch (Exception ex)
             {
-                Trace.TraceError($"{ DateTime.Now } - An error occurred while loading vessels: { ex.Message }");
+                Trace.TraceError($"{ DateTime.Now } - An error occurred while loading vessels \n" +
+                    $"Parameters:\n" +
+                    $"DateFrom: {dtFrom.Value} - DateTo: {dtTo.Value} - Company: {ddlCompany.Text}\n" +
+                    $"Error: { ex.StackTrace }");
                 Trace.Flush();
             }
 
@@ -106,19 +167,33 @@ namespace VeslinkReportExport
 
         private void dtTo_ValueChanged(object sender, EventArgs e)
         {
+            cleanControls("All");
             GetVessels();
+        }
+
+        private void dtTo_DropDown(object sender, EventArgs e)
+        {
+            dtTo.ValueChanged -= dtTo_ValueChanged;
+        }
+
+        private void dtTo_CloseUp(object sender, EventArgs e)
+        {
+            dtTo.ValueChanged += dtTo_ValueChanged;
+            dtTo_ValueChanged(sender, e);
         }
 
         private void ddlCompany_SelectedIndexChanged(object sender, EventArgs e)
         {
+            cleanControls("All");
             GetVessels();
         }
 
         private void ddlVessel_SelectedIndexChanged(object sender, EventArgs e)
         {
+            ComboItem comboItem = ddlVessel.SelectedItem as ComboItem;
             try
             {
-                ComboItem comboItem = ddlVessel.SelectedItem as ComboItem;
+                cleanControls("Vessel");                
                 reportBusiness.SetSelectedVessel(comboItem.Value.ToString());
 
                 if (reportBusiness.VesselSelected != null)
@@ -131,7 +206,10 @@ namespace VeslinkReportExport
             }
             catch (Exception ex)
             {
-                Trace.TraceError($"{ DateTime.Now } - An error occurred while loading voyages: { ex.Message }");
+                Trace.TraceError($"{ DateTime.Now } - An error occurred while loading voyages \n" +
+                    $"Parameters:\n" +
+                    $"DateFrom: {dtFrom.Value} - DateTo: {dtTo.Value} - Company: {ddlCompany.Text} - VesselCode: {comboItem.Value}\n" +
+                    $"Error: { ex.StackTrace }");
                 Trace.Flush();
             }
 
@@ -139,9 +217,10 @@ namespace VeslinkReportExport
 
         private void ddlVoyage_SelectedIndexChanged(object sender, EventArgs e)
         {
+            ComboItem comboItem = ddlVoyage.SelectedItem as ComboItem;            
             try
             {
-                ComboItem comboItem = ddlVoyage.SelectedItem as ComboItem;
+                cleanControls("Voyage");                
                 reportBusiness.SetSelectedVoyage(int.Parse(comboItem.Value.ToString()));
 
                 if (reportBusiness.VesselSelected.VoyageSelected != null)
@@ -154,16 +233,22 @@ namespace VeslinkReportExport
             }
             catch (Exception ex)
             {
-                Trace.TraceError($"{ DateTime.Now } - An error occurred while loading charterers: { ex.Message }");
+                ComboItem comboVessel = ddlVessel.SelectedItem as ComboItem;
+
+                Trace.TraceError($"{ DateTime.Now } - An error occurred while loading charterers \n" +
+                    $"Parameters:\n" +
+                    $"DateFrom: {dtFrom.Value} - DateTo: {dtTo.Value} - Company: {ddlCompany.Text} - VesselCode: {comboVessel.Value} - Voyage: {comboItem.Value}\n" +
+                    $"Error: { ex.StackTrace }");
                 Trace.Flush();
             }
         }
 
         private void ddlCharterer_SelectedIndexChanged(object sender, EventArgs e)
         {
+            ComboItem comboItem = ddlCharterer.SelectedItem as ComboItem;
             try
             {
-                ComboItem comboItem = ddlCharterer.SelectedItem as ComboItem;
+                cleanControls("Charterer");                
                 reportBusiness.SetSelectedCharterer(comboItem.Value.ToString());
 
                 if (reportBusiness.VesselSelected.VoyageSelected.ChartererSelected != null)
@@ -172,15 +257,80 @@ namespace VeslinkReportExport
                     btnExcel.Enabled = true;
                     ddlCargo.Items.Clear();
                     foreach (Cargo cargo in reportBusiness.VesselSelected.VoyageSelected.ChartererSelected.Cargos)
-                        ddlCargo.Items.Add(new ComboItem() { Value = cargo.CargoID, Text = cargo.CargoID.ToString() });
+                        ddlCargo.Items.Add(new ComboItem() { Value = cargo.CargoID, Text = $"{cargo.CargoShortName} ({cargo.CargoQty})" });
                 }
             }
             catch (Exception ex)
             {
-                Trace.TraceError($"{ DateTime.Now } - An error occurred while loading cargos: { ex.Message }");
+                ComboItem comboVessel = ddlVessel.SelectedItem as ComboItem;
+                ComboItem comboVoyage = ddlVoyage.SelectedItem as ComboItem;
+
+                Trace.TraceError($"{ DateTime.Now } - An error occurred while loading cargos \n" +
+                    $"Parameters:\n" +
+                    $"DateFrom: {dtFrom.Value} - DateTo: {dtTo.Value} - Company: {ddlCompany.Text} - VesselCode: {comboVessel.Value} - Voyage: {comboVoyage.Value} - Charterer:{comboItem.Value}\n" +
+                    $"Error: { ex.StackTrace }");
                 Trace.Flush();
             }
 
+        }
+
+        private void cleanControls(string control)
+        {
+            if (control == "All")
+            {
+                ddlVessel.Items.Clear();
+                ddlVessel.ResetText();
+                ddlVessel.Enabled = false;
+
+                ddlVoyage.Items.Clear();
+                ddlVoyage.ResetText();
+                ddlVoyage.Enabled = false;
+
+                ddlCharterer.Items.Clear();
+                ddlCharterer.ResetText();
+                ddlCharterer.Enabled = false;
+
+                ddlCargo.Items.Clear();
+                ddlCargo.ResetText();
+                ddlCargo.Enabled = false;
+
+                btnExcel.Enabled = false;
+            }
+            else if (control == "Vessel")
+            {
+                ddlVoyage.Items.Clear();
+                ddlVoyage.ResetText();
+                ddlVoyage.Enabled = false;
+
+                ddlCharterer.Items.Clear();
+                ddlCharterer.ResetText();
+                ddlCharterer.Enabled = false;
+
+                ddlCargo.Items.Clear();
+                ddlCargo.ResetText();
+                ddlCargo.Enabled = false;
+                btnExcel.Enabled = false;
+
+            }
+            else if (control == "Voyage")
+            {
+                ddlCharterer.Items.Clear();
+                ddlCharterer.ResetText();
+                ddlCharterer.Enabled = false;
+
+                ddlCargo.Items.Clear();
+                ddlCargo.ResetText();
+                ddlCargo.Enabled = false;
+                btnExcel.Enabled = false;
+            }
+            else if (control == "Charterer")
+            {
+                ddlCargo.Items.Clear();
+                ddlCargo.ResetText();
+                ddlCargo.Enabled = false;
+                btnExcel.Enabled = false;
+            }
+            
         }
     }
 }

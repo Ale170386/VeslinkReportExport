@@ -48,6 +48,8 @@
     <Compile Include="Charterer.cs" />
     <Compile Include="ChemicalParcelingReport.cs" />
     <Compile Include="ComboItem.cs" />
+    <Compile Include="ContactInformation.cs" />
+    <Compile Include="Fuel.cs" />
     <Compile Include="ReportData.cs" />
     <Compile Include="Vessel.cs" />
     <Compile Include="Voyage.cs" />

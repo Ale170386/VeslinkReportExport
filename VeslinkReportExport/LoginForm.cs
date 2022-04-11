@@ -38,9 +38,9 @@ namespace VeslinkReportExport
                 Trace.Flush();
 
                 this.Hide();
-                VesselReportForm vesselReportForm = new VesselReportForm();
-                vesselReportForm.Closed += (s, args) => this.Close();
-                vesselReportForm.Show();
+                Menu menu = new Menu();
+                menu.Closed += (s, args) => this.Close();
+                menu.Show();
             }
             catch (Exception ex)
             {

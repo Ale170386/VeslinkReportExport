@@ -11,5 +11,8 @@ namespace Veslink.Entities
         public string ChartererName { get; set; }
         public Cargo CargoSelected { get; set; }
         public List<Cargo> Cargos { get; set; }
+        public List<VoyageCargo> VoyageCargos { get; set; }
+        public List<VoyageLegSummary> VoyageLegSummaries { get; set; }
+        public List<VoyageItinerary> VoyageItineraries { get; set; }
     }
 }

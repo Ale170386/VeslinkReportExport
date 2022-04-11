@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Veslink.Business", "Veslink
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Veslink.Entities", "Veslink.Entities\Veslink.Entities.csproj", "{4772AF80-65F6-4CFF-A05D-86833D388139}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Veslink.Testing", "Veslink.Testing\Veslink.Testing.csproj", "{46DF3F76-BF60-4949-B74B-928978F2C9C1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{4772AF80-65F6-4CFF-A05D-86833D388139}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4772AF80-65F6-4CFF-A05D-86833D388139}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4772AF80-65F6-4CFF-A05D-86833D388139}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46DF3F76-BF60-4949-B74B-928978F2C9C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46DF3F76-BF60-4949-B74B-928978F2C9C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46DF3F76-BF60-4949-B74B-928978F2C9C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46DF3F76-BF60-4949-B74B-928978F2C9C1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
