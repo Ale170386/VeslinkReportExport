@@ -136,7 +136,7 @@ namespace Veslink.Business
         {
             //WorkBook workbook = WorkBook.Load(Properties.Resources.ReportTemplate);
             //WorkSheet sheet = workbook.DefaultWorkSheet;
-            CultureInfo ci = CultureInfo.InvariantCulture;
+            CultureInfo ci = CultureInfo.InvariantCulture;            
 
             // This is invariant
             NumberFormatInfo formatInfo = new NumberFormatInfo();
@@ -154,8 +154,9 @@ namespace Veslink.Business
             //Assign the sheet
             ISheet sheet = hssfwb.GetSheetAt(0);
 
-            //ICellStyle intCellStyle = sheet.GetRow(16).GetCell(2).CellStyle;
-            //intCellStyle.DataFormat = hssfwb.CreateDataFormat().GetFormat("#,##0");
+            //ICellStyle intCellStyle = hssfwb.CreateCellStyle();
+            //intCellStyle.DataFormat = hssfwb.CreateDataFormat().GetFormat("[>=10000000]##\\,##\\,##\\,##0;[>=100000] ##\\,##\\,##0;##,##0.00");            
+
 
             #region Vessel And Cargo Data
             sheet.GetRow(8).GetCell(2).SetCellValue(VesselSelected.IMONo.ToString());
@@ -223,7 +224,7 @@ namespace Veslink.Business
                                             }).ToList();
 
             foreach (var voyageCargo in this.VesselSelected.VoyageSelected.ChartererSelected.VoyageCargos
-                                           .GroupBy(g => new { g.EtaGmt, g.VoyageSeqNo, g.FunctionCode })
+                                           .GroupBy(g => new { g.EtaGmt, g.VoyageSeqNo  g.FunctionCode })
                                            .OrderBy(o => o.Key.EtaGmt)
                                            .ThenByDescending(t => t.Key.FunctionCode))
             {
@@ -233,20 +234,30 @@ namespace Veslink.Business
                     row++;
 
                 currentRow = row;
+                double QuantityAll = Double.Parse(this.VesselSelected.VoyageSelected.VoyageCargos
+                                                                                  .Where(w => w.FunctionCode == voyageCargo.Key.FunctionCode
+                                                                                            && w.VoyageSeqNo == voyageCargo.Key.VoyageSeqNo)
+                                                                                  .Sum(s => s.BLQuantity).ToString(ci), formatInfo);
 
                 //Información de cargos del viaje
                 sheet.GetRow(currentRow).GetCell(1).SetCellType(CellType.Numeric);
-                sheet.GetRow(currentRow).GetCell(1).SetCellValue(Double.Parse(this.VesselSelected.VoyageSelected.VoyageCargos
-                                                                                  .Where(w => w.FunctionCode == voyageCargo.Key.FunctionCode
-                                                                                            && w.VoyageSeqNo == voyageCargo.Key.VoyageSeqNo)
-                                                                                  .Sum(s => s.BLQuantity).ToString(ci), formatInfo));
+                sheet.GetRow(currentRow).GetCell(1).SetCellValue(Double.Parse(QuantityAll.ToString(ci), formatInfo));
 
                 //Información de cargos del charterer
+                double QuantityCharter = Double.Parse(voyageCargo.Where(w => w.CounterpartyShortName == this.VesselSelected.VoyageSelected.ChartererSelected.ChartererName)
+                                    .Sum(s => s.BLQuantity).ToString(ci), formatInfo);
                 sheet.GetRow(currentRow).GetCell(2).SetCellType(CellType.Numeric);
-                sheet.GetRow(currentRow).GetCell(2).SetCellValue(Double.Parse(voyageCargo.Where(w => w.CounterpartyShortName == this.VesselSelected.VoyageSelected.ChartererSelected.ChartererName)
-                                                    .Sum(s => s.BLQuantity).ToString(ci), formatInfo));
+                sheet.GetRow(currentRow).GetCell(2).SetCellValue(Double.Parse(QuantityCharter.ToString(ci), formatInfo));
 
                 endIndex = voyageItiners.FindIndex(i => i.Seq == voyageCargo.Key.VoyageSeqNo);
+
+                //%
+                if (QuantityAll != 0)
+                {
+                    sheet.GetRow(currentRow).GetCell(10).SetCellType(CellType.Numeric);
+                    sheet.GetRow(currentRow).GetCell(10).SetCellValue(QuantityCharter / QuantityAll);
+                }
+
                 if ((row - 1) == ballastLeg)
                 {
                     GetPort(endIndex - 1, "C", ref startIndex);
@@ -285,7 +296,10 @@ namespace Veslink.Business
                     startIndexDistance = startIndex + 1;
                 }
                 else
+                {
                     startIndex = endIndex + 1; // si el puerto es de descarga se considera desde el puerto siguiente al de termino
+                    startIndexDistance = startIndex;
+                }                    
 
                 row++;
             }

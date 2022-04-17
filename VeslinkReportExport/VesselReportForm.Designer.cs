@@ -144,6 +144,7 @@
             // 
             // ddlVessel
             // 
+            this.ddlVessel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddlVessel.Enabled = false;
             this.ddlVessel.FormattingEnabled = true;
             this.ddlVessel.Location = new System.Drawing.Point(343, 136);
@@ -154,6 +155,7 @@
             // 
             // ddlVoyage
             // 
+            this.ddlVoyage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddlVoyage.Enabled = false;
             this.ddlVoyage.FormattingEnabled = true;
             this.ddlVoyage.Location = new System.Drawing.Point(74, 216);
@@ -164,6 +166,7 @@
             // 
             // ddlCompany
             // 
+            this.ddlCompany.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddlCompany.FormattingEnabled = true;
             this.ddlCompany.Location = new System.Drawing.Point(74, 136);
             this.ddlCompany.Name = "ddlCompany";
@@ -173,6 +176,7 @@
             // 
             // ddlCharterer
             // 
+            this.ddlCharterer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddlCharterer.Enabled = false;
             this.ddlCharterer.FormattingEnabled = true;
             this.ddlCharterer.Location = new System.Drawing.Point(344, 216);
@@ -183,6 +187,7 @@
             // 
             // ddlCargo
             // 
+            this.ddlCargo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddlCargo.Enabled = false;
             this.ddlCargo.FormattingEnabled = true;
             this.ddlCargo.Location = new System.Drawing.Point(74, 291);
