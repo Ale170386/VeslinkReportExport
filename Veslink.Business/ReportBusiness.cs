@@ -224,7 +224,7 @@ namespace Veslink.Business
                                             }).ToList();
 
             foreach (var voyageCargo in this.VesselSelected.VoyageSelected.ChartererSelected.VoyageCargos
-                                           .GroupBy(g => new { g.EtaGmt, g.VoyageSeqNo  g.FunctionCode })
+                                           .GroupBy(g => new { g.EtaGmt, g.VoyageSeqNo, g.FunctionCode })
                                            .OrderBy(o => o.Key.EtaGmt)
                                            .ThenByDescending(t => t.Key.FunctionCode))
             {

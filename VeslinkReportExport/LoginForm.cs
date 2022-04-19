@@ -9,11 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.Configuration;
+using log4net;
 
 namespace VeslinkReportExport
 {
     public partial class LoginForm : Form
     {
+        private static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         public LoginForm()
         {
             InitializeComponent();
@@ -34,8 +36,9 @@ namespace VeslinkReportExport
                     return;
                 }
 
-                Trace.TraceInformation($"{ DateTime.Now } - Successfully logged in");
-                Trace.Flush();
+                Log.Info("Successfully logged in");
+                //Trace.TraceInformation($"{ DateTime.Now } - Successfully logged in");
+                //Trace.Flush();
 
                 this.Hide();
                 Menu menu = new Menu();
@@ -44,11 +47,12 @@ namespace VeslinkReportExport
             }
             catch (Exception ex)
             {
-                Trace.TraceError($"{ DateTime.Now } - An error occurred while trying to log in: { ex.Message }");
-                Trace.Flush();
+                Log.Error("An error occurred while trying to log in:" + ex.Message);
+                //Trace.TraceError($"{ DateTime.Now } - An error occurred while trying to log in: { ex.Message }");
+                //Trace.Flush();
             }
 
-            
+
         }
     }
 }

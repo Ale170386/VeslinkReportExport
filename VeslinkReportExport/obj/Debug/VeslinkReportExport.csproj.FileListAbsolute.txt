@@ -41,3 +41,5 @@ C:\Desarrollos\Veslink\Repos\ReportExport\VeslinkReportExport\bin\Debug\NPOI.Ope
 C:\Desarrollos\Veslink\Repos\ReportExport\VeslinkReportExport\bin\Debug\ICSharpCode.SharpZipLib.pdb
 C:\Desarrollos\Veslink\Repos\ReportExport\VeslinkReportExport\bin\Debug\ICSharpCode.SharpZipLib.xml
 C:\Desarrollos\Veslink\Repos\ReportExport\VeslinkReportExport\bin\Debug\BouncyCastle.Crypto.xml
+C:\Desarrollos\Veslink\Repos\ReportExport\VeslinkReportExport\bin\Debug\log4net.dll
+C:\Desarrollos\Veslink\Repos\ReportExport\VeslinkReportExport\bin\Debug\log4net.xml

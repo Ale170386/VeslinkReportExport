@@ -1,4 +1,5 @@
-﻿using System;
+﻿using log4net;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +17,7 @@ namespace VeslinkReportExport
     public partial class VesselReportForm : Form
     {
         ReportBusiness reportBusiness = null;
+        private static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         public VesselReportForm()
         {
             InitializeComponent();
@@ -35,14 +37,16 @@ namespace VeslinkReportExport
                 foreach (string company in companies)
                     ddlCompany.Items.Add(company);
 
-                Trace.TraceInformation($"{ DateTime.Now } - Vessel Report Generator has started successfully");
-                Trace.Flush();
+                Log.Info(" Vessel Report Generator has started successfully");
+                //Trace.TraceInformation($"{ DateTime.Now } - Vessel Report Generator has started successfully");
+                //Trace.Flush();
             }
             catch (Exception ex)
             {
-                Trace.TraceError($"{ DateTime.Now } - An error occurred while loading companies: { ex.Message }");
-                Trace.Flush();
-            }            
+                Log.Error(" An error occurred while loading companies: " + ex.Message);
+                //Trace.TraceError($"{ DateTime.Now } - An error occurred while loading companies: { ex.Message }");
+                //Trace.Flush();
+            }
         }
 
         private void btnExcel_Click(object sender, EventArgs e)
@@ -54,8 +58,9 @@ namespace VeslinkReportExport
 
             try
             {
-                Trace.TraceInformation($"{ DateTime.Now } - Generating report for the following parameters Vessel: { comboVessel.Value } - Voyage: { comboVoyage.Value }");
-                Trace.Flush();
+                Log.Info("  Generating report for the following parameters Vessel: " + comboVessel.Value + " - Voyage:" + comboVoyage.Value);
+                //Trace.TraceInformation($"{ DateTime.Now } - Generating report for the following parameters Vessel: { comboVessel.Value } - Voyage: { comboVoyage.Value }");
+                //Trace.Flush();
 
                 Cursor = Cursors.WaitCursor;
                 byte[] fileGenerated = reportBusiness.GenerateExcel(comboVessel.Value.ToString(),
@@ -86,8 +91,9 @@ namespace VeslinkReportExport
 
                     MessageBox.Show("The report has been generated successfully");
 
-                    Trace.TraceInformation($"{ DateTime.Now } - Report has been generated successfully - FileName: { saveFileDialog1.FileName }");
-                    Trace.Flush();
+                    Log.Info(" Report has been generated successfully - FileName: " + saveFileDialog1.FileName);
+                    //Trace.TraceInformation($"{ DateTime.Now } - Report has been generated successfully - FileName: { saveFileDialog1.FileName }");
+                    //Trace.Flush();
                 }
                 else
                 {                    
@@ -102,11 +108,14 @@ namespace VeslinkReportExport
                 if (comboCargo != null)
                     cargo = comboCargo.Value.ToString();
 
-                Trace.TraceError($"{ DateTime.Now } - An error occurred while generating the excel file \n" +
+                Log.Error(" An error occurred while generating the excel file \n" + $"Parameters:\n" +
+                    $"DateFrom: {dtFrom.Value} - DateTo: {dtTo.Value} - Company: {ddlCompany.Text} - Vessel: {comboVessel.Value} - Voyage: {comboVoyage.Value} - Charterer: {comboCharterer.Value} - Cargo: {cargo}\n" +
+                    $"Error: { ex.StackTrace }");
+                /*Trace.TraceError($"{ DateTime.Now } - An error occurred while generating the excel file \n" +
                     $"Parameters:\n" +
                     $"DateFrom: {dtFrom.Value} - DateTo: {dtTo.Value} - Company: {ddlCompany.Text} - Vessel: {comboVessel.Value} - Voyage: {comboVoyage.Value} - Charterer: {comboCharterer.Value} - Cargo: {cargo}\n" +
                     $"Error: { ex.StackTrace }");
-                Trace.Flush();
+                Trace.Flush();*/
 
                 Cursor = Cursors.Default;
 
@@ -156,11 +165,15 @@ namespace VeslinkReportExport
             }
             catch (Exception ex)
             {
-                Trace.TraceError($"{ DateTime.Now } - An error occurred while loading vessels \n" +
+                Log.Error($" An error occurred while loading vessels \n" +
                     $"Parameters:\n" +
                     $"DateFrom: {dtFrom.Value} - DateTo: {dtTo.Value} - Company: {ddlCompany.Text}\n" +
                     $"Error: { ex.StackTrace }");
-                Trace.Flush();
+                /*Trace.TraceError($"{ DateTime.Now } - An error occurred while loading vessels \n" +
+                    $"Parameters:\n" +
+                    $"DateFrom: {dtFrom.Value} - DateTo: {dtTo.Value} - Company: {ddlCompany.Text}\n" +
+                    $"Error: { ex.StackTrace }");
+                Trace.Flush();*/
             }
 
         }
@@ -206,11 +219,16 @@ namespace VeslinkReportExport
             }
             catch (Exception ex)
             {
-                Trace.TraceError($"{ DateTime.Now } - An error occurred while loading voyages \n" +
+                Log.Error($"An error occurred while loading voyages \n" +
                     $"Parameters:\n" +
                     $"DateFrom: {dtFrom.Value} - DateTo: {dtTo.Value} - Company: {ddlCompany.Text} - VesselCode: {comboItem.Value}\n" +
                     $"Error: { ex.StackTrace }");
-                Trace.Flush();
+
+                /*Trace.TraceError($"{ DateTime.Now } - An error occurred while loading voyages \n" +
+                     $"Parameters:\n" +
+                     $"DateFrom: {dtFrom.Value} - DateTo: {dtTo.Value} - Company: {ddlCompany.Text} - VesselCode: {comboItem.Value}\n" +
+                     $"Error: { ex.StackTrace }");
+                 Trace.Flush();*/
             }
 
         }
@@ -235,11 +253,16 @@ namespace VeslinkReportExport
             {
                 ComboItem comboVessel = ddlVessel.SelectedItem as ComboItem;
 
-                Trace.TraceError($"{ DateTime.Now } - An error occurred while loading charterers \n" +
+                Log.Error($"An error occurred while loading charterers \n" +
                     $"Parameters:\n" +
                     $"DateFrom: {dtFrom.Value} - DateTo: {dtTo.Value} - Company: {ddlCompany.Text} - VesselCode: {comboVessel.Value} - Voyage: {comboItem.Value}\n" +
                     $"Error: { ex.StackTrace }");
-                Trace.Flush();
+
+                /*Trace.TraceError($"{ DateTime.Now } - An error occurred while loading charterers \n" +
+                     $"Parameters:\n" +
+                     $"DateFrom: {dtFrom.Value} - DateTo: {dtTo.Value} - Company: {ddlCompany.Text} - VesselCode: {comboVessel.Value} - Voyage: {comboItem.Value}\n" +
+                     $"Error: { ex.StackTrace }");
+                 Trace.Flush();*/
             }
         }
 
@@ -265,11 +288,15 @@ namespace VeslinkReportExport
                 ComboItem comboVessel = ddlVessel.SelectedItem as ComboItem;
                 ComboItem comboVoyage = ddlVoyage.SelectedItem as ComboItem;
 
-                Trace.TraceError($"{ DateTime.Now } - An error occurred while loading cargos \n" +
+                Log.Error("$An error occurred while loading cargos \n" +
                     $"Parameters:\n" +
                     $"DateFrom: {dtFrom.Value} - DateTo: {dtTo.Value} - Company: {ddlCompany.Text} - VesselCode: {comboVessel.Value} - Voyage: {comboVoyage.Value} - Charterer:{comboItem.Value}\n" +
                     $"Error: { ex.StackTrace }");
-                Trace.Flush();
+                /*Trace.TraceError($"{ DateTime.Now } - An error occurred while loading cargos \n" +
+                    $"Parameters:\n" +
+                    $"DateFrom: {dtFrom.Value} - DateTo: {dtTo.Value} - Company: {ddlCompany.Text} - VesselCode: {comboVessel.Value} - Voyage: {comboVoyage.Value} - Charterer:{comboItem.Value}\n" +
+                    $"Error: { ex.StackTrace }");
+                Trace.Flush();*/
             }
 
         }
