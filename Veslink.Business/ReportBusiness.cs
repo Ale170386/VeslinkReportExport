@@ -108,7 +108,15 @@ namespace Veslink.Business
         public byte[] GenerateExcel(string vesselCode, string voyageNo, string chartererId, string cargoId)
         {
             //Get and Parse Itinerary from API CHEM 1
-            this.VesselSelected.VoyageSelected.ChartererSelected.VoyageItineraries = ReportData.GetItinerariesReportAsync(vesselCode, voyageNo, chartererId, cargoId);
+            this.VesselSelected.VoyageSelected.Itinerary = ReportData.GetItinerariesReportAsync(vesselCode, voyageNo);
+            this.VesselSelected.VoyageSelected.ChartererSelected.VoyageItineraries = this.VesselSelected.VoyageSelected.Itinerary
+                                                                                        .Where(s => s.CounterpartyShortName == chartererId
+                                                                                            && (cargoId == "" || s.CargoID == int.Parse(cargoId)))
+                                                                                        .OrderBy(s => s.Order)
+                                                                                        .ToList();
+
+
+            //this.VesselSelected.VoyageSelected.ChartererSelected.VoyageItineraries = ReportData.GetItinerariesReportAsync(vesselCode, voyageNo, chartererId, cargoId);
 
             //Get and Parse Cargo detail from API CHEM 4
             this.VesselSelected.VoyageSelected.VoyageCargos = ReportData.GetCargoReportAsync(vesselCode, voyageNo, chartererId, cargoId);
@@ -136,7 +144,7 @@ namespace Veslink.Business
         {
             //WorkBook workbook = WorkBook.Load(Properties.Resources.ReportTemplate);
             //WorkSheet sheet = workbook.DefaultWorkSheet;
-            CultureInfo ci = CultureInfo.InvariantCulture;            
+            CultureInfo ci = CultureInfo.InvariantCulture;
 
             // This is invariant
             NumberFormatInfo formatInfo = new NumberFormatInfo();
@@ -154,9 +162,8 @@ namespace Veslink.Business
             //Assign the sheet
             ISheet sheet = hssfwb.GetSheetAt(0);
 
-            //ICellStyle intCellStyle = hssfwb.CreateCellStyle();
-            //intCellStyle.DataFormat = hssfwb.CreateDataFormat().GetFormat("[>=10000000]##\\,##\\,##\\,##0;[>=100000] ##\\,##\\,##0;##,##0.00");            
-
+            //ICellStyle intCellStyle = sheet.GetRow(16).GetCell(2).CellStyle;
+            //intCellStyle.DataFormat = hssfwb.CreateDataFormat().GetFormat("#,##0");
 
             #region Vessel And Cargo Data
             sheet.GetRow(8).GetCell(2).SetCellValue(VesselSelected.IMONo.ToString());
@@ -171,10 +178,19 @@ namespace Veslink.Business
 
             int loadPort = 0;
             int commencedPort = 0;
-            List<VoyageItinerary> voyageItiners = this.VesselSelected.VoyageSelected.ChartererSelected.VoyageItineraries;
+            List<VoyageItinerary> voyageItiners = this.VesselSelected.VoyageSelected.Itinerary;
 
             #region Last Ballast Leg
-            GetPort(0, "L", ref loadPort);
+            //GetPort(0, "L", ref loadPort);
+            VoyageItinerary loadPortItinerary = this.VesselSelected.VoyageSelected.ChartererSelected.VoyageItineraries
+                                                    .Where(w => w.PortFunc == "L")
+                                                    .OrderBy(o => o.Order)
+                                                    .FirstOrDefault();
+
+            loadPort = voyageItiners.FindIndex(i => i.CounterpartyShortName == loadPortItinerary.CounterpartyShortName
+                                                 && i.PortFunc == loadPortItinerary.PortFunc
+                                                 && i.Seq == loadPortItinerary.Seq);
+
             GetPort(loadPort - 1, "C", ref commencedPort);
 
             int distance = GetDistanceSailed(commencedPort, loadPort);
@@ -191,7 +207,18 @@ namespace Veslink.Business
             #endregion
 
             int dischargePort = 0;
-            GetPort(loadPort, "D", ref dischargePort);
+
+            VoyageItinerary dischargePortItinerary = this.VesselSelected.VoyageSelected.ChartererSelected.VoyageItineraries
+                                                    .Where(w => w.PortFunc == "D")
+                                                    .OrderByDescending(o => o.Order)
+                                                    .FirstOrDefault();
+
+            dischargePort = voyageItiners.FindIndex(i => i.CounterpartyShortName == dischargePortItinerary.CounterpartyShortName
+                                                 && i.PortFunc == dischargePortItinerary.PortFunc
+                                                 && i.Seq == dischargePortItinerary.Seq);
+
+
+            //GetPort(loadPort, "D", ref dischargePort);
 
             #region Loaded Leg
             distance = GetDistanceSailed(loadPort + 1, dischargePort);
@@ -224,7 +251,7 @@ namespace Veslink.Business
                                             }).ToList();
 
             foreach (var voyageCargo in this.VesselSelected.VoyageSelected.ChartererSelected.VoyageCargos
-                                           .GroupBy(g => new { g.EtaGmt, g.VoyageSeqNo, g.FunctionCode })
+                                           .GroupBy(g => new { g.EtaGmt, g.VoyageSeqNo, g.FunctionCode, g.CounterpartyShortName, g.OrdNo })
                                            .OrderBy(o => o.Key.EtaGmt)
                                            .ThenByDescending(t => t.Key.FunctionCode))
             {
@@ -238,18 +265,21 @@ namespace Veslink.Business
                                                                                   .Where(w => w.FunctionCode == voyageCargo.Key.FunctionCode
                                                                                             && w.VoyageSeqNo == voyageCargo.Key.VoyageSeqNo)
                                                                                   .Sum(s => s.BLQuantity).ToString(ci), formatInfo);
-
                 //Información de cargos del viaje
                 sheet.GetRow(currentRow).GetCell(1).SetCellType(CellType.Numeric);
                 sheet.GetRow(currentRow).GetCell(1).SetCellValue(Double.Parse(QuantityAll.ToString(ci), formatInfo));
 
+
+
                 //Información de cargos del charterer
                 double QuantityCharter = Double.Parse(voyageCargo.Where(w => w.CounterpartyShortName == this.VesselSelected.VoyageSelected.ChartererSelected.ChartererName)
-                                    .Sum(s => s.BLQuantity).ToString(ci), formatInfo);
+                                                    .Sum(s => s.BLQuantity).ToString(ci), formatInfo);
                 sheet.GetRow(currentRow).GetCell(2).SetCellType(CellType.Numeric);
                 sheet.GetRow(currentRow).GetCell(2).SetCellValue(Double.Parse(QuantityCharter.ToString(ci), formatInfo));
 
-                endIndex = voyageItiners.FindIndex(i => i.Seq == voyageCargo.Key.VoyageSeqNo);
+                endIndex = voyageItiners.FindIndex(i => i.CounterpartyShortName == voyageCargo.Key.CounterpartyShortName
+                                                 && i.PortFunc == voyageCargo.Key.FunctionCode
+                                                 && i.Seq == voyageCargo.Key.OrdNo);
 
                 //%
                 if (QuantityAll != 0)
@@ -299,7 +329,7 @@ namespace Veslink.Business
                 {
                     startIndex = endIndex + 1; // si el puerto es de descarga se considera desde el puerto siguiente al de termino
                     startIndexDistance = startIndex;
-                }                    
+                }
 
                 row++;
             }
@@ -346,7 +376,7 @@ namespace Veslink.Business
         /// <param name="firstOccurrence"></param>
         private void GetPort(int index, string portType, ref int resultPort)
         {
-            List<VoyageItinerary> voyageItiners = this.VesselSelected.VoyageSelected.ChartererSelected.VoyageItineraries;
+            List<VoyageItinerary> voyageItiners = this.VesselSelected.VoyageSelected.Itinerary;
 
             int lenght = voyageItiners.Count;
             switch (portType)
@@ -390,22 +420,34 @@ namespace Veslink.Business
         private int GetDistanceSailed(int startPort, int endPort, string portType = "")
         {
             int distance = 0;
-            int currentNode = startPort;
-            int lenght = this.VesselSelected.VoyageSelected.ChartererSelected.VoyageItineraries.Count;
-
-            if (portType != "" && portType == "L")                
-                endPort--; //No se considera el puerto de carga
-
-            while ((currentNode <= endPort))
+            if (startPort < endPort)
             {
-                distance += this.VesselSelected.VoyageSelected.ChartererSelected.VoyageItineraries[currentNode].Miles;
+                VoyageItinerary sPortNode = this.VesselSelected.VoyageSelected.Itinerary[startPort];
+                VoyageItinerary ePortNode = this.VesselSelected.VoyageSelected.Itinerary[endPort];
+                var ports = this.VesselSelected.VoyageSelected.Itinerary
+                                                .GroupBy(g => new { g.PortName, g.Miles, g.Order })
+                                                .OrderBy(o => o.Key.Order)
+                                                .ToList();
 
-                //if ((currentNode + 1) == endPort)
-                //    distance += this.VesselSelected.VoyageSelected.ChartererSelected.VoyageItineraries[currentNode + 1].Miles;
 
-                currentNode++;
+                int currentNode = ports.FindIndex(i => i.Key.Order == sPortNode.Order);
+                int lastNode = ports.FindIndex(i => i.Key.Order == ePortNode.Order);
+
+                int lenght = this.VesselSelected.VoyageSelected.Itinerary.Count;
+
+                if (portType != "" && portType == "L")
+                    lastNode--; //No se considera el puerto de carga
+
+                while ((currentNode <= lastNode))
+                {
+                    distance += ports[currentNode].Key.Miles;
+
+                    //if ((currentNode + 1) == endPort)
+                    //    distance += this.VesselSelected.VoyageSelected.ChartererSelected.VoyageItineraries[currentNode + 1].Miles;
+
+                    currentNode++;
+                }
             }
-
             return distance;
         }
 

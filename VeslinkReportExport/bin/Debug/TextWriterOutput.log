@@ -531,103 +531,89 @@ VeslinkReportExport.exe Information: 0 : 06-04-2022 23:02:10 - Successfully logg
 VeslinkReportExport.exe Information: 0 : 06-04-2022 23:02:13 - Vessel Report Generator has started successfully
 VeslinkReportExport.exe Information: 0 : 06-04-2022 23:02:30 - Generating report for the following parameters Vessel: GGPA - Voyage: 71
 VeslinkReportExport.exe Information: 0 : 06-04-2022 23:02:47 - Report has been generated successfully - FileName: C:\Desarrollos\Veslink\Docs\GGPA_71_CARGILL AMERICAS  INC.xlsx
-VeslinkReportExport.exe Information: 0 : 11-04-2022 12:03:07 - Successfully logged in
-VeslinkReportExport.exe Information: 0 : 11-04-2022 12:03:11 - Vessel Report Generator has started successfully
-VeslinkReportExport.exe Information: 0 : 11-04-2022 12:03:38 - Generating report for the following parameters Vessel: GGPA - Voyage: 71
-VeslinkReportExport.exe Information: 0 : 11-04-2022 12:07:17 - Report has been generated successfully - FileName: C:\Desarrollos\Veslink\Docs\GGPA_71_CARGILL AMERICAS  INC_2.xlsx
-VeslinkReportExport.exe Information: 0 : 11-04-2022 20:41:11 - Successfully logged in
-VeslinkReportExport.exe Information: 0 : 11-04-2022 20:41:16 - Vessel Report Generator has started successfully
-VeslinkReportExport.exe Information: 0 : 11-04-2022 20:41:40 - Generating report for the following parameters Vessel: GGPA - Voyage: 71
-VeslinkReportExport.exe Information: 0 : 11-04-2022 20:41:51 - Report has been generated successfully - FileName: GGPA_71_CARGILL AMERICAS  INC
-VeslinkReportExport.exe Information: 0 : 11-04-2022 20:43:42 - Successfully logged in
-VeslinkReportExport.exe Information: 0 : 11-04-2022 20:43:48 - Vessel Report Generator has started successfully
-VeslinkReportExport.exe Information: 0 : 11-04-2022 20:44:04 - Generating report for the following parameters Vessel: GGPA - Voyage: 71
-VeslinkReportExport.exe Information: 0 : 11-04-2022 20:44:13 - Report has been generated successfully - FileName: C:\Desarrollos\Veslink\Docs\GGPA_71_CARGILL AMERICAS  INC.xlsx
-VeslinkReportExport.exe Information: 0 : 11-04-2022 20:53:00 - Generating report for the following parameters Vessel: BARB - Voyage: 55
-VeslinkReportExport.exe Information: 0 : 11-04-2022 20:53:17 - Report has been generated successfully - FileName: C:\Desarrollos\Veslink\Docs\BARB_55_WATERFRONT SHIPPING - CAYMAN ISL.xlsx
-VeslinkReportExport.exe Information: 0 : 11-04-2022 21:00:22 - Generating report for the following parameters Vessel: STPA - Voyage: 1
-VeslinkReportExport.exe Information: 0 : 11-04-2022 21:00:29 - Report has been generated successfully - FileName: C:\Desarrollos\Veslink\Docs\STPA_1_CARGILL INTERNATIONAL S.A..xlsx
-VeslinkReportExport.exe Information: 0 : 13-04-2022 10:28:18 - Successfully logged in
-VeslinkReportExport.exe Information: 0 : 13-04-2022 10:28:20 - Vessel Report Generator has started successfully
-VeslinkReportExport.exe Information: 0 : 13-04-2022 10:28:38 - Vessel Report Generator has started successfully
-VeslinkReportExport.exe Information: 0 : 16-04-2022 13:03:21 - Successfully logged in
-VeslinkReportExport.exe Information: 0 : 16-04-2022 13:03:28 - Vessel Report Generator has started successfully
-VeslinkReportExport.exe Information: 0 : 16-04-2022 13:58:08 - Generating report for the following parameters Vessel: LUXE - Voyage: 20
-VeslinkReportExport.exe Information: 0 : 16-04-2022 13:58:25 - Report has been generated successfully - FileName: C:\Desarrollos\Veslink\Docs\LUXE_20_ED&F MAN LIQUID PRODUCTS.xlsx
-VeslinkReportExport.exe Information: 0 : 16-04-2022 14:00:15 - Generating report for the following parameters Vessel: LUXE - Voyage: 20
-VeslinkReportExport.exe Information: 0 : 16-04-2022 15:45:45 - Report has been generated successfully - FileName: LUXE_20_ED&F MAN LIQUID PRODUCTS
-VeslinkReportExport.exe Information: 0 : 16-04-2022 15:58:43 - Successfully logged in
-VeslinkReportExport.exe Information: 0 : 16-04-2022 15:58:46 - Vessel Report Generator has started successfully
-VeslinkReportExport.exe Information: 0 : 16-04-2022 15:59:01 - Generating report for the following parameters Vessel: LUXE - Voyage: 20
-VeslinkReportExport.exe Information: 0 : 16-04-2022 15:59:17 - Report has been generated successfully - FileName: C:\Desarrollos\Veslink\Docs\LUXE_20_ED&F MAN LIQUID PRODUCTS.xlsx
-VeslinkReportExport.exe Information: 0 : 16-04-2022 16:05:42 - Generating report for the following parameters Vessel: LUXE - Voyage: 20
-VeslinkReportExport.exe Information: 0 : 16-04-2022 16:05:58 - Report has been generated successfully - FileName: C:\Desarrollos\Veslink\Docs\LUXE_20_ED&F MAN LIQUID PRODUCTS.xlsx
-VeslinkReportExport.exe Information: 0 : 16-04-2022 16:07:36 - Successfully logged in
-VeslinkReportExport.exe Information: 0 : 16-04-2022 16:07:39 - Vessel Report Generator has started successfully
-VeslinkReportExport.exe Information: 0 : 16-04-2022 16:07:54 - Generating report for the following parameters Vessel: LUXE - Voyage: 20
-VeslinkReportExport.exe Information: 0 : 16-04-2022 16:08:01 - Report has been generated successfully - FileName: C:\Desarrollos\Veslink\Docs\LUXE_20_ED&F MAN LIQUID PRODUCTS.xlsx
-VeslinkReportExport.exe Information: 0 : 16-04-2022 16:08:44 - Successfully logged in
-VeslinkReportExport.exe Information: 0 : 16-04-2022 16:08:46 - Vessel Report Generator has started successfully
-VeslinkReportExport.exe Information: 0 : 16-04-2022 16:08:59 - Generating report for the following parameters Vessel: LUXE - Voyage: 20
-VeslinkReportExport.exe Information: 0 : 16-04-2022 16:09:08 - Report has been generated successfully - FileName: C:\Desarrollos\Veslink\Docs\LUXE_20_ED&F MAN LIQUID PRODUCTS.xlsx
-VeslinkReportExport.exe Information: 0 : 16-04-2022 16:12:11 - Successfully logged in
-VeslinkReportExport.exe Information: 0 : 16-04-2022 16:12:13 - Vessel Report Generator has started successfully
-VeslinkReportExport.exe Information: 0 : 16-04-2022 16:12:27 - Generating report for the following parameters Vessel: LUXE - Voyage: 20
-VeslinkReportExport.exe Information: 0 : 16-04-2022 16:12:40 - Report has been generated successfully - FileName: C:\Desarrollos\Veslink\Docs\LUXE_20_ED&F MAN LIQUID PRODUCTS.xlsx
-VeslinkReportExport.exe Information: 0 : 16-04-2022 16:14:09 - Successfully logged in
-VeslinkReportExport.exe Information: 0 : 16-04-2022 16:14:11 - Vessel Report Generator has started successfully
-VeslinkReportExport.exe Information: 0 : 16-04-2022 16:14:23 - Generating report for the following parameters Vessel: LUXE - Voyage: 20
-VeslinkReportExport.exe Information: 0 : 16-04-2022 16:14:35 - Report has been generated successfully - FileName: C:\Desarrollos\Veslink\Docs\LUXE_20_ED&F MAN LIQUID PRODUCTS.xlsx
-VeslinkReportExport.exe Information: 0 : 16-04-2022 16:21:52 - Generating report for the following parameters Vessel: LUXE - Voyage: 20
-VeslinkReportExport.exe Information: 0 : 16-04-2022 16:24:07 - Successfully logged in
-VeslinkReportExport.exe Information: 0 : 16-04-2022 16:24:10 - Vessel Report Generator has started successfully
-VeslinkReportExport.exe Information: 0 : 16-04-2022 16:25:06 - Generating report for the following parameters Vessel: LUXE - Voyage: 20
-VeslinkReportExport.exe Information: 0 : 16-04-2022 16:34:26 - Successfully logged in
-VeslinkReportExport.exe Information: 0 : 16-04-2022 16:34:29 - Vessel Report Generator has started successfully
-VeslinkReportExport.exe Information: 0 : 16-04-2022 16:34:43 - Generating report for the following parameters Vessel: LUXE - Voyage: 20
-VeslinkReportExport.exe Error: 0 : 16-04-2022 16:35:16 - An error occurred while generating the excel file 
+VeslinkReportExport.exe Information: 0 : 11-04-2022 11:36:04 - Successfully logged in
+VeslinkReportExport.exe Information: 0 : 11-04-2022 11:36:06 - Vessel Report Generator has started successfully
+VeslinkReportExport.exe Information: 0 : 11-04-2022 11:37:09 - Generating report for the following parameters Vessel: MIAM - Voyage: 15
+VeslinkReportExport.exe Error: 0 : 11-04-2022 11:37:20 - An error occurred while generating the excel file 
 Parameters:
-DateFrom: 16-10-2021 16:34:29 - DateTo: 16-04-2022 16:34:29 - Company: UGIN - Vessel: LUXE - Voyage: 20 - Charterer: ED&F MAN LIQUID PRODUCTS - Cargo: 
-Error:    en System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
-   en System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
-   en System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access)
-   en System.Windows.Forms.SaveFileDialog.OpenFile()
-   en VeslinkReportExport.VesselReportForm.btnExcel_Click(Object sender, EventArgs e) en C:\Desarrollos\Veslink\Repos\ReportExport\VeslinkReportExport\VesselReportForm.cs:línea 79
-VeslinkReportExport.exe Information: 0 : 16-04-2022 16:35:33 - Generating report for the following parameters Vessel: LUXE - Voyage: 20
-VeslinkReportExport.exe Information: 0 : 16-04-2022 16:35:39 - Report has been generated successfully - FileName: C:\Desarrollos\Veslink\Docs\LUXE_20_ED&F MAN LIQUID PRODUCTS.xlsx
-VeslinkReportExport.exe Information: 0 : 16-04-2022 16:38:03 - Successfully logged in
-VeslinkReportExport.exe Information: 0 : 16-04-2022 16:38:06 - Vessel Report Generator has started successfully
-VeslinkReportExport.exe Information: 0 : 16-04-2022 16:38:18 - Generating report for the following parameters Vessel: LUXE - Voyage: 20
-VeslinkReportExport.exe Information: 0 : 16-04-2022 16:38:26 - Report has been generated successfully - FileName: C:\Desarrollos\Veslink\Docs\LUXE_20_ED&F MAN LIQUID PRODUCTS.xlsx
-VeslinkReportExport.exe Information: 0 : 16-04-2022 16:40:17 - Successfully logged in
-VeslinkReportExport.exe Information: 0 : 16-04-2022 16:40:20 - Vessel Report Generator has started successfully
-VeslinkReportExport.exe Information: 0 : 16-04-2022 16:40:36 - Generating report for the following parameters Vessel: LUXE - Voyage: 20
-VeslinkReportExport.exe Information: 0 : 16-04-2022 16:40:45 - Report has been generated successfully - FileName: C:\Desarrollos\Veslink\Docs\LUXE_20_ED&F MAN LIQUID PRODUCTS.xlsx
-VeslinkReportExport.exe Information: 0 : 16-04-2022 17:04:47 - Successfully logged in
-VeslinkReportExport.exe Information: 0 : 16-04-2022 17:04:49 - Vessel Report Generator has started successfully
-VeslinkReportExport.exe Information: 0 : 16-04-2022 17:05:00 - Generating report for the following parameters Vessel: LUXE - Voyage: 20
-VeslinkReportExport.exe Information: 0 : 16-04-2022 17:05:08 - Report has been generated successfully - FileName: C:\Desarrollos\Veslink\Docs\LUXE_20_ED&F MAN LIQUID PRODUCTS.xlsx
-VeslinkReportExport.exe Information: 0 : 16-04-2022 17:32:31 - Successfully logged in
-VeslinkReportExport.exe Information: 0 : 16-04-2022 17:32:33 - Vessel Report Generator has started successfully
-VeslinkReportExport.exe Information: 0 : 16-04-2022 17:32:47 - Generating report for the following parameters Vessel: LUXE - Voyage: 20
-VeslinkReportExport.exe Information: 0 : 16-04-2022 17:33:00 - Report has been generated successfully - FileName: C:\Desarrollos\Veslink\Docs\LUXE_20_ED&F MAN LIQUID PRODUCTS.xlsx
-VeslinkReportExport.exe Information: 0 : 16-04-2022 18:23:01 - Successfully logged in
-VeslinkReportExport.exe Information: 0 : 16-04-2022 18:23:03 - Vessel Report Generator has started successfully
-VeslinkReportExport.exe Information: 0 : 16-04-2022 18:23:14 - Generating report for the following parameters Vessel: LUXE - Voyage: 20
-VeslinkReportExport.exe Information: 0 : 16-04-2022 18:30:17 - Report has been generated successfully - FileName: LUXE_20_ED&F MAN LIQUID PRODUCTS
-VeslinkReportExport.exe Information: 0 : 16-04-2022 18:30:20 - Generating report for the following parameters Vessel: LUXE - Voyage: 20
-VeslinkReportExport.exe Information: 0 : 16-04-2022 18:33:37 - Successfully logged in
-VeslinkReportExport.exe Information: 0 : 16-04-2022 18:33:52 - Vessel Report Generator has started successfully
-VeslinkReportExport.exe Information: 0 : 16-04-2022 18:34:37 - Generating report for the following parameters Vessel: LUXE - Voyage: 20
-VeslinkReportExport.exe Information: 0 : 16-04-2022 18:34:46 - Report has been generated successfully - FileName: C:\Desarrollos\Veslink\Docs\LUXE_20_ED&F MAN LIQUID PRODUCTS.xlsx
-VeslinkReportExport.exe Information: 0 : 16-04-2022 18:48:27 - Generating report for the following parameters Vessel: LUXE - Voyage: 21
-VeslinkReportExport.exe Information: 0 : 16-04-2022 18:48:35 - Report has been generated successfully - FileName: C:\Desarrollos\Veslink\Docs\LUXE_21_SHELL TRADING U.S. COMPANY.xlsx
-VeslinkReportExport.exe Information: 0 : 16-04-2022 18:52:24 - Generating report for the following parameters Vessel: LUXE - Voyage: 21
-VeslinkReportExport.exe Information: 0 : 16-04-2022 19:00:22 - Report has been generated successfully - FileName: LUXE_21_SHELL TRADING U.S. COMPANY
-VeslinkReportExport.exe Information: 0 : 16-04-2022 19:08:23 - Generating report for the following parameters Vessel: LUXE - Voyage: 21
-VeslinkReportExport.exe Information: 0 : 16-04-2022 19:21:27 - Report has been generated successfully - FileName: LUXE_21_SHELL TRADING U.S. COMPANY
-VeslinkReportExport.exe Information: 0 : 16-04-2022 19:21:28 - Generating report for the following parameters Vessel: LUXE - Voyage: 21
-VeslinkReportExport.exe Information: 0 : 16-04-2022 19:21:42 - Report has been generated successfully - FileName: LUXE_21_SHELL TRADING U.S. COMPANY
-VeslinkReportExport.exe Information: 0 : 16-04-2022 19:21:43 - Generating report for the following parameters Vessel: LUXE - Voyage: 21
-VeslinkReportExport.exe Information: 0 : 16-04-2022 19:25:27 - Report has been generated successfully - FileName: LUXE_21_SHELL TRADING U.S. COMPANY
-VeslinkReportExport.exe Information: 0 : 16-04-2022 19:25:28 - Generating report for the following parameters Vessel: LUXE - Voyage: 21
+DateFrom: 11-10-2021 11:36:06 - DateTo: 11-04-2022 11:36:06 - Company: CHEM - Vessel: MIAM - Voyage: 15 - Charterer: ED&F MAN LIQUID PRODUCTS - Cargo: 
+Error:    en System.Linq.Enumerable.Where[TSource](IEnumerable`1 source, Func`2 predicate)
+   en Veslink.Data.ReportData.GetItinerariesReportAsync(String vesselCode, String voyageNo, String chartererId, String cargoId) en C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Data\ReportData.cs:línea 53
+   en Veslink.Business.ReportBusiness.GenerateExcel(String vesselCode, String voyageNo, String chartererId, String cargoId) en C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Business\ReportBusiness.cs:línea 111
+   en VeslinkReportExport.VesselReportForm.btnExcel_Click(Object sender, EventArgs e) en C:\Desarrollos\Veslink\Repos\ReportExport\VeslinkReportExport\VesselReportForm.cs:línea 61
+VeslinkReportExport.exe Information: 0 : 11-04-2022 11:37:30 - Generating report for the following parameters Vessel: MIAM - Voyage: 15
+VeslinkReportExport.exe Error: 0 : 11-04-2022 11:39:04 - An error occurred while generating the excel file 
+Parameters:
+DateFrom: 11-10-2021 11:36:06 - DateTo: 11-04-2022 11:36:06 - Company: CHEM - Vessel: MIAM - Voyage: 15 - Charterer: ED&F MAN LIQUID PRODUCTS - Cargo: 
+Error:    en System.Linq.Enumerable.Where[TSource](IEnumerable`1 source, Func`2 predicate)
+   en Veslink.Data.ReportData.GetItinerariesReportAsync(String vesselCode, String voyageNo, String chartererId, String cargoId) en C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Data\ReportData.cs:línea 53
+   en Veslink.Business.ReportBusiness.GenerateExcel(String vesselCode, String voyageNo, String chartererId, String cargoId) en C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Business\ReportBusiness.cs:línea 111
+   en VeslinkReportExport.VesselReportForm.btnExcel_Click(Object sender, EventArgs e) en C:\Desarrollos\Veslink\Repos\ReportExport\VeslinkReportExport\VesselReportForm.cs:línea 61
+VeslinkReportExport.exe Information: 0 : 11-04-2022 11:39:16 - Generating report for the following parameters Vessel: MIAM - Voyage: 15
+VeslinkReportExport.exe Information: 0 : 11-04-2022 11:41:55 - Successfully logged in
+VeslinkReportExport.exe Information: 0 : 11-04-2022 11:41:57 - Vessel Report Generator has started successfully
+VeslinkReportExport.exe Information: 0 : 11-04-2022 11:42:21 - Generating report for the following parameters Vessel: MIAM - Voyage: 15
+VeslinkReportExport.exe Information: 0 : 11-04-2022 11:48:15 - Successfully logged in
+VeslinkReportExport.exe Information: 0 : 11-04-2022 11:48:17 - Vessel Report Generator has started successfully
+VeslinkReportExport.exe Information: 0 : 11-04-2022 11:48:32 - Generating report for the following parameters Vessel: MIAM - Voyage: 15
+VeslinkReportExport.exe Error: 0 : 11-04-2022 11:48:36 - An error occurred while generating the excel file 
+Parameters:
+DateFrom: 11-10-2021 11:48:17 - DateTo: 11-04-2022 11:48:18 - Company: CHEM - Vessel: MIAM - Voyage: 15 - Charterer: ED&F MAN LIQUID PRODUCTS - Cargo: 
+Error:    en System.Linq.GroupedEnumerable`3..ctor(IEnumerable`1 source, Func`2 keySelector, Func`2 elementSelector, IEqualityComparer`1 comparer)
+   en System.Linq.Enumerable.GroupBy[TSource,TKey](IEnumerable`1 source, Func`2 keySelector)
+   en Veslink.Data.ReportData.GetVoyageSummaryReportAsync(String vesselCode, String voyageNo, String chartererId, String cargoId) en C:\SVNUNAV\ReporteNavesChem\Fuentes\VeslinkReportExport-main\Veslink.Data\ReportData.cs:línea 115
+   en Veslink.Business.ReportBusiness.GenerateExcel(String vesselCode, String voyageNo, String chartererId, String cargoId) en C:\SVNUNAV\ReporteNavesChem\Fuentes\VeslinkReportExport-main\Veslink.Business\ReportBusiness.cs:línea 120
+   en VeslinkReportExport.VesselReportForm.btnExcel_Click(Object sender, EventArgs e) en C:\SVNUNAV\ReporteNavesChem\Fuentes\VeslinkReportExport-main\VeslinkReportExport\VesselReportForm.cs:línea 61
+VeslinkReportExport.exe Information: 0 : 11-04-2022 11:48:40 - Generating report for the following parameters Vessel: MIAM - Voyage: 15
+VeslinkReportExport.exe Information: 0 : 11-04-2022 11:50:13 - Successfully logged in
+VeslinkReportExport.exe Information: 0 : 11-04-2022 11:50:15 - Vessel Report Generator has started successfully
+VeslinkReportExport.exe Information: 0 : 11-04-2022 11:50:26 - Generating report for the following parameters Vessel: MIAM - Voyage: 15
+VeslinkReportExport.exe Information: 0 : 11-04-2022 11:50:52 - Successfully logged in
+VeslinkReportExport.exe Information: 0 : 11-04-2022 11:50:54 - Vessel Report Generator has started successfully
+VeslinkReportExport.exe Information: 0 : 11-04-2022 11:51:05 - Generating report for the following parameters Vessel: MIAM - Voyage: 15
+VeslinkReportExport.exe Information: 0 : 11-04-2022 11:51:12 - Report has been generated successfully - FileName: C:\reporteNaves\excel\MIAM_15_ED&F MAN LIQUID PRODUCTS.xlsx
+VeslinkReportExport.exe Information: 0 : 11-04-2022 12:01:25 - Successfully logged in
+VeslinkReportExport.exe Information: 0 : 11-04-2022 12:01:27 - Vessel Report Generator has started successfully
+VeslinkReportExport.exe Information: 0 : 11-04-2022 12:01:58 - Generating report for the following parameters Vessel: GGPA - Voyage: 71
+VeslinkReportExport.exe Information: 0 : 11-04-2022 12:25:03 - Report has been generated successfully - FileName: GGPA_71_CARGILL AMERICAS  INC
+VeslinkReportExport.exe Information: 0 : 11-04-2022 12:25:11 - Successfully logged in
+VeslinkReportExport.exe Information: 0 : 11-04-2022 12:25:13 - Vessel Report Generator has started successfully
+VeslinkReportExport.exe Information: 0 : 11-04-2022 12:25:40 - Generating report for the following parameters Vessel: GGPA - Voyage: 71
+VeslinkReportExport.exe Information: 0 : 11-04-2022 12:25:50 - Report has been generated successfully - FileName: C:\reporteNaves\excel\GGPA_71_CARGILL AMERICAS  INCv5.xlsx
+VeslinkReportExport.exe Information: 0 : 11-04-2022 12:26:45 - Generating report for the following parameters Vessel: GGPA - Voyage: 71
+VeslinkReportExport.exe Information: 0 : 11-04-2022 12:28:37 - Successfully logged in
+VeslinkReportExport.exe Information: 0 : 11-04-2022 12:28:39 - Vessel Report Generator has started successfully
+VeslinkReportExport.exe Information: 0 : 11-04-2022 12:28:57 - Generating report for the following parameters Vessel: GGPA - Voyage: 71
+VeslinkReportExport.exe Information: 0 : 11-04-2022 12:29:07 - Report has been generated successfully - FileName: C:\reporteNaves\excel\GGPA_71_CARGILL AMERICAS  INCv6.xlsx
+VeslinkReportExport.exe Information: 0 : 11-04-2022 12:31:45 - Generating report for the following parameters Vessel: GGPA - Voyage: 71
+VeslinkReportExport.exe Information: 0 : 11-04-2022 12:31:55 - Report has been generated successfully - FileName: C:\reporteNaves\excel\GGPA_71_CARGILL AMERICAS  INC.xlsx
+VeslinkReportExport.exe Information: 0 : 11-04-2022 12:35:14 - Generating report for the following parameters Vessel: GGPA - Voyage: 71
+VeslinkReportExport.exe Information: 0 : 11-04-2022 12:37:49 - Report has been generated successfully - FileName: GGPA_71_CARGILL AMERICAS  INC
+VeslinkReportExport.exe Information: 0 : 11-04-2022 12:39:31 - Generating report for the following parameters Vessel: GGPA - Voyage: 71
+VeslinkReportExport.exe Information: 0 : 11-04-2022 12:43:22 - Successfully logged in
+VeslinkReportExport.exe Information: 0 : 11-04-2022 12:43:24 - Vessel Report Generator has started successfully
+VeslinkReportExport.exe Information: 0 : 11-04-2022 12:43:39 - Generating report for the following parameters Vessel: GGPA - Voyage: 71
+VeslinkReportExport.exe Information: 0 : 11-04-2022 12:43:50 - Report has been generated successfully - FileName: C:\reporteNaves\excel\GGPA_71_CARGILL AMERICAS  INCv7.xlsx
+VeslinkReportExport.exe Information: 0 : 11-04-2022 12:45:41 - Successfully logged in
+VeslinkReportExport.exe Information: 0 : 11-04-2022 12:45:44 - Vessel Report Generator has started successfully
+VeslinkReportExport.exe Information: 0 : 11-04-2022 12:46:01 - Generating report for the following parameters Vessel: GGPA - Voyage: 71
+VeslinkReportExport.exe Information: 0 : 11-04-2022 12:46:21 - Report has been generated successfully - FileName: C:\reporteNaves\excel\GGPA_71_CARGILL AMERICAS  INCv76.xlsx
+VeslinkReportExport.exe Information: 0 : 11-04-2022 12:47:42 - Successfully logged in
+VeslinkReportExport.exe Information: 0 : 11-04-2022 12:47:44 - Vessel Report Generator has started successfully
+VeslinkReportExport.exe Information: 0 : 11-04-2022 12:48:00 - Generating report for the following parameters Vessel: GGPA - Voyage: 71
+VeslinkReportExport.exe Information: 0 : 11-04-2022 12:48:28 - Report has been generated successfully - FileName: C:\reporteNaves\excel\GGPA_71_CARGILL AMERICAS  INCv8.xlsx
+VeslinkReportExport.exe Information: 0 : 11-04-2022 13:39:37 - Successfully logged in
+VeslinkReportExport.exe Information: 0 : 11-04-2022 13:39:39 - Vessel Report Generator has started successfully
+VeslinkReportExport.exe Information: 0 : 11-04-2022 13:39:56 - Generating report for the following parameters Vessel: MIAM - Voyage: 15
+VeslinkReportExport.exe Information: 0 : 11-04-2022 13:44:21 - Successfully logged in
+VeslinkReportExport.exe Information: 0 : 11-04-2022 13:44:23 - Vessel Report Generator has started successfully
+VeslinkReportExport.exe Information: 0 : 11-04-2022 13:45:31 - Generating report for the following parameters Vessel: MIAM - Voyage: 15
+VeslinkReportExport.exe Information: 0 : 11-04-2022 13:46:33 - Successfully logged in
+VeslinkReportExport.exe Information: 0 : 11-04-2022 13:46:39 - Successfully logged in
+VeslinkReportExport.exe Information: 0 : 11-04-2022 13:46:41 - Vessel Report Generator has started successfully
+VeslinkReportExport.exe Information: 0 : 11-04-2022 13:46:59 - Generating report for the following parameters Vessel: MIAM - Voyage: 15
+VeslinkReportExport.exe Information: 0 : 11-04-2022 13:47:13 - Report has been generated successfully - FileName: C:\reporteNaves\excel\MIAM_15_ED&F MAN LIQUID PRODUCTSb98.xlsx
+VeslinkReportExport.exe Information: 0 : 11-04-2022 16:11:43 - Successfully logged in
+VeslinkReportExport.exe Information: 0 : 11-04-2022 16:11:45 - Vessel Report Generator has started successfully
+VeslinkReportExport.exe Information: 0 : 11-04-2022 16:12:02 - Generating report for the following parameters Vessel: MIAM - Voyage: 14
+VeslinkReportExport.exe Information: 0 : 11-04-2022 16:12:14 - Report has been generated successfully - FileName: C:\reporteNaves\excel\MIAM_14_BUNGE LATIN AMERICA  LLC.xlsx

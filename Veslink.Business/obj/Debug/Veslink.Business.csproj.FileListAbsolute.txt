@@ -30,3 +30,67 @@ C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Business\bin\Debug\NPOI.OOXML.
 C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Business\bin\Debug\NPOI.OOXML.xml
 C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Business\bin\Debug\NPOI.OpenXml4Net.pdb
 C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Business\bin\Debug\NPOI.OpenXmlFormats.pdb
+C:\SVNUNAV\ReporteNavesChem\Fuentes\VeslinkReportExport-main\Veslink.Business\bin\Debug\Veslink.Business.dll
+C:\SVNUNAV\ReporteNavesChem\Fuentes\VeslinkReportExport-main\Veslink.Business\bin\Debug\Veslink.Business.pdb
+C:\SVNUNAV\ReporteNavesChem\Fuentes\VeslinkReportExport-main\Veslink.Business\bin\Debug\BouncyCastle.Crypto.dll
+C:\SVNUNAV\ReporteNavesChem\Fuentes\VeslinkReportExport-main\Veslink.Business\bin\Debug\ICSharpCode.SharpZipLib.dll
+C:\SVNUNAV\ReporteNavesChem\Fuentes\VeslinkReportExport-main\Veslink.Business\bin\Debug\NPOI.dll
+C:\SVNUNAV\ReporteNavesChem\Fuentes\VeslinkReportExport-main\Veslink.Business\bin\Debug\NPOI.OOXML.dll
+C:\SVNUNAV\ReporteNavesChem\Fuentes\VeslinkReportExport-main\Veslink.Business\bin\Debug\NPOI.OpenXml4Net.dll
+C:\SVNUNAV\ReporteNavesChem\Fuentes\VeslinkReportExport-main\Veslink.Business\bin\Debug\NPOI.OpenXmlFormats.dll
+C:\SVNUNAV\ReporteNavesChem\Fuentes\VeslinkReportExport-main\Veslink.Business\bin\Debug\Veslink.Data.dll
+C:\SVNUNAV\ReporteNavesChem\Fuentes\VeslinkReportExport-main\Veslink.Business\bin\Debug\Veslink.Entities.dll
+C:\SVNUNAV\ReporteNavesChem\Fuentes\VeslinkReportExport-main\Veslink.Business\bin\Debug\System.Net.Http.Formatting.dll
+C:\SVNUNAV\ReporteNavesChem\Fuentes\VeslinkReportExport-main\Veslink.Business\bin\Debug\Newtonsoft.Json.dll
+C:\SVNUNAV\ReporteNavesChem\Fuentes\VeslinkReportExport-main\Veslink.Business\bin\Debug\Veslink.Data.pdb
+C:\SVNUNAV\ReporteNavesChem\Fuentes\VeslinkReportExport-main\Veslink.Business\bin\Debug\Veslink.Entities.pdb
+C:\SVNUNAV\ReporteNavesChem\Fuentes\VeslinkReportExport-main\Veslink.Business\bin\Debug\BouncyCastle.Crypto.xml
+C:\SVNUNAV\ReporteNavesChem\Fuentes\VeslinkReportExport-main\Veslink.Business\bin\Debug\ICSharpCode.SharpZipLib.pdb
+C:\SVNUNAV\ReporteNavesChem\Fuentes\VeslinkReportExport-main\Veslink.Business\bin\Debug\ICSharpCode.SharpZipLib.xml
+C:\SVNUNAV\ReporteNavesChem\Fuentes\VeslinkReportExport-main\Veslink.Business\bin\Debug\NPOI.pdb
+C:\SVNUNAV\ReporteNavesChem\Fuentes\VeslinkReportExport-main\Veslink.Business\bin\Debug\NPOI.xml
+C:\SVNUNAV\ReporteNavesChem\Fuentes\VeslinkReportExport-main\Veslink.Business\bin\Debug\NPOI.OOXML.pdb
+C:\SVNUNAV\ReporteNavesChem\Fuentes\VeslinkReportExport-main\Veslink.Business\bin\Debug\NPOI.OOXML.xml
+C:\SVNUNAV\ReporteNavesChem\Fuentes\VeslinkReportExport-main\Veslink.Business\bin\Debug\NPOI.OpenXml4Net.pdb
+C:\SVNUNAV\ReporteNavesChem\Fuentes\VeslinkReportExport-main\Veslink.Business\bin\Debug\NPOI.OpenXmlFormats.pdb
+C:\SVNUNAV\ReporteNavesChem\Fuentes\VeslinkReportExport-main\Veslink.Business\bin\Debug\System.Net.Http.Formatting.xml
+C:\SVNUNAV\ReporteNavesChem\Fuentes\VeslinkReportExport-main\Veslink.Business\bin\Debug\Newtonsoft.Json.xml
+C:\SVNUNAV\ReporteNavesChem\Fuentes\VeslinkReportExport-main\Veslink.Business\obj\Debug\Veslink.Business.csproj.AssemblyReference.cache
+C:\SVNUNAV\ReporteNavesChem\Fuentes\VeslinkReportExport-main\Veslink.Business\obj\Debug\Veslink.Business.Properties.Resources.resources
+C:\SVNUNAV\ReporteNavesChem\Fuentes\VeslinkReportExport-main\Veslink.Business\obj\Debug\Veslink.Business.csproj.GenerateResource.cache
+C:\SVNUNAV\ReporteNavesChem\Fuentes\VeslinkReportExport-main\Veslink.Business\obj\Debug\Veslink.Business.csproj.CoreCompileInputs.cache
+C:\SVNUNAV\ReporteNavesChem\Fuentes\VeslinkReportExport-main\Veslink.Business\obj\Debug\Veslink.Business.csproj.CopyComplete
+C:\SVNUNAV\ReporteNavesChem\Fuentes\VeslinkReportExport-main\Veslink.Business\obj\Debug\Veslink.Business.dll
+C:\SVNUNAV\ReporteNavesChem\Fuentes\VeslinkReportExport-main\Veslink.Business\obj\Debug\Veslink.Business.pdb
+C:\Users\Alejandro Soto\Downloads\export\export\Veslink.Business\bin\Debug\Veslink.Business.dll
+C:\Users\Alejandro Soto\Downloads\export\export\Veslink.Business\bin\Debug\Veslink.Business.pdb
+C:\Users\Alejandro Soto\Downloads\export\export\Veslink.Business\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Alejandro Soto\Downloads\export\export\Veslink.Business\bin\Debug\ICSharpCode.SharpZipLib.dll
+C:\Users\Alejandro Soto\Downloads\export\export\Veslink.Business\bin\Debug\NPOI.dll
+C:\Users\Alejandro Soto\Downloads\export\export\Veslink.Business\bin\Debug\NPOI.OOXML.dll
+C:\Users\Alejandro Soto\Downloads\export\export\Veslink.Business\bin\Debug\NPOI.OpenXml4Net.dll
+C:\Users\Alejandro Soto\Downloads\export\export\Veslink.Business\bin\Debug\NPOI.OpenXmlFormats.dll
+C:\Users\Alejandro Soto\Downloads\export\export\Veslink.Business\bin\Debug\Veslink.Data.dll
+C:\Users\Alejandro Soto\Downloads\export\export\Veslink.Business\bin\Debug\Veslink.Entities.dll
+C:\Users\Alejandro Soto\Downloads\export\export\Veslink.Business\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\Alejandro Soto\Downloads\export\export\Veslink.Business\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Alejandro Soto\Downloads\export\export\Veslink.Business\bin\Debug\Veslink.Data.pdb
+C:\Users\Alejandro Soto\Downloads\export\export\Veslink.Business\bin\Debug\Veslink.Entities.pdb
+C:\Users\Alejandro Soto\Downloads\export\export\Veslink.Business\bin\Debug\BouncyCastle.Crypto.xml
+C:\Users\Alejandro Soto\Downloads\export\export\Veslink.Business\bin\Debug\ICSharpCode.SharpZipLib.pdb
+C:\Users\Alejandro Soto\Downloads\export\export\Veslink.Business\bin\Debug\ICSharpCode.SharpZipLib.xml
+C:\Users\Alejandro Soto\Downloads\export\export\Veslink.Business\bin\Debug\NPOI.pdb
+C:\Users\Alejandro Soto\Downloads\export\export\Veslink.Business\bin\Debug\NPOI.xml
+C:\Users\Alejandro Soto\Downloads\export\export\Veslink.Business\bin\Debug\NPOI.OOXML.pdb
+C:\Users\Alejandro Soto\Downloads\export\export\Veslink.Business\bin\Debug\NPOI.OOXML.xml
+C:\Users\Alejandro Soto\Downloads\export\export\Veslink.Business\bin\Debug\NPOI.OpenXml4Net.pdb
+C:\Users\Alejandro Soto\Downloads\export\export\Veslink.Business\bin\Debug\NPOI.OpenXmlFormats.pdb
+C:\Users\Alejandro Soto\Downloads\export\export\Veslink.Business\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\Alejandro Soto\Downloads\export\export\Veslink.Business\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Alejandro Soto\Downloads\export\export\Veslink.Business\obj\Debug\Veslink.Business.csproj.AssemblyReference.cache
+C:\Users\Alejandro Soto\Downloads\export\export\Veslink.Business\obj\Debug\Veslink.Business.Properties.Resources.resources
+C:\Users\Alejandro Soto\Downloads\export\export\Veslink.Business\obj\Debug\Veslink.Business.csproj.GenerateResource.cache
+C:\Users\Alejandro Soto\Downloads\export\export\Veslink.Business\obj\Debug\Veslink.Business.csproj.CoreCompileInputs.cache
+C:\Users\Alejandro Soto\Downloads\export\export\Veslink.Business\obj\Debug\Veslink.Business.csproj.CopyComplete
+C:\Users\Alejandro Soto\Downloads\export\export\Veslink.Business\obj\Debug\Veslink.Business.dll
+C:\Users\Alejandro Soto\Downloads\export\export\Veslink.Business\obj\Debug\Veslink.Business.pdb

@@ -1,5 +1,4 @@
-﻿using log4net;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Veslink.Business;
 using Veslink.Entities;
+using log4net;
 
 namespace VeslinkReportExport
 {
@@ -46,7 +46,7 @@ namespace VeslinkReportExport
                 Log.Error(" An error occurred while loading companies: " + ex.Message);
                 //Trace.TraceError($"{ DateTime.Now } - An error occurred while loading companies: { ex.Message }");
                 //Trace.Flush();
-            }
+            }            
         }
 
         private void btnExcel_Click(object sender, EventArgs e)
@@ -90,7 +90,6 @@ namespace VeslinkReportExport
                     }
 
                     MessageBox.Show("The report has been generated successfully");
-
                     Log.Info(" Report has been generated successfully - FileName: " + saveFileDialog1.FileName);
                     //Trace.TraceInformation($"{ DateTime.Now } - Report has been generated successfully - FileName: { saveFileDialog1.FileName }");
                     //Trace.Flush();
@@ -107,7 +106,6 @@ namespace VeslinkReportExport
                 string cargo = "";
                 if (comboCargo != null)
                     cargo = comboCargo.Value.ToString();
-
                 Log.Error(" An error occurred while generating the excel file \n" + $"Parameters:\n" +
                     $"DateFrom: {dtFrom.Value} - DateTo: {dtTo.Value} - Company: {ddlCompany.Text} - Vessel: {comboVessel.Value} - Voyage: {comboVoyage.Value} - Charterer: {comboCharterer.Value} - Cargo: {cargo}\n" +
                     $"Error: { ex.StackTrace }");
@@ -252,7 +250,6 @@ namespace VeslinkReportExport
             catch (Exception ex)
             {
                 ComboItem comboVessel = ddlVessel.SelectedItem as ComboItem;
-
                 Log.Error($"An error occurred while loading charterers \n" +
                     $"Parameters:\n" +
                     $"DateFrom: {dtFrom.Value} - DateTo: {dtTo.Value} - Company: {ddlCompany.Text} - VesselCode: {comboVessel.Value} - Voyage: {comboItem.Value}\n" +
@@ -287,7 +284,6 @@ namespace VeslinkReportExport
             {
                 ComboItem comboVessel = ddlVessel.SelectedItem as ComboItem;
                 ComboItem comboVoyage = ddlVoyage.SelectedItem as ComboItem;
-
                 Log.Error("$An error occurred while loading cargos \n" +
                     $"Parameters:\n" +
                     $"DateFrom: {dtFrom.Value} - DateTo: {dtTo.Value} - Company: {ddlCompany.Text} - VesselCode: {comboVessel.Value} - Voyage: {comboVoyage.Value} - Charterer:{comboItem.Value}\n" +

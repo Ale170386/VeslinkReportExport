@@ -7,3 +7,12 @@ C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Entities\obj\Release\Veslink.E
 C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Entities\obj\Release\Veslink.Entities.csproj.CopyComplete
 C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Entities\obj\Release\Veslink.Entities.dll
 C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Entities\obj\Release\Veslink.Entities.pdb
+C:\Users\Alejandro Soto\Downloads\export\export\Veslink.Entities\bin\Release\Veslink.Entities.dll
+C:\Users\Alejandro Soto\Downloads\export\export\Veslink.Entities\bin\Release\Veslink.Entities.pdb
+C:\Users\Alejandro Soto\Downloads\export\export\Veslink.Entities\bin\Release\Newtonsoft.Json.dll
+C:\Users\Alejandro Soto\Downloads\export\export\Veslink.Entities\bin\Release\Newtonsoft.Json.xml
+C:\Users\Alejandro Soto\Downloads\export\export\Veslink.Entities\obj\Release\Veslink.Entities.csproj.AssemblyReference.cache
+C:\Users\Alejandro Soto\Downloads\export\export\Veslink.Entities\obj\Release\Veslink.Entities.csproj.CoreCompileInputs.cache
+C:\Users\Alejandro Soto\Downloads\export\export\Veslink.Entities\obj\Release\Veslink.Entities.csproj.CopyComplete
+C:\Users\Alejandro Soto\Downloads\export\export\Veslink.Entities\obj\Release\Veslink.Entities.dll
+C:\Users\Alejandro Soto\Downloads\export\export\Veslink.Entities\obj\Release\Veslink.Entities.pdb

@@ -21,6 +21,10 @@ namespace Veslink.Entities
         /// </summary>
         public List<VoyageCargo> VoyageCargos { get; set; }
         /// <summary>
+        /// Itinerario del viaje
+        /// </summary>
+        public List<VoyageItinerary> Itinerary { get; set; }
+        /// <summary>
         /// Charterers del Viaje
         /// </summary>
         public List<Charterer> Charterers { get; set; }

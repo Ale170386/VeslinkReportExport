@@ -29,7 +29,7 @@ namespace Veslink.Data
         public static List<Root> GetVesselReportAsync(string startDate, string endDate, string company)
         {
             List<Root> roots = null;
-            string uri = $"{uriVessels}&filter[0]=Vessel.CompanyCode==%22{company}%22&filter[1]=CommenceDateGmt%3E=%22{startDate}%22&filter[2]=CommenceDateGmt%3C=%22{endDate}%22&format=doc";
+            string uri = $"{uriVessels}&filter[0]=CompanyCode==%22{company}%22&filter[1]=CommenceDateGmt%3E=%22{startDate}%22&filter[2]=CommenceDateGmt%3C=%22{endDate}%22&format=doc";
             HttpResponseMessage response = client.GetAsync(uri).ConfigureAwait(false).GetAwaiter().GetResult();
             if (response.IsSuccessStatusCode)
                 roots = response.Content.ReadAsAsync<List<Root>>().GetAwaiter().GetResult();
@@ -38,13 +38,17 @@ namespace Veslink.Data
         }
 
         //Report 1
-        public static List<VoyageItinerary> GetItinerariesReportAsync(string vesselCode, string voyageNo, string chartererId, string cargoId)
+        public static List<VoyageItinerary> GetItinerariesReportAsync(string vesselCode, string voyageNo, string chartererId = "", string cargoId = "")
         {
             List<VoyageItinerary> itineraries = null;
-            string uri = $"{uriVoyageItineraries}&filter[0]=VesselCode==%22{vesselCode}%22&filter[1]=VoyageNo==%22{voyageNo}%22&filter[2]=Cargos.Counterparty.ShortName==%22{chartererId.Replace("&", "%26")}%22";
+            ;
+            string uri = $"{uriVoyageItineraries}&filter[0]=VesselCode==%22{vesselCode}%22&filter[1]=VoyageNo==%22{voyageNo}%22";
 
-            if (!(String.IsNullOrEmpty(cargoId)))
-                uri += $"&filter[3]=Cargos.CargoID==%22{cargoId}%22";
+            //if (!(String.IsNullOrEmpty(chartererId)))
+            //    uri += $"&filter[2]=VoyageCargoHandlings.Cargo.Counterparty.ShortName==%22{chartererId.Replace("&", "%26")}%22";
+
+            //if (!(String.IsNullOrEmpty(cargoId)))
+            //    uri += $"&filter[3]=VoyageCargoHandlings.CargoID==%22{cargoId}%22";
 
             HttpResponseMessage response = client.GetAsync($"{uri}&format=json").GetAwaiter().GetResult();
             if (response.IsSuccessStatusCode)
@@ -55,25 +59,25 @@ namespace Veslink.Data
                             .GroupBy(g => new
                                             {
                                                 g.Seq,
-                                                g.Order,
-                                                g.FixtureNo,
+                                                g.Order,                                                
                                                 g.EtaGmt,
                                                 g.PortName,
                                                 g.PortFunc,
-                                                g.Miles,
-                                                g.LSMiles,
-                                                g.EtdGmt
+                                                g.Miles,                                                
+                                                g.EtdGmt,
+                                                g.CounterpartyShortName,
+                                                g.CargoID
                                             }).Select(s => new VoyageItinerary()
                                             {
                                                 Seq = s.Key.Seq,
-                                                Order = s.Key.Order,
-                                                FixtureNo = s.Key.FixtureNo,
+                                                Order = s.Key.Order,                                                
                                                 EtaGmt = s.Key.EtaGmt,
                                                 PortName = s.Key.PortName,
                                                 PortFunc = s.Key.PortFunc,
                                                 Miles = s.Key.Miles,
-                                                LSMiles = s.Key.LSMiles,
-                                                EtdGmt = s.Key.EtdGmt                                                        
+                                                EtdGmt = s.Key.EtdGmt,
+                                                CounterpartyShortName = s.Key.CounterpartyShortName,
+                                                CargoID = s.Key.CargoID
                                             }).ToList();
 
             return itineraries.OrderBy(o => o.Order).ToList();

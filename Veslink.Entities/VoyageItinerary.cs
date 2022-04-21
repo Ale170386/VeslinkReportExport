@@ -10,31 +10,31 @@ namespace Veslink.Entities
     //ReporteNavesCHEM_1
     public class VoyageItinerary
     {
-        [JsonProperty("VoyageItineraries.PortFunc")]
+        [JsonProperty("VoyageCargoHandlings.VoyageItinerary.PortFunc")]
         public string PortFunc { get; set; }
 
-        [JsonProperty("VoyageItineraries.Order")]
+        [JsonProperty("VoyageCargoHandlings.VoyageItineraryOrderNo")]
         public int Order { get; set; }
 
-        [JsonProperty("VoyageItineraries.PortName")]
+        [JsonProperty("VoyageCargoHandlings.Port.Name")]
         public string PortName { get; set; }
 
-        [JsonProperty("VoyageItineraries.EtaGmt")]
+        [JsonProperty("VoyageCargoHandlings.VoyageItinerary.EtaGmt")]
         public DateTime? EtaGmt { get; set; }
 
-        [JsonProperty("VoyageItineraries.EtdGmt")]
+        [JsonProperty("VoyageCargoHandlings.VoyageItinerary.EtdGmt")]
         public DateTime? EtdGmt { get; set; }
 
-        [JsonProperty("VoyageItineraries.Miles")]
+        [JsonProperty("VoyageCargoHandlings.VoyageItinerary.Miles")]
         public int Miles { get; set; }
 
-        [JsonProperty("VoyageItineraries.LSMiles")]
-        public int LSMiles { get; set; }
-
-        [JsonProperty("VoyageItineraries.FixtureNo")]
-        public string FixtureNo { get; set; }
-
-        [JsonProperty("VoyageItineraries.Seq")]
+        [JsonProperty("VoyageCargoHandlings.SeqNo")]
         public int Seq { get; set; }
+
+        [JsonProperty("VoyageCargoHandlings.Cargo.CounterpartyShortName")]
+        public string CounterpartyShortName { get; set; }
+
+        [JsonProperty("VoyageCargoHandlings.CargoID")]
+        public int CargoID { get; set; }
     }
 }

@@ -11,3 +11,29 @@ C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Data\obj\Debug\Veslink.Data.cs
 C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Data\obj\Debug\Veslink.Data.csproj.CopyComplete
 C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Data\obj\Debug\Veslink.Data.dll
 C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Data\obj\Debug\Veslink.Data.pdb
+C:\SVNUNAV\ReporteNavesChem\Fuentes\VeslinkReportExport-main\Veslink.Data\bin\Debug\Veslink.Data.dll
+C:\SVNUNAV\ReporteNavesChem\Fuentes\VeslinkReportExport-main\Veslink.Data\bin\Debug\Veslink.Data.pdb
+C:\SVNUNAV\ReporteNavesChem\Fuentes\VeslinkReportExport-main\Veslink.Data\bin\Debug\Newtonsoft.Json.dll
+C:\SVNUNAV\ReporteNavesChem\Fuentes\VeslinkReportExport-main\Veslink.Data\bin\Debug\System.Net.Http.Formatting.dll
+C:\SVNUNAV\ReporteNavesChem\Fuentes\VeslinkReportExport-main\Veslink.Data\bin\Debug\Veslink.Entities.dll
+C:\SVNUNAV\ReporteNavesChem\Fuentes\VeslinkReportExport-main\Veslink.Data\bin\Debug\Veslink.Entities.pdb
+C:\SVNUNAV\ReporteNavesChem\Fuentes\VeslinkReportExport-main\Veslink.Data\bin\Debug\Newtonsoft.Json.xml
+C:\SVNUNAV\ReporteNavesChem\Fuentes\VeslinkReportExport-main\Veslink.Data\bin\Debug\System.Net.Http.Formatting.xml
+C:\SVNUNAV\ReporteNavesChem\Fuentes\VeslinkReportExport-main\Veslink.Data\obj\Debug\Veslink.Data.csproj.AssemblyReference.cache
+C:\SVNUNAV\ReporteNavesChem\Fuentes\VeslinkReportExport-main\Veslink.Data\obj\Debug\Veslink.Data.csproj.CoreCompileInputs.cache
+C:\SVNUNAV\ReporteNavesChem\Fuentes\VeslinkReportExport-main\Veslink.Data\obj\Debug\Veslink.Data.csproj.CopyComplete
+C:\SVNUNAV\ReporteNavesChem\Fuentes\VeslinkReportExport-main\Veslink.Data\obj\Debug\Veslink.Data.dll
+C:\SVNUNAV\ReporteNavesChem\Fuentes\VeslinkReportExport-main\Veslink.Data\obj\Debug\Veslink.Data.pdb
+C:\Users\Alejandro Soto\Downloads\export\export\Veslink.Data\bin\Debug\Veslink.Data.dll
+C:\Users\Alejandro Soto\Downloads\export\export\Veslink.Data\bin\Debug\Veslink.Data.pdb
+C:\Users\Alejandro Soto\Downloads\export\export\Veslink.Data\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Alejandro Soto\Downloads\export\export\Veslink.Data\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\Alejandro Soto\Downloads\export\export\Veslink.Data\bin\Debug\Veslink.Entities.dll
+C:\Users\Alejandro Soto\Downloads\export\export\Veslink.Data\bin\Debug\Veslink.Entities.pdb
+C:\Users\Alejandro Soto\Downloads\export\export\Veslink.Data\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Alejandro Soto\Downloads\export\export\Veslink.Data\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\Alejandro Soto\Downloads\export\export\Veslink.Data\obj\Debug\Veslink.Data.csproj.AssemblyReference.cache
+C:\Users\Alejandro Soto\Downloads\export\export\Veslink.Data\obj\Debug\Veslink.Data.csproj.CoreCompileInputs.cache
+C:\Users\Alejandro Soto\Downloads\export\export\Veslink.Data\obj\Debug\Veslink.Data.csproj.CopyComplete
+C:\Users\Alejandro Soto\Downloads\export\export\Veslink.Data\obj\Debug\Veslink.Data.dll
+C:\Users\Alejandro Soto\Downloads\export\export\Veslink.Data\obj\Debug\Veslink.Data.pdb

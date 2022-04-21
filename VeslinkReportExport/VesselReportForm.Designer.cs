@@ -51,7 +51,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(71, 39);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 16);
+            this.label1.Size = new System.Drawing.Size(74, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Date From";
             // 
@@ -60,7 +60,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(340, 39);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 16);
+            this.label2.Size = new System.Drawing.Size(59, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Date To";
             // 
@@ -91,7 +91,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(337, 119);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 16);
+            this.label3.Size = new System.Drawing.Size(50, 17);
             this.label3.TabIndex = 4;
             this.label3.Text = "Vessel";
             // 
@@ -100,7 +100,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(69, 200);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(55, 16);
+            this.label4.Size = new System.Drawing.Size(56, 17);
             this.label4.TabIndex = 5;
             this.label4.Text = "Voyage";
             // 
@@ -109,7 +109,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(71, 119);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(65, 16);
+            this.label5.Size = new System.Drawing.Size(67, 17);
             this.label5.TabIndex = 8;
             this.label5.Text = "Company";
             // 
@@ -118,7 +118,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(340, 198);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(62, 16);
+            this.label6.Size = new System.Drawing.Size(68, 17);
             this.label6.TabIndex = 10;
             this.label6.Text = "Charterer";
             // 
@@ -127,7 +127,7 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(71, 274);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(44, 16);
+            this.label7.Size = new System.Drawing.Size(46, 17);
             this.label7.TabIndex = 12;
             this.label7.Text = "Cargo";
             // 

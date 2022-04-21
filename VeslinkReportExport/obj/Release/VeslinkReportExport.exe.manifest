@@ -66,6 +66,18 @@
     </dependentAssembly>
   </dependency>
   <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="log4net.dll" size="270336">
+      <assemblyIdentity name="log4net" version="2.0.14.0" publicKeyToken="669E0DDF0BB1AA2A" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>VbL+aGvI9znOhF0Wif0Iy8ogOByODSQXGF0aABjYqTg=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Newtonsoft.Json.dll" size="502272">
       <assemblyIdentity name="Newtonsoft.Json" version="6.0.0.0" publicKeyToken="30AD4FE6B2A6AEED" language="neutral" processorArchitecture="msil" />
       <hash>
@@ -138,14 +150,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Veslink.Business.dll" size="144384">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Veslink.Business.dll" size="88576">
       <assemblyIdentity name="Veslink.Business" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>iAGslB4nImkRKkz1MbsXITHHdA2ZZLHXE87jomR4b3c=</dsig:DigestValue>
+        <dsig:DigestValue>ZBdspiQfBO+fLjIl3qE8NmdBvL3IirQLAllTmN/cMio=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -157,7 +169,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>gkJwiYXphTLkmJ6EnDNAzYMb1CDqVWyhWyBhzd6j1/A=</dsig:DigestValue>
+        <dsig:DigestValue>0KQUxaq5S3qmHjKetpQGuBGxCmaJCyjy/EJ4aSyPHU8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -169,29 +181,29 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>KeF8MgXFqdoGTt/wdLnNVGHxYp0FQLcoL5MI1hfTiTg=</dsig:DigestValue>
+        <dsig:DigestValue>nQw93rQsN64StFF0YXPNecrqnyqVSsjBmNZjplZUux4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="VeslinkReportExport.exe" size="168984">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="VeslinkReportExport.exe" size="169496">
       <assemblyIdentity name="VeslinkReportExport" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>JcrpMlLpR7BOmfbwqDlkPSSH3BLbL3aT9a7KfLS0CzA=</dsig:DigestValue>
+        <dsig:DigestValue>dPfKbwWQbYbNdMcdKXZxVlRFxOWWA6gq0cPr4zKJ7kc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="VeslinkReportExport.exe.config" size="2531">
+  <file name="VeslinkReportExport.exe.config" size="3667">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>iWyj3IwOaFzJ4a+LP8SZgrq7oyzMUNGs4UC011CmZEw=</dsig:DigestValue>
+      <dsig:DigestValue>Kle9qyl7ucrdiWf3g2I2DkSfNg5ImT1/CSj4tskiBXE=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

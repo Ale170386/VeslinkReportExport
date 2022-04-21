@@ -1,0 +1,16 @@
+2022-04-19 12:03:53,272 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-04-19 12:03:58,381 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-04-19 12:04:01,082 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully
+2022-04-19 12:05:08,866 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-04-19 12:05:13,516 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-04-19 12:05:48,046 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-04-19 12:05:52,692 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-04-19 12:05:54,555 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully
+2022-04-19 12:06:56,926 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: LUXE - Voyage:14
+2022-04-19 12:07:08,389 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been generated successfully - FileName: C:\Desarrollos\Veslink\Docs\LUXE_14_WATERFRONT SHIPPING - CAYMAN ISL.xlsx
+2022-04-19 12:08:14,567 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-04-19 12:08:28,585 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-04-19 12:08:33,653 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-04-19 12:08:35,651 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully
+2022-04-19 12:08:50,959 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: LUXE - Voyage:13
+2022-04-19 12:08:57,321 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been generated successfully - FileName: C:\Desarrollos\Veslink\Docs\LUXE_13_WATERFRONT SHIPPING - CAYMAN ISL.xlsx

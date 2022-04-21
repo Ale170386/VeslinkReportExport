@@ -1,0 +1,66 @@
+2022-04-20 21:16:21,935 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-04-20 21:16:27,366 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-04-20 21:16:29,962 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully
+2022-04-20 21:17:12,852 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: LUXE - Voyage:19
+2022-04-20 21:17:24,085 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been generated successfully - FileName: LUXE_19_ARCHER DANIELS MIDLAND COMPANY
+2022-04-20 21:20:03,273 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-04-20 21:38:11,146 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-04-20 21:38:17,372 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-04-20 21:38:19,485 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully
+2022-04-20 21:39:02,125 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: LUXE - Voyage:21
+2022-04-20 21:39:12,231 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been generated successfully - FileName: LUXE_21_SHELL TRADING U.S. COMPANY
+2022-04-20 21:39:22,514 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: LUXE - Voyage:21
+2022-04-20 21:53:55,917 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-04-20 21:54:01,171 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-04-20 21:54:03,555 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully
+2022-04-20 21:55:33,166 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: LUXE - Voyage:21
+2022-04-20 22:22:32,482 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-04-20 22:22:37,619 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-04-20 22:22:39,555 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully
+2022-04-20 22:23:07,157 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: LUXE - Voyage:21
+2022-04-20 22:45:13,914 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-04-20 22:45:32,735 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-04-20 22:45:36,259 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully
+2022-04-20 22:45:57,975 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: LUXE - Voyage:21
+2022-04-20 22:46:04,658 [1] ERROR VeslinkReportExport.VesselReportForm [(null)] -  An error occurred while generating the excel file 
+Parameters:
+DateFrom: 01-01-2020 22:45:36 - DateTo: 20-04-2022 22:45:36 - Company: UTNK - Vessel: LUXE - Voyage: 21 - Charterer: SHELL TRADING U.S. COMPANY - Cargo: 
+Error:    en System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   en System.Collections.Generic.List`1.get_Item(Int32 index)
+   en Veslink.Business.ReportBusiness.GetDistanceSailed(Int32 startPort, Int32 endPort, String portType) en C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Business\ReportBusiness.cs:línea 401
+   en Veslink.Business.ReportBusiness.CreateExcel() en C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Business\ReportBusiness.cs:línea 179
+   en Veslink.Business.ReportBusiness.GenerateExcel(String vesselCode, String voyageNo, String chartererId, String cargoId) en C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Business\ReportBusiness.cs:línea 126
+   en VeslinkReportExport.VesselReportForm.btnExcel_Click(Object sender, EventArgs e) en C:\Desarrollos\Veslink\Repos\ReportExport\VeslinkReportExport\VesselReportForm.cs:línea 66
+2022-04-20 22:46:27,125 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: LUXE - Voyage:21
+2022-04-20 22:47:14,198 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-04-20 22:47:19,532 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-04-20 22:47:23,082 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully
+2022-04-20 22:47:58,579 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: LUXE - Voyage:21
+2022-04-20 22:57:18,714 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-04-20 22:57:26,584 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-04-20 22:57:29,011 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully
+2022-04-20 22:57:44,628 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: LUXE - Voyage:21
+2022-04-20 22:58:00,720 [1] ERROR VeslinkReportExport.VesselReportForm [(null)] -  An error occurred while generating the excel file 
+Parameters:
+DateFrom: 01-01-2020 22:57:28 - DateTo: 20-04-2022 22:57:29 - Company: UTNK - Vessel: LUXE - Voyage: 21 - Charterer: SHELL TRADING U.S. COMPANY - Cargo: 
+Error:    en System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   en System.Collections.Generic.List`1.get_Item(Int32 index)
+   en Veslink.Business.ReportBusiness.GetDistanceSailed(Int32 startPort, Int32 endPort, String portType) en C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Business\ReportBusiness.cs:línea 401
+   en Veslink.Business.ReportBusiness.CreateExcel() en C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Business\ReportBusiness.cs:línea 179
+   en Veslink.Business.ReportBusiness.GenerateExcel(String vesselCode, String voyageNo, String chartererId, String cargoId) en C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Business\ReportBusiness.cs:línea 126
+   en VeslinkReportExport.VesselReportForm.btnExcel_Click(Object sender, EventArgs e) en C:\Desarrollos\Veslink\Repos\ReportExport\VeslinkReportExport\VesselReportForm.cs:línea 66
+2022-04-20 22:58:09,774 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: LUXE - Voyage:21
+2022-04-20 22:58:46,865 [1] ERROR VeslinkReportExport.VesselReportForm [(null)] -  An error occurred while generating the excel file 
+Parameters:
+DateFrom: 01-01-2020 22:57:28 - DateTo: 20-04-2022 22:57:29 - Company: UTNK - Vessel: LUXE - Voyage: 21 - Charterer: SHELL TRADING U.S. COMPANY - Cargo: 
+Error:    en System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   en System.Collections.Generic.List`1.get_Item(Int32 index)
+   en Veslink.Business.ReportBusiness.GetDistanceSailed(Int32 startPort, Int32 endPort, String portType) en C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Business\ReportBusiness.cs:línea 401
+   en Veslink.Business.ReportBusiness.CreateExcel() en C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Business\ReportBusiness.cs:línea 179
+   en Veslink.Business.ReportBusiness.GenerateExcel(String vesselCode, String voyageNo, String chartererId, String cargoId) en C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Business\ReportBusiness.cs:línea 126
+   en VeslinkReportExport.VesselReportForm.btnExcel_Click(Object sender, EventArgs e) en C:\Desarrollos\Veslink\Repos\ReportExport\VeslinkReportExport\VesselReportForm.cs:línea 66
+2022-04-20 22:58:48,965 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: LUXE - Voyage:21
+2022-04-20 23:01:34,159 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-04-20 23:01:40,585 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-04-20 23:01:43,116 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully
+2022-04-20 23:02:00,615 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: LUXE - Voyage:21

@@ -7,3 +7,21 @@ C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Entities\obj\Debug\Veslink.Ent
 C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Entities\bin\Debug\Newtonsoft.Json.dll
 C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Entities\bin\Debug\Newtonsoft.Json.xml
 C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Entities\obj\Debug\Veslink.Entities.csproj.CopyComplete
+C:\SVNUNAV\ReporteNavesChem\Fuentes\VeslinkReportExport-main\Veslink.Entities\bin\Debug\Veslink.Entities.dll
+C:\SVNUNAV\ReporteNavesChem\Fuentes\VeslinkReportExport-main\Veslink.Entities\bin\Debug\Veslink.Entities.pdb
+C:\SVNUNAV\ReporteNavesChem\Fuentes\VeslinkReportExport-main\Veslink.Entities\bin\Debug\Newtonsoft.Json.dll
+C:\SVNUNAV\ReporteNavesChem\Fuentes\VeslinkReportExport-main\Veslink.Entities\bin\Debug\Newtonsoft.Json.xml
+C:\SVNUNAV\ReporteNavesChem\Fuentes\VeslinkReportExport-main\Veslink.Entities\obj\Debug\Veslink.Entities.csproj.AssemblyReference.cache
+C:\SVNUNAV\ReporteNavesChem\Fuentes\VeslinkReportExport-main\Veslink.Entities\obj\Debug\Veslink.Entities.csproj.CoreCompileInputs.cache
+C:\SVNUNAV\ReporteNavesChem\Fuentes\VeslinkReportExport-main\Veslink.Entities\obj\Debug\Veslink.Entities.csproj.CopyComplete
+C:\SVNUNAV\ReporteNavesChem\Fuentes\VeslinkReportExport-main\Veslink.Entities\obj\Debug\Veslink.Entities.dll
+C:\SVNUNAV\ReporteNavesChem\Fuentes\VeslinkReportExport-main\Veslink.Entities\obj\Debug\Veslink.Entities.pdb
+C:\Users\Alejandro Soto\Downloads\export\export\Veslink.Entities\bin\Debug\Veslink.Entities.dll
+C:\Users\Alejandro Soto\Downloads\export\export\Veslink.Entities\bin\Debug\Veslink.Entities.pdb
+C:\Users\Alejandro Soto\Downloads\export\export\Veslink.Entities\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Alejandro Soto\Downloads\export\export\Veslink.Entities\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Alejandro Soto\Downloads\export\export\Veslink.Entities\obj\Debug\Veslink.Entities.csproj.AssemblyReference.cache
+C:\Users\Alejandro Soto\Downloads\export\export\Veslink.Entities\obj\Debug\Veslink.Entities.csproj.CoreCompileInputs.cache
+C:\Users\Alejandro Soto\Downloads\export\export\Veslink.Entities\obj\Debug\Veslink.Entities.csproj.CopyComplete
+C:\Users\Alejandro Soto\Downloads\export\export\Veslink.Entities\obj\Debug\Veslink.Entities.dll
+C:\Users\Alejandro Soto\Downloads\export\export\Veslink.Entities\obj\Debug\Veslink.Entities.pdb

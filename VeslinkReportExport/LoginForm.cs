@@ -47,12 +47,12 @@ namespace VeslinkReportExport
             }
             catch (Exception ex)
             {
-                Log.Error("An error occurred while trying to log in:" + ex.Message);
+                Log.Error("An error occurred while trying to log in:" + ex.Message );
                 //Trace.TraceError($"{ DateTime.Now } - An error occurred while trying to log in: { ex.Message }");
                 //Trace.Flush();
             }
 
-
+            
         }
     }
 }
