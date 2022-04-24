@@ -39,3 +39,22 @@ Error:    en Veslink.Business.ReportBusiness.<>c__DisplayClass16_0.<CreateExcel>
    en Veslink.Business.ReportBusiness.CreateExcel() en C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Business\ReportBusiness.cs:línea 186
    en Veslink.Business.ReportBusiness.GenerateExcel(String vesselCode, String voyageNo, String chartererId, String cargoId) en C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Business\ReportBusiness.cs:línea 130
    en VeslinkReportExport.VesselReportForm.btnExcel_Click(Object sender, EventArgs e) en C:\Desarrollos\Veslink\Repos\ReportExport\VeslinkReportExport\VesselReportForm.cs:línea 66
+2022-04-24 15:31:47,081 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-04-24 15:32:12,334 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-04-24 15:32:16,101 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully
+2022-04-24 15:32:40,355 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: GGPA - Voyage:74
+2022-04-24 15:33:34,895 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been generated successfully - FileName: C:\Desarrollos\Veslink\Docs\GGPA_74_CARGILL AMERICAS  INC.xlsx
+2022-04-24 15:33:44,824 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: GGPA - Voyage:74
+2022-04-24 15:35:20,075 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been generated successfully - FileName: GGPA_74_CARGILL AMERICAS  INC
+2022-04-24 15:36:39,497 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-04-24 15:36:45,535 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-04-24 15:36:47,511 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully
+2022-04-24 15:37:01,657 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: BIRD - Voyage:67
+2022-04-24 15:37:09,668 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been generated successfully - FileName: BIRD_67_CARGILL INTERNATIONAL S.A.
+2022-04-24 15:38:36,070 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-04-24 15:38:41,136 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-04-24 15:38:42,997 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully
+2022-04-24 15:38:56,170 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: AMAK - Voyage:4
+2022-04-24 15:39:02,898 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been canceled - FileName: AMAK_4_OCCIDENTAL CHEMICAL EXPORT SALES
+2022-04-24 15:40:32,926 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: AMAK - Voyage:4
+2022-04-24 15:41:01,999 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been generated successfully - FileName: C:\Desarrollos\Veslink\Docs\AMAK_4_OCCIDENTAL CHEMICAL EXPORT SALES.xlsx

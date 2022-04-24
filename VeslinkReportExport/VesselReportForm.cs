@@ -75,22 +75,27 @@ namespace VeslinkReportExport
                     saveFileDialog1.Filter = "Excel |*.xlsx"; ;
                     saveFileDialog1.Title = "Save an Excel File";
                     saveFileDialog1.FileName = $"{comboVessel.Value.ToString()}_{comboVoyage.Value.ToString()}_{comboCharterer.Value.ToString()}";
-                    saveFileDialog1.ShowDialog();
-
-                    // If the file name is not an empty string open it for saving.
-                    if (saveFileDialog1.FileName != "")
+                    if (saveFileDialog1.ShowDialog() == DialogResult.OK)
                     {
-                        // Saves the Excel via a FileStream created by the OpenFile method.
-                        System.IO.FileStream fs =
-                            (System.IO.FileStream)saveFileDialog1.OpenFile();
+                        // If the file name is not an empty string open it for saving.
+                        if (saveFileDialog1.FileName != "")
+                        {
+                            // Saves the Excel via a FileStream created by the OpenFile method.
+                            System.IO.FileStream fs =
+                                (System.IO.FileStream)saveFileDialog1.OpenFile();
 
-                        fs.Write(fileGenerated, 0, fileGenerated.Length);
+                            fs.Write(fileGenerated, 0, fileGenerated.Length);
 
-                        fs.Close();
+                            fs.Close();
+                        }
+
+                        MessageBox.Show("The report has been generated successfully");
+                        Log.Info(" Report has been generated successfully - FileName: " + saveFileDialog1.FileName);
                     }
-
-                    MessageBox.Show("The report has been generated successfully");
-                    Log.Info(" Report has been generated successfully - FileName: " + saveFileDialog1.FileName);
+                    else
+                    {
+                        Log.Info(" Report has been canceled - FileName: " + saveFileDialog1.FileName);
+                    }
                     //Trace.TraceInformation($"{ DateTime.Now } - Report has been generated successfully - FileName: { saveFileDialog1.FileName }");
                     //Trace.Flush();
                 }
