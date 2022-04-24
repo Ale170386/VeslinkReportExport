@@ -1,0 +1,152 @@
+2022-04-22 17:52:32,535 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-04-22 17:52:42,953 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-04-22 17:52:47,000 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully
+2022-04-22 17:53:03,627 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: LUXE - Voyage:21
+2022-04-22 17:53:23,760 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been generated successfully - FileName: LUXE_21_SHELL TRADING U.S. COMPANY
+2022-04-22 17:53:38,213 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: GGPA - Voyage:60
+2022-04-22 17:53:44,530 [1] ERROR VeslinkReportExport.VesselReportForm [(null)] -  An error occurred while generating the excel file 
+Parameters:
+DateFrom: 01-01-2020 17:52:46 - DateTo: 22-04-2022 17:52:47 - Company: UGIN - Vessel: GGPA - Voyage: 60 - Charterer: WATERFRONT SHIPPING - CAYMAN ISL - Cargo: 
+Error:    en System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   en System.Collections.Generic.List`1.get_Item(Int32 index)
+   en Veslink.Business.ReportBusiness.GetDistanceSailed(Int32 startPort, Int32 endPort, String portType) en C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Business\ReportBusiness.cs:línea 425
+   en Veslink.Business.ReportBusiness.CreateExcel() en C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Business\ReportBusiness.cs:línea 196
+   en Veslink.Business.ReportBusiness.GenerateExcel(String vesselCode, String voyageNo, String chartererId, String cargoId) en C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Business\ReportBusiness.cs:línea 134
+   en VeslinkReportExport.VesselReportForm.btnExcel_Click(Object sender, EventArgs e) en C:\Desarrollos\Veslink\Repos\ReportExport\VeslinkReportExport\VesselReportForm.cs:línea 66
+2022-04-22 18:15:35,191 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-04-22 18:15:41,888 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-04-22 18:15:45,704 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully
+2022-04-22 18:16:01,844 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: LUXE - Voyage:21
+2022-04-22 18:16:13,723 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been generated successfully - FileName: LUXE_21_SHELL TRADING U.S. COMPANY
+2022-04-22 18:16:29,564 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: GGPA - Voyage:60
+2022-04-22 18:16:55,504 [1] ERROR VeslinkReportExport.VesselReportForm [(null)] -  An error occurred while generating the excel file 
+Parameters:
+DateFrom: 01-01-2020 18:15:45 - DateTo: 22-04-2022 18:15:45 - Company: UGIN - Vessel: GGPA - Voyage: 60 - Charterer: WATERFRONT SHIPPING - CAYMAN ISL - Cargo: 
+Error:    en System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   en System.Collections.Generic.List`1.get_Item(Int32 index)
+   en Veslink.Business.ReportBusiness.GetDistanceSailed(Int32 startPort, Int32 endPort, String portType) en C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Business\ReportBusiness.cs:línea 425
+   en Veslink.Business.ReportBusiness.CreateExcel() en C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Business\ReportBusiness.cs:línea 196
+   en Veslink.Business.ReportBusiness.GenerateExcel(String vesselCode, String voyageNo, String chartererId, String cargoId) en C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Business\ReportBusiness.cs:línea 134
+   en VeslinkReportExport.VesselReportForm.btnExcel_Click(Object sender, EventArgs e) en C:\Desarrollos\Veslink\Repos\ReportExport\VeslinkReportExport\VesselReportForm.cs:línea 66
+2022-04-22 18:16:58,107 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: GGPA - Voyage:60
+2022-04-22 18:18:46,320 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-04-22 18:18:51,260 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-04-22 18:18:55,248 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully
+2022-04-22 18:19:26,104 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: GGPA - Voyage:60
+2022-04-22 18:19:55,879 [1] ERROR VeslinkReportExport.VesselReportForm [(null)] -  An error occurred while generating the excel file 
+Parameters:
+DateFrom: 01-01-2020 18:18:55 - DateTo: 22-04-2022 18:18:55 - Company: UGIN - Vessel: GGPA - Voyage: 60 - Charterer: WATERFRONT SHIPPING - CAYMAN ISL - Cargo: 
+Error:    en System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   en System.Collections.Generic.List`1.get_Item(Int32 index)
+   en Veslink.Business.ReportBusiness.GetDistanceSailed(Int32 startPort, Int32 endPort, String portType) en C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Business\ReportBusiness.cs:línea 426
+   en Veslink.Business.ReportBusiness.CreateExcel() en C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Business\ReportBusiness.cs:línea 300
+   en Veslink.Business.ReportBusiness.GenerateExcel(String vesselCode, String voyageNo, String chartererId, String cargoId) en C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Business\ReportBusiness.cs:línea 134
+   en VeslinkReportExport.VesselReportForm.btnExcel_Click(Object sender, EventArgs e) en C:\Desarrollos\Veslink\Repos\ReportExport\VeslinkReportExport\VesselReportForm.cs:línea 66
+2022-04-22 18:20:09,011 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: GGPA - Voyage:60
+2022-04-22 18:21:29,949 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-04-22 18:21:35,441 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-04-22 18:21:38,889 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully
+2022-04-22 18:21:56,425 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: GGPA - Voyage:60
+2022-04-22 18:25:15,564 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been generated successfully - FileName: C:\Desarrollos\Veslink\Docs\GGPA_60_WATERFRONT SHIPPING - CAYMAN ISL.xlsx
+2022-04-22 18:32:48,251 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-04-22 18:32:53,909 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-04-22 18:36:22,666 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully
+2022-04-22 18:36:40,828 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: GGPA - Voyage:60
+2022-04-22 18:39:24,415 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-04-22 18:39:36,369 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-04-22 18:39:42,070 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-04-22 18:39:48,383 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully
+2022-04-22 18:40:02,592 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: GGPA - Voyage:60
+2022-04-22 18:40:05,618 [1] ERROR VeslinkReportExport.VesselReportForm [(null)] -  An error occurred while generating the excel file 
+Parameters:
+DateFrom: 01-01-2020 18:39:48 - DateTo: 22-04-2022 18:39:48 - Company: UGIN - Vessel: GGPA - Voyage: 60 - Charterer: WATERFRONT SHIPPING - CAYMAN ISL - Cargo: 
+Error:    en System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   en System.Collections.Generic.List`1.get_Item(Int32 index)
+   en Veslink.Business.ReportBusiness.CreateExcel() en C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Business\ReportBusiness.cs:línea 198
+   en Veslink.Business.ReportBusiness.GenerateExcel(String vesselCode, String voyageNo, String chartererId, String cargoId) en C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Business\ReportBusiness.cs:línea 134
+   en VeslinkReportExport.VesselReportForm.btnExcel_Click(Object sender, EventArgs e) en C:\Desarrollos\Veslink\Repos\ReportExport\VeslinkReportExport\VesselReportForm.cs:línea 66
+2022-04-22 18:43:11,496 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: GGPA - Voyage:60
+2022-04-22 18:43:23,404 [1] ERROR VeslinkReportExport.VesselReportForm [(null)] -  An error occurred while generating the excel file 
+Parameters:
+DateFrom: 01-01-2020 18:39:48 - DateTo: 22-04-2022 18:39:48 - Company: UGIN - Vessel: GGPA - Voyage: 60 - Charterer: WATERFRONT SHIPPING - CAYMAN ISL - Cargo: 
+Error:    en System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   en System.Collections.Generic.List`1.get_Item(Int32 index)
+   en Veslink.Business.ReportBusiness.CreateExcel() en C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Business\ReportBusiness.cs:línea 198
+   en Veslink.Business.ReportBusiness.GenerateExcel(String vesselCode, String voyageNo, String chartererId, String cargoId) en C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Business\ReportBusiness.cs:línea 134
+   en VeslinkReportExport.VesselReportForm.btnExcel_Click(Object sender, EventArgs e) en C:\Desarrollos\Veslink\Repos\ReportExport\VeslinkReportExport\VesselReportForm.cs:línea 66
+2022-04-22 18:43:36,415 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: GGPA - Voyage:60
+2022-04-22 18:43:46,006 [1] ERROR VeslinkReportExport.VesselReportForm [(null)] -  An error occurred while generating the excel file 
+Parameters:
+DateFrom: 01-01-2020 18:39:48 - DateTo: 22-04-2022 18:39:48 - Company: UGIN - Vessel: GGPA - Voyage: 60 - Charterer: WATERFRONT SHIPPING - CAYMAN ISL - Cargo: 
+Error:    en System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   en System.Collections.Generic.List`1.get_Item(Int32 index)
+   en Veslink.Business.ReportBusiness.CreateExcel() en C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Business\ReportBusiness.cs:línea 198
+   en Veslink.Business.ReportBusiness.GenerateExcel(String vesselCode, String voyageNo, String chartererId, String cargoId) en C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Business\ReportBusiness.cs:línea 134
+   en VeslinkReportExport.VesselReportForm.btnExcel_Click(Object sender, EventArgs e) en C:\Desarrollos\Veslink\Repos\ReportExport\VeslinkReportExport\VesselReportForm.cs:línea 66
+2022-04-22 18:43:47,666 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: GGPA - Voyage:60
+2022-04-22 18:45:03,778 [1] ERROR VeslinkReportExport.VesselReportForm [(null)] -  An error occurred while generating the excel file 
+Parameters:
+DateFrom: 01-01-2020 18:39:48 - DateTo: 22-04-2022 18:39:48 - Company: UGIN - Vessel: GGPA - Voyage: 60 - Charterer: WATERFRONT SHIPPING - CAYMAN ISL - Cargo: 
+Error:    en System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   en System.Collections.Generic.List`1.get_Item(Int32 index)
+   en Veslink.Business.ReportBusiness.CreateExcel() en C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Business\ReportBusiness.cs:línea 198
+   en Veslink.Business.ReportBusiness.GenerateExcel(String vesselCode, String voyageNo, String chartererId, String cargoId) en C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Business\ReportBusiness.cs:línea 134
+   en VeslinkReportExport.VesselReportForm.btnExcel_Click(Object sender, EventArgs e) en C:\Desarrollos\Veslink\Repos\ReportExport\VeslinkReportExport\VesselReportForm.cs:línea 66
+2022-04-22 18:53:22,862 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: GGPA - Voyage:60
+2022-04-22 18:59:16,905 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-04-22 18:59:22,624 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-04-22 18:59:24,531 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully
+2022-04-22 18:59:42,185 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: GGPA - Voyage:60
+2022-04-22 19:19:35,598 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-04-22 19:36:00,658 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-04-22 19:36:07,708 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully
+2022-04-22 19:36:32,252 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: GGPA - Voyage:60
+2022-04-22 19:36:42,312 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been generated successfully - FileName: C:\Desarrollos\Veslink\Docs\GGPA_60_WATERFRONT SHIPPING - CAYMAN ISL.xlsx
+2022-04-22 19:42:03,294 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: LUXE - Voyage:21
+2022-04-22 19:42:17,018 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been generated successfully - FileName: C:\Desarrollos\Veslink\Docs\LUXE_21_SHELL TRADING U.S. COMPANY corregido 2.xlsx
+2022-04-22 19:47:00,686 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: LUXE - Voyage:21
+2022-04-22 20:06:28,195 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been generated successfully - FileName: LUXE_21_SHELL TRADING U.S. COMPANY
+2022-04-22 20:07:22,911 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: LUXE - Voyage:21
+2022-04-22 21:07:36,007 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-04-22 21:07:41,158 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-04-22 21:07:43,002 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully
+2022-04-22 21:08:03,159 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: LUXE - Voyage:21
+2022-04-22 21:16:14,910 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-04-22 21:16:19,719 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-04-22 21:16:24,011 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully
+2022-04-22 21:16:36,672 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: LUXE - Voyage:21
+2022-04-22 21:16:56,886 [1] ERROR VeslinkReportExport.VesselReportForm [(null)] -  An error occurred while generating the excel file 
+Parameters:
+DateFrom: 01-01-2020 21:16:23 - DateTo: 22-04-2022 21:16:24 - Company: UTNK - Vessel: LUXE - Voyage: 21 - Charterer: SHELL TRADING U.S. COMPANY - Cargo: 
+Error:    en Newtonsoft.Json.Serialization.JsonSerializerInternalReader.EnsureType(JsonReader reader, Object value, CultureInfo culture, JsonContract contract, Type targetType)
+   en Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   en Newtonsoft.Json.Serialization.JsonSerializerInternalReader.SetPropertyValue(JsonProperty property, JsonConverter propertyConverter, JsonContainerContract containerContract, JsonProperty containerProperty, JsonReader reader, Object target)
+   en Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   en Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   en Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   en Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateList(IList list, JsonReader reader, JsonArrayContract contract, JsonProperty containerProperty, String id)
+   en Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateList(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, Object existingValue, String id)
+   en Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   en Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   en Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   en System.Net.Http.Formatting.BaseJsonMediaTypeFormatter.ReadFromStream(Type type, Stream readStream, Encoding effectiveEncoding, IFormatterLogger formatterLogger)
+   en System.Net.Http.Formatting.JsonMediaTypeFormatter.ReadFromStream(Type type, Stream readStream, Encoding effectiveEncoding, IFormatterLogger formatterLogger)
+   en System.Net.Http.Formatting.BaseJsonMediaTypeFormatter.ReadFromStream(Type type, Stream readStream, HttpContent content, IFormatterLogger formatterLogger)
+   en System.Net.Http.Formatting.BaseJsonMediaTypeFormatter.ReadFromStreamAsync(Type type, Stream readStream, HttpContent content, IFormatterLogger formatterLogger)
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Net.Http.HttpContentExtensions.<ReadAsAsyncCore>d__17`1.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en Veslink.Data.ReportData.GetItinerariesReportAsync(String vesselCode, String voyageNo) en C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Data\ReportData.cs:línea 50
+   en Veslink.Business.ReportBusiness.GenerateExcel(String vesselCode, String voyageNo, String chartererId, String cargoId) en C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Business\ReportBusiness.cs:línea 111
+   en VeslinkReportExport.VesselReportForm.btnExcel_Click(Object sender, EventArgs e) en C:\Desarrollos\Veslink\Repos\ReportExport\VeslinkReportExport\VesselReportForm.cs:línea 66
+2022-04-22 21:17:07,236 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: LUXE - Voyage:21
+2022-04-22 21:17:42,013 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-04-22 21:17:48,440 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-04-22 21:17:52,162 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully
+2022-04-22 21:18:05,274 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: LUXE - Voyage:21
+2022-04-22 21:19:55,336 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been generated successfully - FileName: C:\Desarrollos\Veslink\Docs\LUXE_21_SHELL TRADING U.S. COMPANY corregido 3.xlsx

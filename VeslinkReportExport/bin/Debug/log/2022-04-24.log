@@ -1,0 +1,41 @@
+2022-04-24 13:17:40,976 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-04-24 13:17:46,053 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-04-24 13:17:48,404 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully
+2022-04-24 13:18:14,807 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: GGPA - Voyage:60
+2022-04-24 13:18:41,028 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: GGPA - Voyage:59
+2022-04-24 13:19:00,386 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: GGPA - Voyage:60
+2022-04-24 13:19:20,425 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: GGPA - Voyage:56
+2022-04-24 13:19:29,876 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: GGPA - Voyage:53
+2022-04-24 13:19:50,101 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: BIRD - Voyage:66
+2022-04-24 13:20:08,001 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: BIRD - Voyage:66
+2022-04-24 13:20:45,516 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: BIRD - Voyage:67
+2022-04-24 13:21:04,359 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: GGPA - Voyage:71
+2022-04-24 13:21:20,469 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: GGPA - Voyage:71
+2022-04-24 14:39:55,591 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-04-24 14:40:06,248 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-04-24 14:40:11,000 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully
+2022-04-24 14:40:54,025 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: GGPA - Voyage:60
+2022-04-24 14:41:03,767 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been generated successfully - FileName: C:\Desarrollos\Veslink\Docs\GGPA_60_WATERFRONT SHIPPING - CAYMAN ISL.xlsx
+2022-04-24 14:41:50,398 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: GGPA - Voyage:60
+2022-04-24 15:05:10,359 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-04-24 15:05:16,402 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-04-24 15:05:27,279 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully
+2022-04-24 15:06:44,218 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: GGPA - Voyage:60
+2022-04-24 15:07:02,752 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been generated successfully - FileName: C:\Desarrollos\Veslink\Docs\GGPA_60_WATERFRONT SHIPPING - CAYMAN ISL.xlsx
+2022-04-24 15:08:46,673 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: LUXE - Voyage:21
+2022-04-24 15:08:59,873 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been generated successfully - FileName: C:\Desarrollos\Veslink\Docs\LUXE_21_SHELL TRADING U.S. COMPANY corregido 4.xlsx
+2022-04-24 15:09:57,178 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: GGPA - Voyage:71
+2022-04-24 15:10:06,380 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been generated successfully - FileName: C:\Desarrollos\Veslink\Docs\GGPA_71_CARGILL AMERICAS  INC.xlsx
+2022-04-24 15:11:17,208 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-04-24 15:11:21,896 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-04-24 15:11:23,734 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully
+2022-04-24 15:11:45,934 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: GGPA - Voyage:58
+2022-04-24 15:12:15,676 [1] ERROR VeslinkReportExport.VesselReportForm [(null)] -  An error occurred while generating the excel file 
+Parameters:
+DateFrom: 01-01-2020 15:11:23 - DateTo: 24-04-2022 15:11:23 - Company: UGIN - Vessel: GGPA - Voyage: 58 - Charterer: PETROBRAS - PETROLEO BRASILEIRO - Cargo: 
+Error:    en Veslink.Business.ReportBusiness.<>c__DisplayClass16_0.<CreateExcel>b__2(VoyageItinerary i) en C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Business\ReportBusiness.cs:línea 186
+   en System.Collections.Generic.List`1.FindIndex(Int32 startIndex, Int32 count, Predicate`1 match)
+   en System.Collections.Generic.List`1.FindIndex(Predicate`1 match)
+   en Veslink.Business.ReportBusiness.CreateExcel() en C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Business\ReportBusiness.cs:línea 186
+   en Veslink.Business.ReportBusiness.GenerateExcel(String vesselCode, String voyageNo, String chartererId, String cargoId) en C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Business\ReportBusiness.cs:línea 130
+   en VeslinkReportExport.VesselReportForm.btnExcel_Click(Object sender, EventArgs e) en C:\Desarrollos\Veslink\Repos\ReportExport\VeslinkReportExport\VesselReportForm.cs:línea 66

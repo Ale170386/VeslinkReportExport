@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Cargo.cs" />
     <Compile Include="Charterer.cs" />
+    <Compile Include="ChartererItinerary.cs" />
     <Compile Include="ChemicalParcelingReport.cs" />
     <Compile Include="ComboItem.cs" />
     <Compile Include="ContactInformation.cs" />

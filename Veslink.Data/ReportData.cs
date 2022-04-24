@@ -16,6 +16,7 @@ namespace Veslink.Data
         static HttpClient client = new HttpClient();
         static string uriVessels = ConfigurationManager.AppSettings["uriVessels"];
         static string uriVoyageItineraries = ConfigurationManager.AppSettings["uriVoyageItineraries"];
+        static string uriChartererItinerary = ConfigurationManager.AppSettings["uriChartererItinerary"];
         static string uriVoyage = ConfigurationManager.AppSettings["uriVoyage"];
         static string uriCargo = ConfigurationManager.AppSettings["uriCargo"];
         static string uriContact = ConfigurationManager.AppSettings["uriContact"];
@@ -38,17 +39,11 @@ namespace Veslink.Data
         }
 
         //Report 1
-        public static List<VoyageItinerary> GetItinerariesReportAsync(string vesselCode, string voyageNo, string chartererId = "", string cargoId = "")
+        public static List<VoyageItinerary> GetItinerariesReportAsync(string vesselCode, string voyageNo)
         {
             List<VoyageItinerary> itineraries = null;
             ;
             string uri = $"{uriVoyageItineraries}&filter[0]=VesselCode==%22{vesselCode}%22&filter[1]=VoyageNo==%22{voyageNo}%22";
-
-            //if (!(String.IsNullOrEmpty(chartererId)))
-            //    uri += $"&filter[2]=VoyageCargoHandlings.Cargo.Counterparty.ShortName==%22{chartererId.Replace("&", "%26")}%22";
-
-            //if (!(String.IsNullOrEmpty(cargoId)))
-            //    uri += $"&filter[3]=VoyageCargoHandlings.CargoID==%22{cargoId}%22";
 
             HttpResponseMessage response = client.GetAsync($"{uri}&format=json").GetAwaiter().GetResult();
             if (response.IsSuccessStatusCode)
@@ -58,27 +53,69 @@ namespace Veslink.Data
                             .Where(w => w.PortFunc != "P")
                             .GroupBy(g => new
                                             {
-                                                g.Seq,
                                                 g.Order,                                                
                                                 g.EtaGmt,
                                                 g.PortName,
+                                                g.PortNo,
                                                 g.PortFunc,
                                                 g.Miles,                                                
-                                                g.EtdGmt,
-                                                g.CounterpartyShortName,
-                                                g.CargoID
+                                                g.EtdGmt                                                
                                             }).Select(s => new VoyageItinerary()
                                             {
-                                                Seq = s.Key.Seq,
                                                 Order = s.Key.Order,                                                
                                                 EtaGmt = s.Key.EtaGmt,
                                                 PortName = s.Key.PortName,
+                                                PortNo = s.Key.PortNo,
                                                 PortFunc = s.Key.PortFunc,
                                                 Miles = s.Key.Miles,
-                                                EtdGmt = s.Key.EtdGmt,
-                                                CounterpartyShortName = s.Key.CounterpartyShortName,
-                                                CargoID = s.Key.CargoID
+                                                EtdGmt = s.Key.EtdGmt                                                
                                             }).ToList();
+
+            return itineraries.OrderBy(o => o.Order).ToList();
+        }
+
+        //Report 1_V2
+        public static List<ChartererItinerary> GetChartererItineraryAsync(string vesselCode, string voyageNo, string chartererId = "", string cargoId = "")
+        {
+            List<ChartererItinerary> itineraries = null;
+            ;
+            string uri = $"{uriChartererItinerary}&filter[0]=VesselCode==%22{vesselCode}%22&filter[1]=VoyageNo==%22{voyageNo}%22";
+
+            if (!(String.IsNullOrEmpty(chartererId)))
+                uri += $"&filter[2]=VoyageCargoHandlings.Cargo.Counterparty.ShortName==%22{chartererId.Replace("&", "%26")}%22";
+
+            if (!(String.IsNullOrEmpty(cargoId)))
+                uri += $"&filter[3]=VoyageCargoHandlings.CargoID==%22{cargoId}%22";
+
+            HttpResponseMessage response = client.GetAsync($"{uri}&format=json").GetAwaiter().GetResult();
+            if (response.IsSuccessStatusCode)
+                itineraries = response.Content.ReadAsAsync<List<ChartererItinerary>>().GetAwaiter().GetResult();
+
+            itineraries = itineraries
+                            .Where(w => w.PortFunc != "P")
+                            .GroupBy(g => new
+                            {
+                                g.Order,
+                                g.EtaGmt,
+                                g.PortName,
+                                g.PortNo,
+                                g.PortFunc,
+                                g.Miles,
+                                g.EtdGmt,
+                                g.CounterpartyShortName,
+                                g.CargoID
+                            }).Select(s => new ChartererItinerary()
+                            {
+                                Order = s.Key.Order,
+                                EtaGmt = s.Key.EtaGmt,
+                                PortName = s.Key.PortName,
+                                PortNo = s.Key.PortNo,
+                                PortFunc = s.Key.PortFunc,
+                                Miles = s.Key.Miles,
+                                EtdGmt = s.Key.EtdGmt,
+                                CounterpartyShortName = s.Key.CounterpartyShortName,
+                                CargoID = s.Key.CargoID
+                            }).ToList();
 
             return itineraries.OrderBy(o => o.Order).ToList();
         }
