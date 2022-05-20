@@ -1,0 +1,6 @@
+2022-05-14 17:07:41,130 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-05-14 17:07:52,128 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-05-14 17:07:56,323 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully
+2022-05-14 17:08:19,930 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: CMAL - Voyage:64
+2022-05-14 17:10:52,009 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been generated successfully - FileName: C:\Desarrollos\Veslink\Docs\CMAL_64_ARCHER DANIELS MIDLAND COMPANY_TEST.xlsx
+2022-05-14 17:12:28,929 [1] INFO  VeslinkReportExport.Program [(null)] - Start App

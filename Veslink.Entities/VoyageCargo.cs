@@ -39,5 +39,7 @@ namespace Veslink.Entities
         public string FunctionCode { get; set; }
         [JsonProperty("VoyageCargoHandlings.VoyageItinerary.EtaGmt")]
         public DateTime EtaGmt { get; set; }
+        [JsonProperty("VoyageCargoHandlings.Cargo.CPQty")]
+        public double CPQty { get; set; }
     }
 }

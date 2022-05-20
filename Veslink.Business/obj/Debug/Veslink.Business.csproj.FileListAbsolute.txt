@@ -17,19 +17,9 @@ C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Business\obj\Debug\Veslink.Bus
 C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Business\obj\Debug\Veslink.Business.csproj.GenerateResource.cache
 C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Business\bin\Debug\BouncyCastle.Crypto.dll
 C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Business\bin\Debug\ICSharpCode.SharpZipLib.dll
-C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Business\bin\Debug\NPOI.dll
-C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Business\bin\Debug\NPOI.OOXML.dll
-C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Business\bin\Debug\NPOI.OpenXml4Net.dll
-C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Business\bin\Debug\NPOI.OpenXmlFormats.dll
 C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Business\bin\Debug\BouncyCastle.Crypto.xml
 C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Business\bin\Debug\ICSharpCode.SharpZipLib.pdb
 C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Business\bin\Debug\ICSharpCode.SharpZipLib.xml
-C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Business\bin\Debug\NPOI.pdb
-C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Business\bin\Debug\NPOI.xml
-C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Business\bin\Debug\NPOI.OOXML.pdb
-C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Business\bin\Debug\NPOI.OOXML.xml
-C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Business\bin\Debug\NPOI.OpenXml4Net.pdb
-C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Business\bin\Debug\NPOI.OpenXmlFormats.pdb
 C:\SVNUNAV\ReporteNavesChem\Fuentes\VeslinkReportExport-main\Veslink.Business\bin\Debug\Veslink.Business.dll
 C:\SVNUNAV\ReporteNavesChem\Fuentes\VeslinkReportExport-main\Veslink.Business\bin\Debug\Veslink.Business.pdb
 C:\SVNUNAV\ReporteNavesChem\Fuentes\VeslinkReportExport-main\Veslink.Business\bin\Debug\BouncyCastle.Crypto.dll
@@ -94,3 +84,11 @@ C:\Users\Alejandro Soto\Downloads\export\export\Veslink.Business\obj\Debug\Vesli
 C:\Users\Alejandro Soto\Downloads\export\export\Veslink.Business\obj\Debug\Veslink.Business.csproj.CopyComplete
 C:\Users\Alejandro Soto\Downloads\export\export\Veslink.Business\obj\Debug\Veslink.Business.dll
 C:\Users\Alejandro Soto\Downloads\export\export\Veslink.Business\obj\Debug\Veslink.Business.pdb
+C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Business\bin\Debug\ClosedXML.dll
+C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Business\bin\Debug\DocumentFormat.OpenXml.dll
+C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Business\bin\Debug\ExcelNumberFormat.dll
+C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Business\bin\Debug\System.IO.Packaging.dll
+C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Business\bin\Debug\ClosedXML.pdb
+C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Business\bin\Debug\ClosedXML.xml
+C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Business\bin\Debug\DocumentFormat.OpenXml.xml
+C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Business\bin\Debug\ExcelNumberFormat.xml

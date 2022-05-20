@@ -9,62 +9,33 @@ namespace Veslink.Entities
 {
     public class VoyageLegSummary
     {
-        [JsonProperty("VoyageLegSummary.Bnkr1_FuelType")]
-        public string Bnkr1FuelType { get; set; }
+        public string VesselName { get; set; }
+        public int VoyageNo { get; set; }
+        public string VesselCode { get; set; }
 
-        [JsonProperty("VoyageLegSummary.Bnkr2_FuelType")]
-        public string Bnkr2FuelType { get; set; }
+        [JsonProperty("VoyageItineraries.VoyageItineraryBunkers.FuelType")]
+        public string FuelType { get; set; }
 
-        [JsonProperty("VoyageLegSummary.Bnkr3_FuelType")]
-        public string Bnkr3FuelType { get; set; }
+        [JsonProperty("VoyageItineraries.VoyageItineraryBunkers.RobArrival")]
+        public double RobArrival { get; set; }
 
-        [JsonProperty("VoyageLegSummary.Bnkr4_FuelType")]
-        public string Bnkr4FuelType { get; set; }
+        [JsonProperty("VoyageItineraries.VoyageItineraryBunkers.RobDeparture")]
+        public double RobDeparture { get; set; }
 
-        [JsonProperty("VoyageLegSummary.Bnkr5_FuelType")]
-        public string Bnkr5FuelType { get; set; }
+        [JsonProperty("VoyageItineraries.VoyageItineraryBunkers.Seq")]
+        public int Seq { get; set; }
 
-        [JsonProperty("VoyageLegSummary.Bnkr6_FuelType")]
-        public string Bnkr6FuelType { get; set; }
+        [JsonProperty("VoyageItineraries.PortName")]
+        public string PortName { get; set; }
 
-        [JsonProperty("VoyageLegSummary.Bnkr1_Total")]
-        public double Bnkr1Total { get; set; }
+        [JsonProperty("VoyageItineraries.PortFunc")]
+        public string PortFunc { get; set; }
 
-        [JsonProperty("VoyageLegSummary.Bnkr2_Total")]
-        public double Bnkr2Total { get; set; }
+        [JsonProperty("VoyageItineraries.PortNo")]
+        public int PortNo { get; set; }
 
-        [JsonProperty("VoyageLegSummary.Bnkr3_Total")]
-        public double Bnkr3Total { get; set; }
-
-        [JsonProperty("VoyageLegSummary.Bnkr4_Total")]
-        public double Bnkr4Total { get; set; }
-
-        [JsonProperty("VoyageLegSummary.Bnkr5_Total")]
-        public double Bnkr5Total { get; set; }
-
-        [JsonProperty("VoyageLegSummary.Bnkr6_Total")]
-        public double Bnkr6Total { get; set; }
-
-        [JsonProperty("VoyageLegSummary.FromPortName")]
-        public string FromPortName { get; set; }
-
-        [JsonProperty("VoyageLegSummary.FromPortFunc")]
-        public string FromPortFunc { get; set; }
-
-        [JsonProperty("VoyageLegSummary.ToPortName")]
-        public string ToPortName { get; set; }
-
-        [JsonProperty("VoyageLegSummary.Distance")]
-        public double Distance { get; set; }
-
-        [JsonProperty("VoyageLegSummary.FromGMT")]
-        public DateTime FromGMT { get; set; }
-
-        [JsonProperty("VoyageLegSummary.FromPortSeq")]
-        public int FromPortSeq { get; set; }
-
-        [JsonProperty("VoyageLegSummary.ToGMT")]
-        public DateTime ToGMT { get; set; }
+        [JsonProperty("VoyageItineraries.Order")]
+        public int Order { get; set; }
 
     }
 }

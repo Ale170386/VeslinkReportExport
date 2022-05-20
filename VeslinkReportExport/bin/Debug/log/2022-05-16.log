@@ -1,0 +1,5 @@
+2022-05-16 20:11:35,778 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-05-16 20:11:41,399 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-05-16 20:11:45,700 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully
+2022-05-16 20:12:09,672 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: CMAL - Voyage:61
+2022-05-16 20:12:25,801 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been generated successfully - FileName: C:\Desarrollos\Veslink\Docs\CMAL_61_COPERSUCAR EUROPE.xlsx

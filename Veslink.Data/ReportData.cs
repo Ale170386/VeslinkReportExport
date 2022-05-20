@@ -20,6 +20,7 @@ namespace Veslink.Data
         static string uriVoyage = ConfigurationManager.AppSettings["uriVoyage"];
         static string uriCargo = ConfigurationManager.AppSettings["uriCargo"];
         static string uriContact = ConfigurationManager.AppSettings["uriContact"];
+        static string usePorts = ConfigurationManager.AppSettings["ports"];
 
         public static List<string> GetCompanies()
         {
@@ -50,19 +51,21 @@ namespace Veslink.Data
                 itineraries = response.Content.ReadAsAsync<List<VoyageItinerary>>().GetAwaiter().GetResult();
 
             itineraries = itineraries
-                            .Where(w => w.PortFunc != "P")
+                            .Where(w => usePorts.Contains(w.PortFunc))
                             .GroupBy(g => new
                                             {
-                                                g.Order,                                                
+                                                g.Order,
+                                                g.Seq,
                                                 g.EtaGmt,
                                                 g.PortName,
                                                 g.PortNo,
                                                 g.PortFunc,
                                                 g.Miles,                                                
-                                                g.EtdGmt                                                
+                                                g.EtdGmt
                                             }).Select(s => new VoyageItinerary()
                                             {
-                                                Order = s.Key.Order,                                                
+                                                Order = s.Key.Order,
+                                                Seq = s.Key.Seq,
                                                 EtaGmt = s.Key.EtaGmt,
                                                 PortName = s.Key.PortName,
                                                 PortNo = s.Key.PortNo,
@@ -152,50 +155,7 @@ namespace Veslink.Data
             if (response.IsSuccessStatusCode)
                 voyage = response.Content.ReadAsAsync<List<VoyageLegSummary>>().GetAwaiter().GetResult();
 
-            var summary = voyage.GroupBy(g => new
-            {
-                g.Bnkr1FuelType,
-                g.Bnkr2FuelType,
-                g.Bnkr3FuelType,
-                g.Bnkr4FuelType,
-                g.Bnkr5FuelType,
-                g.Bnkr6FuelType,
-                g.Bnkr1Total,
-                g.Bnkr2Total,
-                g.Bnkr3Total,
-                g.Bnkr4Total,
-                g.Bnkr5Total,
-                g.Bnkr6Total,
-                g.FromPortName,
-                g.FromPortSeq,
-                g.FromPortFunc,
-                g.ToPortName,
-                g.Distance,
-                g.FromGMT,
-                g.ToGMT
-            });
-
-            return summary.Select(s => new VoyageLegSummary()
-            {
-                Bnkr1FuelType = s.Key.Bnkr1FuelType.ToString(),
-                Bnkr2FuelType = s.Key.Bnkr2FuelType.ToString(),
-                Bnkr3FuelType = s.Key.Bnkr3FuelType.ToString(),
-                Bnkr4FuelType = s.Key.Bnkr4FuelType.ToString(),
-                Bnkr5FuelType = s.Key.Bnkr5FuelType.ToString(),
-                Bnkr6FuelType = s.Key.Bnkr6FuelType.ToString(),
-                Bnkr1Total = s.Key.Bnkr1Total,
-                Bnkr2Total = s.Key.Bnkr2Total,
-                Bnkr3Total = s.Key.Bnkr3Total,
-                Bnkr4Total = s.Key.Bnkr4Total,
-                Bnkr5Total = s.Key.Bnkr5Total,
-                Bnkr6Total = s.Key.Bnkr6Total,
-                FromPortName = s.Key.FromPortName,
-                FromPortSeq = s.Key.FromPortSeq,
-                ToPortName = s.Key.ToPortName,
-                Distance = s.Key.Distance,
-                FromGMT = s.Key.FromGMT,
-                ToGMT = s.Key.ToGMT
-            }).OrderBy(o => o.FromGMT).ToList();
+            return voyage.OrderBy(o => o.Order).ToList();
 
         }
 

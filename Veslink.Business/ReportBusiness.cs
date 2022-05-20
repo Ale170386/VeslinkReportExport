@@ -1,8 +1,4 @@
-﻿using NPOI.HSSF.UserModel;
-using NPOI.SS.UserModel;
-using NPOI.SS.Util;
-using NPOI.Util;
-using NPOI.XSSF.UserModel;
+﻿using ClosedXML.Excel;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -134,282 +130,244 @@ namespace Veslink.Business
             //vessel.VoyageCargos = await ReportData.GetCargoReportAsync();
 
 
-        }        
+        }
 
         public byte[] CreateExcel()
         {
-            //WorkBook workbook = WorkBook.Load(Properties.Resources.ReportTemplate);
-            //WorkSheet sheet = workbook.DefaultWorkSheet;
+            byte[] result = null;
+            XLWorkbook workbook;
             CultureInfo ci = CultureInfo.InvariantCulture;
-
             // This is invariant
             NumberFormatInfo formatInfo = new NumberFormatInfo();
             // Set the 'splitter' for thousands
             formatInfo.NumberGroupSeparator = ",";
             // Set the decimal seperator
             formatInfo.NumberDecimalSeparator = ".";
-
-            XSSFWorkbook hssfwb;
-            using (Stream stream = new MemoryStream(Properties.Resources.ReportTemplate))
-            {
-                hssfwb = new XSSFWorkbook(stream);
-            }
+            MemoryStream stream = new MemoryStream(Properties.Resources.ReportTemplate);
+            workbook = new XLWorkbook(stream);
 
             //Assign the sheet
-            ISheet sheet = hssfwb.GetSheetAt(0);
+            var sheet = workbook.Worksheet(1);
 
-            //ICellStyle intCellStyle = sheet.GetRow(16).GetCell(2).CellStyle;
-            //intCellStyle.DataFormat = hssfwb.CreateDataFormat().GetFormat("#,##0");
+            #region Header
 
             #region Vessel And Cargo Data
-            sheet.GetRow(8).GetCell(2).SetCellValue(VesselSelected.IMONo.ToString());
-            sheet.GetRow(9).GetCell(2).SetCellValue(VesselSelected.VesselName.ToString());
-            sheet.GetRow(10).GetCell(2).SetCellValue(VesselSelected.VesselType.ToString());
-
-            sheet.GetRow(11).GetCell(2).SetCellType(CellType.Numeric);
-            sheet.GetRow(11).GetCell(2).SetCellValue(VesselSelected.Size);
-
-            sheet.GetRow(12).GetCell(2).SetCellValue(VesselSelected.VoyageSelected.VoyageNo.ToString());
+            sheet.Cell("F9").Value = VesselSelected.IMONo.ToString();
+            sheet.Cell("F10").Value = VesselSelected.VesselName.ToString();
+            sheet.Cell("F11").Value = VesselSelected.VesselType.ToString();
+            sheet.Cell("F12").Value = VesselSelected.Size;
+            sheet.Cell("F14").Value = VesselSelected.VoyageSelected.VoyageNo.ToString();
             #endregion
 
-            int loadPort = 0;
-            int commencedPort = 0;
-            List<VoyageItinerary> voyageItiners = this.VesselSelected.VoyageSelected.Itinerary;
+            List<VoyageItinerary> voyageItinerary = this.VesselSelected.VoyageSelected.Itinerary;
 
-            #region Last Ballast Leg
-            //GetPort(0, "L", ref loadPort);
-            ChartererItinerary loadPortItinerary = this.VesselSelected.VoyageSelected.ChartererSelected.ChartererItinerary
-                                                    .Where(w => w.PortFunc == "L")
-                                                    .OrderBy(o => o.Order)
-                                                    .FirstOrDefault();
+            #region Preceding Ballast Leg            
 
-            loadPort = voyageItiners.FindIndex(i => i.PortFunc == loadPortItinerary.PortFunc
-                                                 && i.PortNo == loadPortItinerary.PortNo);
-
-            if (loadPort == 0) commencedPort = 0;
-            else GetPort(loadPort - 1, "C", ref commencedPort);
+            int commencedPort = 0;//El puerto de inicio del ballast es el primer puerto del itinerario
+            int loadPort = voyageItinerary.FindIndex(i => i.PortFunc == "L");
 
             int distance = GetDistanceSailed(commencedPort, loadPort);
 
-            sheet.GetRow(16).GetCell(2).SetCellValue(voyageItiners[commencedPort].PortName.ToString());
-            sheet.GetRow(17).GetCell(2).SetCellValue(voyageItiners[loadPort].PortName.ToString());
-            sheet.GetRow(18).GetCell(2).SetCellValue(voyageItiners[commencedPort].EtdGmt.ToString());
-            sheet.GetRow(19).GetCell(2).SetCellValue(((loadPort - 1 >= 0 && voyageItiners[loadPort - 1].PortFunc == "W") ?
-                                                                     voyageItiners[loadPort - 1].EtdGmt :
-                                                                     voyageItiners[loadPort].EtdGmt).ToString());
+            sheet.Cell("F18").Value = voyageItinerary[commencedPort].PortName.ToString();
+            sheet.Cell("F20").Value = voyageItinerary[loadPort].PortName.ToString();
 
-            sheet.GetRow(20).GetCell(2).SetCellType(CellType.Numeric);
-            sheet.GetRow(20).GetCell(2).SetCellValue(Double.Parse(distance.ToString(ci), formatInfo));
+            //Ballast Start Date
+            DateTime ballastStartDate = (DateTime)voyageItinerary[commencedPort].EtdGmt;
+                        
+            sheet.Cell("F22").Value = ballastStartDate.ToString("dd/MM/yyyy");
+            sheet.Cell("F23").Value = ballastStartDate.ToString("hh:mm");
+
+            //Ballast End Date
+            DateTime ballastEndDate = (DateTime)((loadPort - 1 >= 0 && voyageItinerary[loadPort - 1].PortFunc == "W") ?
+                                                                     voyageItinerary[loadPort - 1].EtdGmt :
+                                                                     voyageItinerary[loadPort].EtdGmt);
+
+            sheet.Cell("F24").Value = ballastEndDate.ToString("dd/MM/yyyy");
+            sheet.Cell("F25").Value = ballastEndDate.ToString("hh:mm");
+
+            //Distancia
+            sheet.Cell("F26").Value = Double.Parse(distance.ToString(ci), formatInfo);
             #endregion
 
-            int dischargePort = 0;
+            #region Laden Leg
 
-            ChartererItinerary dischargePortItinerary = this.VesselSelected.VoyageSelected.ChartererSelected.ChartererItinerary
-                                                    .Where(w => w.PortFunc == "D")
-                                                    .OrderByDescending(o => o.Order)
-                                                    .FirstOrDefault();
+            int dischargePort = voyageItinerary.FindLastIndex(i => i.PortFunc == "D");
 
-            dischargePort = voyageItiners.FindIndex(i => i.PortFunc == dischargePortItinerary.PortFunc
-                                                    && i.PortNo == dischargePortItinerary.PortNo);
+            sheet.Cell("F32").Value = voyageItinerary[dischargePort].PortName.ToString();
 
+            //Fecha de inicio del viaje, es la misma que la del primer puerto de carga
+            sheet.Cell("F34").Value = sheet.Cell("F24").Value;
+            sheet.Cell("F35").Value = sheet.Cell("F25").Value;
 
-            //GetPort(loadPort, "D", ref dischargePort);
+            //Fecha del ultimo puerto de descarga del viaje
+            DateTime voyageEndDate = (DateTime)voyageItinerary[dischargePort].EtdGmt;
+            sheet.Cell("F36").Value = voyageEndDate.ToString("dd/MM/yyyy");
+            sheet.Cell("F37").Value = voyageEndDate.ToString("hh:mm");
 
-            #region Loaded Leg
-
-            if (loadPort == 0)
-                distance = GetDistanceSailed(loadPort, dischargePort);
-            else
-                distance = GetDistanceSailed(loadPort + 1, dischargePort);
-
-            sheet.GetRow(24).GetCell(2).SetCellValue(voyageItiners[loadPort].PortName.ToString());
-            sheet.GetRow(25).GetCell(2).SetCellValue(voyageItiners[dischargePort].PortName.ToString());
-            sheet.GetRow(26).GetCell(2).SetCellValue(voyageItiners[loadPort].EtaGmt.ToString());
-            sheet.GetRow(27).GetCell(2).SetCellValue(voyageItiners[dischargePort].EtdGmt.ToString());
-
-            sheet.GetRow(28).GetCell(2).SetCellType(CellType.Numeric);
-            sheet.GetRow(28).GetCell(2).SetCellValue(Double.Parse(distance.ToString(ci), formatInfo));
+            #endregion
 
             #endregion
 
             #region Cargo Quantities, Distances, and Consumption
 
-            int row = 35;
-            int ballastLeg = 34;
-            int currentRow = 0;
-            int startIndex = 0;
-            int startIndexDistance = 0;
-            int endIndex = -1;
-            int distanceSailed = 0;
+            #region Variables para calcular
+
+            int row = 45;
+            VoyageItinerary nextPort = null;            
+            int cargoQuantity = 0;
+            int charterCargoQuantity = 0;
+            List<VoyageItinerary> cargoItinerary = voyageItinerary.SkipWhile((i, index) => index < loadPort).ToList();
+            int lastPort = cargoItinerary.Count - 1;
             List<Fuel> totalConsumedList = ConfigurationManager.AppSettings["Fuel"]
-                                          .Split(';')
+                                            .Split(';')
                                             .Select(s => new Fuel()
                                             {
                                                 FuelType = s,
                                                 Consumed = 0
                                             }).ToList();
+            #endregion
 
-            foreach (var voyageCargo in this.VesselSelected.VoyageSelected.ChartererSelected.VoyageCargos
-                                           .GroupBy(g => new { g.EtaGmt, g.VoyageSeqNo, g.FunctionCode, g.CounterpartyShortName, g.PortNo })
-                                           .OrderBy(o => o.Key.EtaGmt)
-                                           .ThenByDescending(t => t.Key.FunctionCode))
+            #region Ballast Leg
+
+            //Calculo de consumos de Ballast
+            List<Fuel> consumed = GetFuelConsumed(voyageItinerary[commencedPort], voyageItinerary[loadPort]);
+            int col = 10;
+            sheet.Cell("C44").Value = 2;//Establece check para fila de ballast
+
+            foreach (Fuel fuel in consumed)
             {
-                if (row % 2 == 0 && voyageCargo.Key.FunctionCode == "L") // Si estoy en la fila de Descarga y el Puerto es Carga avanzo una fila
-                    row++;
-                else if (row % 2 > 0 && voyageCargo.Key.FunctionCode == "D") //Si estoy en la fila de Carga y el puerto es de Descarga avanzo una fila
-                    row++;
-
-                currentRow = row;
-                double QuantityAll = Double.Parse(this.VesselSelected.VoyageSelected.VoyageCargos
-                                                                                  .Where(w => w.FunctionCode == voyageCargo.Key.FunctionCode
-                                                                                            && w.VoyageSeqNo == voyageCargo.Key.VoyageSeqNo)
-                                                                                  .Sum(s => s.BLQuantity).ToString(ci), formatInfo);
-                //Información de cargos del viaje
-                sheet.GetRow(currentRow).GetCell(1).SetCellType(CellType.Numeric);
-                sheet.GetRow(currentRow).GetCell(1).SetCellValue(Double.Parse(QuantityAll.ToString(ci), formatInfo));
-
-
-
-                //Información de cargos del charterer
-                double QuantityCharter = Double.Parse(voyageCargo.Where(w => w.CounterpartyShortName == this.VesselSelected.VoyageSelected.ChartererSelected.ChartererName)
-                                                    .Sum(s => s.BLQuantity).ToString(ci), formatInfo);
-                sheet.GetRow(currentRow).GetCell(2).SetCellType(CellType.Numeric);
-                sheet.GetRow(currentRow).GetCell(2).SetCellValue(Double.Parse(QuantityCharter.ToString(ci), formatInfo));
-
-                endIndex = voyageItiners.FindIndex(i => i.PortFunc == voyageCargo.Key.FunctionCode
-                                                 && i.PortNo == voyageCargo.Key.PortNo);
-
-                //%
-                if (QuantityAll != 0)
-                {
-                    sheet.GetRow(currentRow).GetCell(10).SetCellType(CellType.Numeric);
-                    sheet.GetRow(currentRow).GetCell(10).SetCellValue(QuantityCharter / QuantityAll);
-                }
-
-                if ((row - 1) == ballastLeg)
-                {
-                    if (endIndex == 0) startIndex = 0;
-                    else GetPort(endIndex - 1, "C", ref startIndex);
-                    currentRow = ballastLeg;
-                    startIndexDistance = startIndex;
-                }
-
-                //Busca distancia
-                distanceSailed = GetDistanceSailed(startIndexDistance, endIndex);
-                //Llena distancia en columna 3(D)
-                sheet.GetRow(currentRow).GetCell(3).SetCellType(CellType.Numeric);
-                sheet.GetRow(currentRow).GetCell(3).SetCellValue(Double.Parse(distanceSailed.ToString(ci), formatInfo));
-
-
-                //Busca consumo
-                List<Fuel> consumed = GetFuelConsumed(startIndex, endIndex, voyageCargo.Key.FunctionCode);
-
-                //LLena consumos desde columna 4(E)
-                int cell = 4;
-                foreach (Fuel fuel in consumed)
-                {
-                    //sheet.GetRow(currentRow).GetCell(cell).CellStyle = intCellStyle;
-                    sheet.GetRow(currentRow).GetCell(cell).SetCellType(CellType.Numeric);
-                    sheet.GetRow(currentRow).GetCell(cell).SetCellValue(Double.Parse(fuel.Consumed.ToString(ci), formatInfo));
-                    //Suma al total
-                    if (currentRow != ballastLeg)
-                        totalConsumedList.Where(w => w.FuelType == fuel.FuelType)
-                            .Select(s => { s.Consumed += fuel.Consumed; return s; }).ToList();
-
-                    cell++;
-                }
-
-                if (voyageCargo.Key.FunctionCode == "L")
-                {
-                    startIndex = endIndex; // Si el puerto es de carga se considera desde el puerto de termino
-                    if (startIndex > 0)
-                        startIndexDistance = startIndex + 1;
-                }
-                else
-                {
-                    startIndex = endIndex + 1; // si el puerto es de descarga se considera desde el puerto siguiente al de termino
-                    startIndexDistance = startIndex;
-                }
-
-                row++;
+                sheet.Column(col).Cell(44).Value = Double.Parse(fuel.Consumed.ToString(ci), formatInfo);
+                col++;
             }
+
+            #endregion
+
+            #region Detalle de Puertos
+
+            //Recorre itinerario sin considerar ballast leg
+            foreach (var itinerary in cargoItinerary.Select((element, index) => new { element, index }))
+            {
+                //Genera dos filas en excel por cada PUERTO
+                do
+                {
+                    #region Itinerario y distancia
+
+                    //No realiza nada para las filas de Port Stay (Filas impares)
+                    //Registra los itinerarios de las filas Port (Filas pares)
+                    if (row % 2 == 0)
+                    {
+                        nextPort = itinerary.index < lastPort ? cargoItinerary[itinerary.index + 1] : null;
+
+                        if (nextPort != null)
+                        {
+                            sheet.Column("D").Cell(row).Value = itinerary.element.PortName;
+                            sheet.Column("F").Cell(row).Value = nextPort.PortName;
+                            sheet.Column("G").Cell(row).Value = nextPort.Miles;
+                        }
+                    }
+
+                    #endregion
+
+                    #region Cálculo de Cargos
+
+                    //Si la fila es Port Stay (Fila impar) se suma lo que se carga en el puerto
+                    if (row % 2 != 0)
+                    {
+                        if (itinerary.element.PortFunc == "L")
+                        {
+                            cargoQuantity += Convert.ToInt32(this.VesselSelected.VoyageSelected.VoyageCargos
+                                                            .Where(w => w.FunctionCode == itinerary.element.PortFunc
+                                                                        && w.PortNo == itinerary.element.PortNo
+                                                                        && w.VoyageSeqNo == itinerary.element.Seq)
+                                                            .Sum(s => s.BLQuantity));
+
+                            charterCargoQuantity += Convert.ToInt32(this.VesselSelected.VoyageSelected.ChartererSelected.VoyageCargos
+                                                                    .Where(w => w.FunctionCode == itinerary.element.PortFunc
+                                                                                && w.PortNo == itinerary.element.PortNo
+                                                                                && w.VoyageSeqNo == itinerary.element.Seq)
+                                                                    .Sum(s => s.BLQuantity));
+                        }
+                    }
+                    //Si la fila es Leg (Fila par) se resta la descarga
+                    else
+                    {
+                        if (itinerary.element.PortFunc == "D")
+                        {
+                            cargoQuantity -= Convert.ToInt32(this.VesselSelected.VoyageSelected.VoyageCargos
+                                                            .Where(w => w.FunctionCode == itinerary.element.PortFunc
+                                                                        && w.PortNo == itinerary.element.PortNo
+                                                                        && w.VoyageSeqNo == itinerary.element.Seq)
+                                                            .Sum(s => s.BLQuantity));
+
+                            charterCargoQuantity -= Convert.ToInt32(this.VesselSelected.VoyageSelected.ChartererSelected.VoyageCargos
+                                                                    .Where(w => w.FunctionCode == itinerary.element.PortFunc
+                                                                                && w.PortNo == itinerary.element.PortNo
+                                                                                && w.VoyageSeqNo == itinerary.element.Seq)
+                                                                    .Sum(s => s.BLQuantity));
+                        }
+                    }
+
+                    if (row == 45 || nextPort != null)
+                    {
+                        sheet.Column("H").Cell(row).Value = cargoQuantity;
+                        sheet.Column("I").Cell(row).Value = charterCargoQuantity;
+                    }
+
+                    #endregion
+
+                    #region Cálculo de Consumos
+
+                    if (row == 45 || nextPort != null)
+                    {
+                        VoyageItinerary endPort = nextPort != null ? nextPort : itinerary.element;
+                        consumed = GetFuelConsumed(itinerary.element, endPort);
+                        col = 10;
+                        foreach (Fuel fuel in consumed)
+                        {
+                            sheet.Column(col).Cell(row).Value = Double.Parse(fuel.Consumed.ToString(ci), formatInfo);
+                            col++;
+                        }
+                    }
+
+                    #endregion
+
+                    if (row == 45 || nextPort != null)
+                        //Setea check de validación de fila
+                        sheet.Column("C").Cell(row).Value = 2;
+
+                    row++;
+                } while (row % 2 == 0);
+                                
+            }
+
+            #endregion
 
             #endregion
 
             #region Contact Information
             if (this.VesselSelected.VoyageSelected.ContactInformation != null)
             {
-                sheet.GetRow(59).GetCell(2).SetCellValue(this.VesselSelected.VoyageSelected.ContactInformation.UserFullName.ToString());
-                sheet.GetRow(60).GetCell(2).SetCellValue(this.VesselSelected.VoyageSelected.ContactInformation.UserEmail.ToString());
+                sheet.Cell("E71").Value = 2;//Check de validación de información de contacto
+                sheet.Cell("G72").Value = this.VesselSelected.VoyageSelected.ContactInformation.UserFullName.ToString();
+                sheet.Cell("G73").Value = this.VesselSelected.VoyageSelected.ContactInformation.UserEmail.ToString();
+                sheet.Cell("G74").Value = "Yes";
             }
             #endregion
 
-            #region Sumatoria de consumos
-            int f = 4;
-            foreach (Fuel totalFuel in totalConsumedList)
+            #region Escribe archivo
+
+            using (var ms = new MemoryStream())
             {
-                sheet.GetRow(56).GetCell(f).SetCellValue(totalFuel.Consumed);
-                f++;
+                workbook.SaveAs(ms, true, true);
+                result = ms.ToArray();
             }
+
+            stream.Close();
 
             #endregion
 
-            ByteArrayOutputStream bos = new ByteArrayOutputStream();
-            try
-            {
-                hssfwb.Write(bos);
-            }
-            finally
-            {
-                bos.Close();
-            }
-            
-            return bos.ToByteArray();
-        }        
-
-        /// <summary>
-        /// Busca puerto según tipo
-        /// </summary>
-        /// <param name="index"></param>
-        /// <param name="portType"></param>
-        /// <param name="resultPort"></param>
-        /// <param name="firstOccurrence"></param>
-        private void GetPort(int index, string portType, ref int resultPort)
-        {
-            List<VoyageItinerary> voyageItiners = this.VesselSelected.VoyageSelected.Itinerary;
-
-            int lenght = voyageItiners.Count;
-            switch (portType)
-            {
-                case "L":
-
-                    if (index < lenght && voyageItiners[index].PortFunc != "L")
-                        GetPort(index + 1, portType, ref resultPort);
-                    else
-                        resultPort = index;
-
-                    break;
-
-                case "C":                    
-                    if (index >= 0 && voyageItiners[index].PortFunc == "W")
-                        GetPort(index - 1, portType, ref resultPort);
-                    else
-                        resultPort = index;
-
-                    break;
-                case "D":
-
-                    if (index < lenght)
-                    {
-                        if (voyageItiners[index].PortFunc == "D")
-                            resultPort = index;
-
-                        GetPort(index + 1, portType, ref resultPort);
-                    }
-
-                    break;
-            }
-        }
+            return result;
+        }                
 
         /// <summary>
         /// Suma las distancias entre un puerto a otro
@@ -457,9 +415,8 @@ namespace Veslink.Business
         /// <param name="startPort"></param>
         /// <param name="endPort"></param>
         /// <returns></returns>
-        private List<Fuel> GetFuelConsumed(int startPort, int endPort, string portType = "")
+        private List<Fuel> GetFuelConsumed(VoyageItinerary startPort, VoyageItinerary endPort)
         {
-            int currentNode = startPort;            
             List<Fuel> fuelConsumedList = ConfigurationManager.AppSettings["Fuel"]
                                           .Split(';')
                                             .Select(s => new Fuel()
@@ -469,53 +426,48 @@ namespace Veslink.Business
                                                 Consumed = 0
                                             }).ToList();
 
-            if (portType != "" && portType == "L")
-                endPort--; //No se considera el puerto de carga
-
-
-            while (currentNode <= endPort)
+            foreach (Fuel fuel in fuelConsumedList)
             {
-                foreach (Fuel fuel in fuelConsumedList)
-                {
-                    double consumed = GetFuelConsumed(currentNode, fuel.FuelTypeMap);
-                    if (consumed > 0)
-                        fuel.Consumed += consumed;
-                }
+                double consumed = 0;
 
-                currentNode++;
+                VoyageLegSummary consumeLegStart = this.VesselSelected.VoyageSelected.ChartererSelected.VoyageLegSummaries
+                                                    .Where(f => f.PortNo == startPort.PortNo 
+                                                                && f.Seq == startPort.Seq
+                                                                && fuel.FuelTypeMap.Contains(f.FuelType))
+                                                    .GroupBy(g => g.PortNo)
+                                                    .Select(s => new VoyageLegSummary
+                                                    {
+                                                        PortNo = s.Key,
+                                                        RobArrival = s.Sum(sm => sm.RobArrival),
+                                                        RobDeparture = s.Sum(sm => sm.RobDeparture)
+                                                    }).FirstOrDefault();
+
+                VoyageLegSummary consumeLegEnd = this.VesselSelected.VoyageSelected.ChartererSelected.VoyageLegSummaries
+                                                    .Where(f => f.PortNo == endPort.PortNo
+                                                                && f.Seq == endPort.Seq
+                                                                && fuel.FuelTypeMap.Contains(f.FuelType))
+                                                    .GroupBy(g => g.PortNo)
+                                                    .Select(s => new VoyageLegSummary
+                                                    {
+                                                        PortNo = s.Key,
+                                                        RobArrival = s.Sum(sm => sm.RobArrival),
+                                                        RobDeparture = s.Sum(sm => sm.RobDeparture)
+                                                    }).FirstOrDefault();
+
+                if (consumeLegStart != null)
+                {
+                    if (startPort != endPort)
+                        consumed = consumeLegStart.RobDeparture - consumeLegEnd.RobArrival;
+                    else
+                        consumed = consumeLegStart.RobArrival - consumeLegStart.RobDeparture;
+                }
+                else
+                    consumed = 0;
+
+                fuel.Consumed += consumed;
             }
 
             return fuelConsumedList;
-        }
-
-        /// <summary>
-        /// Busca consumo para el nodo actual
-        /// </summary>
-        /// <param name="currentNode"></param>
-        /// <param name="fuelType"></param>
-        /// <returns></returns>
-        private double GetFuelConsumed(int currentNode, string fuelType)
-        {
-            double consumed = 0;
-            List<VoyageLegSummary> legSummaries = this.VesselSelected.VoyageSelected.ChartererSelected.VoyageLegSummaries;
-
-            if (currentNode <= legSummaries.Count - 1)
-            {
-                if (fuelType.Contains(legSummaries[currentNode].Bnkr1FuelType))
-                    consumed += legSummaries[currentNode].Bnkr1Total;
-                if (fuelType.Contains(legSummaries[currentNode].Bnkr2FuelType))
-                    consumed += legSummaries[currentNode].Bnkr2Total;
-                if (fuelType.Contains(legSummaries[currentNode].Bnkr3FuelType))
-                    consumed += legSummaries[currentNode].Bnkr3Total;
-                if (fuelType.Contains(legSummaries[currentNode].Bnkr4FuelType))
-                    consumed += legSummaries[currentNode].Bnkr4Total;
-                if (fuelType.Contains(legSummaries[currentNode].Bnkr5FuelType))
-                    consumed += legSummaries[currentNode].Bnkr5Total;
-                if (fuelType.Contains(legSummaries[currentNode].Bnkr6FuelType))
-                    consumed += legSummaries[currentNode].Bnkr6Total;
-            }
-
-            return consumed;
-        }
+        }        
     }
 }

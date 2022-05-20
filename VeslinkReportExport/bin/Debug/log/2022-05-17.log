@@ -1,0 +1,17 @@
+2022-05-17 21:45:04,995 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-05-17 21:45:12,402 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-05-17 21:45:16,669 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully
+2022-05-17 21:45:23,221 [1] ERROR VeslinkReportExport.VesselReportForm [(null)] -  An error occurred while loading vessels 
+Parameters:
+DateFrom: 01-01-2021 21:45:16 - DateTo: 17-05-2022 21:45:16 - Company: UTNK
+Error:    en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()
+   en Veslink.Data.ReportData.GetVesselReportAsync(String startDate, String endDate, String company) en C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Data\ReportData.cs:línea 34
+   en Veslink.Business.ReportBusiness.GetVessels(DateTime startDate, DateTime endDate, String company) en C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Business\ReportBusiness.cs:línea 27
+   en VeslinkReportExport.VesselReportForm.GetVessels() en C:\Desarrollos\Veslink\Repos\ReportExport\VeslinkReportExport\VesselReportForm.cs:línea 156
+2022-05-17 21:47:03,335 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-05-17 21:47:10,767 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-05-17 21:47:15,715 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully
+2022-05-17 21:47:32,756 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: CMAL - Voyage:61
+2022-05-17 21:47:44,404 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been generated successfully - FileName: C:\Desarrollos\Veslink\Docs\CMAL_61_COPERSUCAR EUROPE.xlsx

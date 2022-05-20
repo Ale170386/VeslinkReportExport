@@ -1,0 +1,7 @@
+2022-04-27 20:35:58,637 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-04-27 20:36:05,115 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-04-27 20:36:08,529 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully
+2022-04-27 20:38:37,785 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: LUXE - Voyage:22
+2022-04-27 20:38:57,088 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been generated successfully - FileName: C:\Desarrollos\Veslink\Docs\LUXE_22_Nouryon Functional Chemicals_old.xlsx
+2022-04-27 20:46:22,130 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: LUXE - Voyage:22
+2022-04-27 20:51:32,566 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been canceled - FileName: LUXE_22_Nouryon Functional Chemicals S.A

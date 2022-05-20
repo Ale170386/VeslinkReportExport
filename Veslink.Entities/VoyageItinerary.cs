@@ -30,5 +30,7 @@ namespace Veslink.Entities
 
         [JsonProperty("VoyageItineraries.PortNo")]
         public int PortNo { get; set; }
+        [JsonProperty("VoyageItineraries.Seq")]
+        public int Seq { get; set; }
     }
 }

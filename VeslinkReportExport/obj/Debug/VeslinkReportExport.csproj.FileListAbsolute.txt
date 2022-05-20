@@ -26,21 +26,6 @@ C:\Desarrollos\Veslink\Repos\ReportExport\VeslinkReportExport\bin\Debug\VeslinkR
 C:\Desarrollos\Veslink\Repos\ReportExport\VeslinkReportExport\bin\Debug\VeslinkReportExport.application
 C:\Desarrollos\Veslink\Repos\ReportExport\VeslinkReportExport\obj\Debug\VeslinkReportExport.exe.manifest
 C:\Desarrollos\Veslink\Repos\ReportExport\VeslinkReportExport\obj\Debug\VeslinkReportExport.application
-C:\Desarrollos\Veslink\Repos\ReportExport\VeslinkReportExport\bin\Debug\NPOI.OOXML.dll
-C:\Desarrollos\Veslink\Repos\ReportExport\VeslinkReportExport\bin\Debug\NPOI.dll
-C:\Desarrollos\Veslink\Repos\ReportExport\VeslinkReportExport\bin\Debug\NPOI.OpenXml4Net.dll
-C:\Desarrollos\Veslink\Repos\ReportExport\VeslinkReportExport\bin\Debug\NPOI.OpenXmlFormats.dll
-C:\Desarrollos\Veslink\Repos\ReportExport\VeslinkReportExport\bin\Debug\ICSharpCode.SharpZipLib.dll
-C:\Desarrollos\Veslink\Repos\ReportExport\VeslinkReportExport\bin\Debug\BouncyCastle.Crypto.dll
-C:\Desarrollos\Veslink\Repos\ReportExport\VeslinkReportExport\bin\Debug\NPOI.OOXML.pdb
-C:\Desarrollos\Veslink\Repos\ReportExport\VeslinkReportExport\bin\Debug\NPOI.OOXML.xml
-C:\Desarrollos\Veslink\Repos\ReportExport\VeslinkReportExport\bin\Debug\NPOI.pdb
-C:\Desarrollos\Veslink\Repos\ReportExport\VeslinkReportExport\bin\Debug\NPOI.xml
-C:\Desarrollos\Veslink\Repos\ReportExport\VeslinkReportExport\bin\Debug\NPOI.OpenXml4Net.pdb
-C:\Desarrollos\Veslink\Repos\ReportExport\VeslinkReportExport\bin\Debug\NPOI.OpenXmlFormats.pdb
-C:\Desarrollos\Veslink\Repos\ReportExport\VeslinkReportExport\bin\Debug\ICSharpCode.SharpZipLib.pdb
-C:\Desarrollos\Veslink\Repos\ReportExport\VeslinkReportExport\bin\Debug\ICSharpCode.SharpZipLib.xml
-C:\Desarrollos\Veslink\Repos\ReportExport\VeslinkReportExport\bin\Debug\BouncyCastle.Crypto.xml
 C:\SVNUNAV\ReporteNavesChem\Fuentes\VeslinkReportExport-main\VeslinkReportExport\bin\Debug\VeslinkReportExport.exe.config
 C:\SVNUNAV\ReporteNavesChem\Fuentes\VeslinkReportExport-main\VeslinkReportExport\bin\Debug\VeslinkReportExport.exe.manifest
 C:\SVNUNAV\ReporteNavesChem\Fuentes\VeslinkReportExport-main\VeslinkReportExport\bin\Debug\VeslinkReportExport.application
@@ -132,3 +117,10 @@ C:\Users\Alejandro Soto\Downloads\export\export\VeslinkReportExport\obj\Debug\Ve
 C:\Users\Alejandro Soto\Downloads\export\export\VeslinkReportExport\obj\Debug\VeslinkReportExport.pdb
 C:\Desarrollos\Veslink\Repos\ReportExport\VeslinkReportExport\bin\Debug\log4net.dll
 C:\Desarrollos\Veslink\Repos\ReportExport\VeslinkReportExport\bin\Debug\log4net.xml
+C:\Desarrollos\Veslink\Repos\ReportExport\VeslinkReportExport\bin\Debug\ClosedXML.dll
+C:\Desarrollos\Veslink\Repos\ReportExport\VeslinkReportExport\bin\Debug\DocumentFormat.OpenXml.dll
+C:\Desarrollos\Veslink\Repos\ReportExport\VeslinkReportExport\bin\Debug\ExcelNumberFormat.dll
+C:\Desarrollos\Veslink\Repos\ReportExport\VeslinkReportExport\bin\Debug\ClosedXML.pdb
+C:\Desarrollos\Veslink\Repos\ReportExport\VeslinkReportExport\bin\Debug\ClosedXML.xml
+C:\Desarrollos\Veslink\Repos\ReportExport\VeslinkReportExport\bin\Debug\DocumentFormat.OpenXml.xml
+C:\Desarrollos\Veslink\Repos\ReportExport\VeslinkReportExport\bin\Debug\ExcelNumberFormat.xml

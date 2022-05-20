@@ -1,0 +1,15 @@
+2022-05-19 09:38:31,992 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-05-19 09:38:39,538 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-05-19 09:38:41,691 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully
+2022-05-19 09:51:05,859 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: GGPA - Voyage:71
+2022-05-19 10:25:27,274 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-05-19 10:25:32,235 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-05-19 10:25:35,504 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully
+2022-05-19 10:25:52,365 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: GGPA - Voyage:71
+2022-05-19 10:26:01,817 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been generated successfully - FileName: C:\Desarrollos\Veslink\Docs\GGPA_71_ARCHER DANIELS MIDLAND COMPANY.xlsx
+2022-05-19 10:38:31,882 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: GGPA - Voyage:71
+2022-05-19 15:43:23,877 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-05-19 15:43:32,001 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-05-19 15:43:34,235 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully
+2022-05-19 15:43:53,226 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: GGPA - Voyage:71
+2022-05-19 15:44:17,868 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been generated successfully - FileName: C:\Desarrollos\Veslink\Docs\GGPA_71_ARCHER DANIELS MIDLAND COMPANY.xlsx
