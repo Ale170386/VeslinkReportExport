@@ -36,6 +36,9 @@ namespace Veslink.Entities
 
         [JsonProperty("VoyageItineraries.Order")]
         public int Order { get; set; }
+        [JsonProperty("VoyageItineraries.VoyageItineraryBunkers.OprQty")]
+        public double OprQty { get; set; }
+
 
     }
 }

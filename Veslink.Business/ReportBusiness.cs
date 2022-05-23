@@ -439,7 +439,8 @@ namespace Veslink.Business
                                                     {
                                                         PortNo = s.Key,
                                                         RobArrival = s.Sum(sm => sm.RobArrival),
-                                                        RobDeparture = s.Sum(sm => sm.RobDeparture)
+                                                        RobDeparture = s.Sum(sm => sm.RobDeparture),
+                                                        OprQty = s.Sum(sm => sm.OprQty)
                                                     }).FirstOrDefault();
 
                 VoyageLegSummary consumeLegEnd = this.VesselSelected.VoyageSelected.ChartererSelected.VoyageLegSummaries
@@ -451,7 +452,8 @@ namespace Veslink.Business
                                                     {
                                                         PortNo = s.Key,
                                                         RobArrival = s.Sum(sm => sm.RobArrival),
-                                                        RobDeparture = s.Sum(sm => sm.RobDeparture)
+                                                        RobDeparture = s.Sum(sm => sm.RobDeparture),
+                                                        OprQty = s.Sum(sm => sm.OprQty)
                                                     }).FirstOrDefault();
 
                 if (consumeLegStart != null)
@@ -459,7 +461,7 @@ namespace Veslink.Business
                     if (startPort != endPort)
                         consumed = consumeLegStart.RobDeparture - consumeLegEnd.RobArrival;
                     else
-                        consumed = consumeLegStart.RobArrival - consumeLegStart.RobDeparture;
+                        consumed = (consumeLegStart.RobArrival - consumeLegStart.RobDeparture) + consumeLegStart.OprQty;
                 }
                 else
                     consumed = 0;
