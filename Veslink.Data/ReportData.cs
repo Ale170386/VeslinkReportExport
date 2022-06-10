@@ -146,7 +146,7 @@ namespace Veslink.Data
         {
             List<VoyageLegSummary> voyage = null;
 
-            string uri = $"{uriVoyage}&filter[0]=VesselCode==%22{vesselCode}%22&filter[1]=VoyageNo==%22{voyageNo}%22&filter[2]=Cargos.CounterpartyShortName==%22{chartererId.Replace("&", "%26")}%22";
+            string uri = $"{uriVoyage}&filter[0]=VesselCode==%22{vesselCode}%22&filter[1]=VoyageNo==%22{voyageNo}%22";
 
             if (!(String.IsNullOrEmpty(cargoId)))
                 uri += $"&filter[3]=Cargos.CargoID==%22{cargoId}%22";

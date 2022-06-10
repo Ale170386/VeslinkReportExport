@@ -17,14 +17,14 @@ namespace Veslink.Testing
             DateTime startDate = new DateTime(2021, 1, 1);
             DateTime endDate = new DateTime(2022, 5, 31);
             reportBusiness.GetVessels(startDate, endDate, "UTNK");
-            reportBusiness.SetSelectedVessel("CMAL");
-            reportBusiness.SetSelectedVoyage(64);
-            reportBusiness.SetSelectedCharterer("ARCHER DANIELS MIDLAND COMPANY");
+            reportBusiness.SetSelectedVessel("MANI");
+            reportBusiness.SetSelectedVoyage(57);
+            reportBusiness.SetSelectedCharterer("QUIMPAC");
 
-            byte[] fileGenerated = reportBusiness.GenerateExcel("CMAL", "64", "ARCHER DANIELS MIDLAND COMPANY", "");
+            byte[] fileGenerated = reportBusiness.GenerateExcel("MANI", "57", "QUIMPAC", "");
 
 
-            using (System.IO.FileStream fs = new System.IO.FileStream(@"C:\Desarrollos\Veslink\Docs\CMAL_64_ARCHER DANIELS MIDLAND COMPANY_TEST.xlsx",
+            using (System.IO.FileStream fs = new System.IO.FileStream(@"C:\Desarrollos\Veslink\Docs\MANI_57_QUIMPAC_TEST.xlsx",
                      System.IO.FileMode.Create, System.IO.FileAccess.Write, System.IO.FileShare.None))
             {
                 fs.Write(fileGenerated, 0, fileGenerated.Length);

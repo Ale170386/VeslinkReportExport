@@ -1,0 +1,14 @@
+2022-06-09 19:42:47,809 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-06-09 19:42:53,743 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-06-09 19:43:00,939 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-06-09 19:43:14,444 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-06-09 19:43:17,888 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully
+2022-06-09 19:50:17,784 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: MANI - Voyage:57
+2022-06-09 19:50:28,620 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been generated successfully - FileName: C:\Desarrollos\Veslink\Docs\MANI_57_QUIMPAC.xlsx
+2022-06-09 19:51:19,797 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: MANI - Voyage:57
+2022-06-09 20:03:48,086 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-06-09 20:04:09,523 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-06-09 20:04:11,879 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully
+2022-06-09 20:04:28,080 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: MANI - Voyage:57
+2022-06-09 20:09:41,471 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been canceled - FileName: MANI_57_QUIMPAC
+2022-06-09 20:09:52,473 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: MANI - Voyage:57
