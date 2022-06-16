@@ -103,9 +103,11 @@ namespace Veslink.Business
 
         public byte[] GenerateExcel(string vesselCode, string voyageNo, string chartererId, string cargoId)
         {
+            string usePorts = ConfigurationManager.AppSettings["ports"];
             //Get and Parse Itinerary from API CHEM 1
             this.VesselSelected.VoyageSelected.Itinerary = ReportData.GetItinerariesReportAsync(vesselCode, voyageNo);
-            this.VesselSelected.VoyageSelected.ChartererSelected.ChartererItinerary = ReportData.GetChartererItineraryAsync(vesselCode, voyageNo, chartererId, cargoId);
+            this.VesselSelected.VoyageSelected.DisplayItinerary = this.VesselSelected.VoyageSelected.Itinerary.Where(w => usePorts.Contains(w.PortFunc)).ToList();
+            //this.VesselSelected.VoyageSelected.ChartererSelected.ChartererItinerary = ReportData.GetChartererItineraryAsync(vesselCode, voyageNo, chartererId, cargoId);
 
 
             //this.VesselSelected.VoyageSelected.ChartererSelected.VoyageItineraries = ReportData.GetItinerariesReportAsync(vesselCode, voyageNo, chartererId, cargoId);
@@ -122,7 +124,7 @@ namespace Veslink.Business
             //Get contact information from API CHEM 5
             this.VesselSelected.VoyageSelected.ContactInformation = ReportData.GetVoyageContactAsync(vesselCode, voyageNo);
 
-            if (this.VesselSelected.VoyageSelected.ChartererSelected.ChartererItinerary != null && this.VesselSelected.VoyageSelected.ChartererSelected.ChartererItinerary.Count > 0)
+            if (this.VesselSelected.VoyageSelected.Itinerary != null && this.VesselSelected.VoyageSelected.Itinerary.Count > 0)
                 return CreateExcel();
             else
                 return null;
@@ -159,14 +161,14 @@ namespace Veslink.Business
             sheet.Cell("F14").Value = VesselSelected.VoyageSelected.VoyageNo.ToString();
             #endregion
 
-            List<VoyageItinerary> voyageItinerary = this.VesselSelected.VoyageSelected.Itinerary;
+            List<VoyageItinerary> voyageItinerary = this.VesselSelected.VoyageSelected.DisplayItinerary;
 
             #region Preceding Ballast Leg            
 
             int commencedPort = 0;//El puerto de inicio del ballast es el primer puerto del itinerario
             int loadPort = voyageItinerary.FindIndex(i => i.PortFunc == "L");
 
-            int distance = GetDistanceSailed(commencedPort, loadPort);
+            int distance = GetDistanceSailed(voyageItinerary[commencedPort], voyageItinerary[loadPort]);
 
             sheet.Cell("F18").Value = voyageItinerary[commencedPort].PortName.ToString();
             sheet.Cell("F20").Value = voyageItinerary[loadPort].PortName.ToString();
@@ -262,7 +264,8 @@ namespace Veslink.Business
                         {
                             sheet.Column("D").Cell(row).Value = itinerary.element.PortName;
                             sheet.Column("F").Cell(row).Value = nextPort.PortName;
-                            sheet.Column("G").Cell(row).Value = nextPort.Miles;
+                            int miles = GetDistanceSailed(itinerary.element, nextPort);
+                            sheet.Column("G").Cell(row).Value = miles;
                         }
                     }
 
@@ -375,13 +378,13 @@ namespace Veslink.Business
         /// <param name="startPort"></param>
         /// <param name="endPort"></param>
         /// <returns></returns>
-        private int GetDistanceSailed(int startPort, int endPort, string portType = "")
+        private int GetDistanceSailed(VoyageItinerary startPort, VoyageItinerary endPort, string portType = "")
         {
             int distance = 0;            
-            if (startPort >= 0 && endPort >= 0 && startPort <= endPort)
+            if (startPort != null && endPort != null)
             {
-                VoyageItinerary sPortNode = this.VesselSelected.VoyageSelected.Itinerary[startPort];
-                VoyageItinerary ePortNode = this.VesselSelected.VoyageSelected.Itinerary[endPort];
+                VoyageItinerary sPortNode = this.VesselSelected.VoyageSelected.Itinerary.Where(w => w.PortNo == startPort.PortNo && w.Order == startPort.Order).FirstOrDefault();
+                VoyageItinerary ePortNode = this.VesselSelected.VoyageSelected.Itinerary.Where(w => w.PortNo == endPort.PortNo && w.Order == endPort.Order).FirstOrDefault();
                 var ports = this.VesselSelected.VoyageSelected.Itinerary
                                                 .GroupBy(g => new { g.PortName, g.Miles, g.Order })
                                                 .OrderBy(o => o.Key.Order)
@@ -389,19 +392,14 @@ namespace Veslink.Business
 
 
                 int currentNode = ports.FindIndex(i => i.Key.Order == sPortNode.Order);
+
+                if (currentNode != -1) currentNode++;//Suma desde el siguiente puerto del itinerario
+
                 int lastNode = ports.FindIndex(i => i.Key.Order == ePortNode.Order);
-
-                int lenght = this.VesselSelected.VoyageSelected.Itinerary.Count;
-
-                if (portType != "" && portType == "L")
-                    lastNode--; //No se considera el puerto de carga
 
                 while ((currentNode <= lastNode))
                 {
                     distance += ports[currentNode].Key.Miles;
-
-                    //if ((currentNode + 1) == endPort)
-                    //    distance += this.VesselSelected.VoyageSelected.ChartererSelected.VoyageItineraries[currentNode + 1].Miles;
 
                     currentNode++;
                 }
@@ -430,41 +428,48 @@ namespace Veslink.Business
             {
                 double consumed = 0;
 
-                VoyageLegSummary consumeLegStart = this.VesselSelected.VoyageSelected.ChartererSelected.VoyageLegSummaries
-                                                    .Where(f => f.PortNo == startPort.PortNo 
-                                                                && f.Seq == startPort.Seq
-                                                                && fuel.FuelTypeMap.Contains(f.FuelType))
-                                                    .GroupBy(g => g.PortNo)
-                                                    .Select(s => new VoyageLegSummary
-                                                    {
-                                                        PortNo = s.Key,
-                                                        RobArrival = s.Sum(sm => sm.RobArrival),
-                                                        RobDeparture = s.Sum(sm => sm.RobDeparture),
-                                                        OprQty = s.Sum(sm => sm.OprQty)
-                                                    }).FirstOrDefault();
+                var ports = this.VesselSelected.VoyageSelected.ChartererSelected.VoyageLegSummaries
+                                .Where(w => fuel.FuelTypeMap.Contains(w.FuelType))
+                                .GroupBy(g => new { g.PortNo, g.Seq, g.Order })
+                                .Select(s => new VoyageLegSummary
+                                {
+                                    PortNo = s.Key.PortNo,
+                                    Seq = s.Key.Seq,
+                                    Order = s.Key.Order,
+                                    RobArrival = s.Sum(sm => sm.RobArrival),
+                                    RobDeparture = s.Sum(sm => sm.RobDeparture),
+                                    OprQty = s.Sum(sm => sm.OprQty)
+                                })
+                                .OrderBy(o => o.Order)
+                                .ToList();
 
-                VoyageLegSummary consumeLegEnd = this.VesselSelected.VoyageSelected.ChartererSelected.VoyageLegSummaries
+                VoyageLegSummary consumeLegStart = ports
+                                                    .Where(f => f.PortNo == startPort.PortNo
+                                                                && f.Seq == startPort.Seq)
+                                                    .FirstOrDefault();
+
+                VoyageLegSummary consumeLegEnd = ports
                                                     .Where(f => f.PortNo == endPort.PortNo
-                                                                && f.Seq == endPort.Seq
-                                                                && fuel.FuelTypeMap.Contains(f.FuelType))
-                                                    .GroupBy(g => g.PortNo)
-                                                    .Select(s => new VoyageLegSummary
-                                                    {
-                                                        PortNo = s.Key,
-                                                        RobArrival = s.Sum(sm => sm.RobArrival),
-                                                        RobDeparture = s.Sum(sm => sm.RobDeparture),
-                                                        OprQty = s.Sum(sm => sm.OprQty)
-                                                    }).FirstOrDefault();
+                                                                && f.Seq == endPort.Seq)
+                                                    .FirstOrDefault();
 
-                if (consumeLegStart != null)
-                {
-                    if (startPort != endPort)
-                        consumed = consumeLegStart.RobDeparture - consumeLegEnd.RobArrival;
-                    else
-                        consumed = (consumeLegStart.RobArrival - consumeLegStart.RobDeparture) + consumeLegStart.OprQty;
-                }
+                int currentNode = ports.FindIndex(i => i.PortNo == consumeLegStart.PortNo && i.Seq == consumeLegStart.Seq);
+                int lastNode = ports.FindIndex(i => i.PortNo == consumeLegEnd.PortNo && i.Seq == consumeLegEnd.Seq);
+
+                if ((currentNode == lastNode) && (currentNode != -1 && lastNode != -1))
+                    consumed += (ports[currentNode].RobArrival - ports[currentNode].RobDeparture) + ports[currentNode].OprQty;                
                 else
-                    consumed = 0;
+                {
+                    while ((currentNode < lastNode) && (currentNode != -1 && lastNode != -1))
+                    {
+                        int nextPort = currentNode + 1;
+
+                        consumed += ports[currentNode].RobDeparture - ports[nextPort].RobArrival;
+                        consumed += (ports[nextPort].RobArrival - ports[nextPort].RobDeparture) + ports[nextPort].OprQty;
+
+                        currentNode++;
+                    }
+                }
 
                 fuel.Consumed += consumed;
             }

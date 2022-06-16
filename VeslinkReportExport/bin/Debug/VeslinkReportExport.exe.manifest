@@ -114,26 +114,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Veslink.Business.dll" size="66560">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Veslink.Business.dll" size="68096">
       <assemblyIdentity name="Veslink.Business" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>rrd1BMHomexP85IX6QfYVFHOV0kFQ4hL1YONitpQ93I=</dsig:DigestValue>
+        <dsig:DigestValue>9ARw8WyAvhxhxzJDEKz9E7oHOm1f66kePpVUH9KSv4w=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Veslink.Data.dll" size="17920">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Veslink.Data.dll" size="17408">
       <assemblyIdentity name="Veslink.Data" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Zz2m4yxFlbDgHxZjJgBX+sQ0pwF0S/91R4J7nXWo0pk=</dsig:DigestValue>
+        <dsig:DigestValue>7rto/TNN4c85WiMo70C5Dcu7W35mF4eHLg8Ay40aZNA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -145,7 +145,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ZCSuJM8wlRmdQ18msl3y03f4TWNoSQh1OZN0Vj0YnhA=</dsig:DigestValue>
+        <dsig:DigestValue>+7TOZgjIYckruDQe5+M7Nele8TRsDD1wBmN2csV0kek=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -157,17 +157,17 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>F5qaRTXF540bWBUCeBZ36Q/2inyhh7StT3lTCEMc2N8=</dsig:DigestValue>
+        <dsig:DigestValue>xSiN5Fr7OY+zQ+ciE0HmVf2C5uaN+v0vpcP3HaYICZ0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="VeslinkReportExport.exe.config" size="3925">
+  <file name="VeslinkReportExport.exe.config" size="3940">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>0pYFg9SjiQvgo+L4xihec4t7+RSM2YGrNUF42MCKQvM=</dsig:DigestValue>
+      <dsig:DigestValue>2KN0k4Zj7Dsm8vYKPji5gn5uroETJL+ewDRdrhKr19E=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

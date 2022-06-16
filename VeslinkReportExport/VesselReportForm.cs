@@ -74,7 +74,7 @@ namespace VeslinkReportExport
                     SaveFileDialog saveFileDialog1 = new SaveFileDialog();
                     saveFileDialog1.Filter = "Excel |*.xlsx"; ;
                     saveFileDialog1.Title = "Save an Excel File";
-                    saveFileDialog1.FileName = $"{comboVessel.Value.ToString()}_{comboVoyage.Value.ToString()}_{comboCharterer.Value.ToString()}";
+                    saveFileDialog1.FileName = $"{comboVessel.Value.ToString()}_{comboVoyage.Value.ToString()}_{comboCharterer.Value.ToString()}.xlsx";
                     if (saveFileDialog1.ShowDialog() == DialogResult.OK)
                     {
                         // If the file name is not an empty string open it for saving.

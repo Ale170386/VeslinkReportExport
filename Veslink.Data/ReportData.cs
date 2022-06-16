@@ -51,7 +51,7 @@ namespace Veslink.Data
                 itineraries = response.Content.ReadAsAsync<List<VoyageItinerary>>().GetAwaiter().GetResult();
 
             itineraries = itineraries
-                            .Where(w => usePorts.Contains(w.PortFunc))
+                            //.Where(w => usePorts.Contains(w.PortFunc))
                             .GroupBy(g => new
                                             {
                                                 g.Order,

@@ -1,0 +1,52 @@
+2022-06-15 13:14:22,446 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-06-15 13:14:31,233 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-06-15 13:14:35,662 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully
+2022-06-15 13:14:44,837 [1] ERROR VeslinkReportExport.VesselReportForm [(null)] -  An error occurred while loading vessels 
+Parameters:
+DateFrom: 01-01-2021 13:14:35 - DateTo: 15-06-2022 13:14:35 - Company: UTNK
+Error:    en System.Linq.OrderedEnumerable`2..ctor(IEnumerable`1 source, Func`2 keySelector, IComparer`1 comparer, Boolean descending)
+   en System.Linq.Enumerable.OrderBy[TSource,TKey](IEnumerable`1 source, Func`2 keySelector)
+   en Veslink.Business.ReportBusiness.ParseObjectToVessels(List`1 roots) en C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Business\ReportBusiness.cs:línea 37
+   en Veslink.Business.ReportBusiness.GetVessels(DateTime startDate, DateTime endDate, String company) en C:\Desarrollos\Veslink\Repos\ReportExport\Veslink.Business\ReportBusiness.cs:línea 31
+   en VeslinkReportExport.VesselReportForm.GetVessels() en C:\Desarrollos\Veslink\Repos\ReportExport\VeslinkReportExport\VesselReportForm.cs:línea 156
+2022-06-15 13:17:22,121 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-06-15 13:17:30,220 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-06-15 13:17:34,116 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully
+2022-06-15 13:18:40,083 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-06-15 13:18:58,549 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-06-15 13:19:01,010 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully
+2022-06-15 13:20:19,467 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-06-15 13:20:50,675 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-06-15 13:20:53,892 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully
+2022-06-15 13:21:59,357 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: PETL - Voyage:5
+2022-06-15 13:22:19,288 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been generated successfully - FileName: C:\Desarrollos\Veslink\Docs\PETL_5_Nouryon Functional Chemicals S.A.xlsx
+2022-06-15 18:09:00,540 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-06-15 18:09:05,723 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-06-15 18:09:09,280 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully
+2022-06-15 18:09:39,482 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: PETL - Voyage:5
+2022-06-15 18:10:46,487 [1] ERROR VeslinkReportExport.VesselReportForm [(null)] -  An error occurred while generating the excel file 
+Parameters:
+DateFrom: 01-01-2021 18:09:09 - DateTo: 15-06-2022 18:09:09 - Company: UTNK - Vessel: PETL - Voyage: 5 - Charterer: Nouryon Functional Chemicals S.A - Cargo: 
+Error:    en System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   en System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   en System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access)
+   en System.Windows.Forms.SaveFileDialog.OpenFile()
+   en VeslinkReportExport.VesselReportForm.btnExcel_Click(Object sender, EventArgs e) en C:\Desarrollos\Veslink\Repos\ReportExport\VeslinkReportExport\VesselReportForm.cs:línea 84
+2022-06-15 18:10:54,162 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: PETL - Voyage:5
+2022-06-15 18:11:02,154 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been generated successfully - FileName: C:\Desarrollos\Veslink\Docs\PETL_5_Nouryon Functional Chemicals S.A.xlsx
+2022-06-15 18:19:07,429 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-06-15 18:19:11,798 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-06-15 18:19:14,340 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully
+2022-06-15 18:19:27,935 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: PETL - Voyage:5
+2022-06-15 18:19:35,675 [1] ERROR VeslinkReportExport.VesselReportForm [(null)] -  An error occurred while generating the excel file 
+Parameters:
+DateFrom: 15-01-2021 18:19:14 - DateTo: 15-06-2022 18:19:14 - Company: UTNK - Vessel: PETL - Voyage: 5 - Charterer: Nouryon Functional Chemicals S.A - Cargo: 
+Error:    en System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   en System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   en System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access)
+   en System.Windows.Forms.SaveFileDialog.OpenFile()
+   en VeslinkReportExport.VesselReportForm.btnExcel_Click(Object sender, EventArgs e) en C:\Desarrollos\Veslink\Repos\ReportExport\VeslinkReportExport\VesselReportForm.cs:línea 84
+2022-06-15 18:19:49,271 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: PETL - Voyage:5
+2022-06-15 18:19:56,529 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been generated successfully - FileName: C:\Desarrollos\Veslink\Docs\PETL_5_Nouryon Functional Chemicals S.A.xlsx
+2022-06-15 18:21:23,865 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: MANI - Voyage:57
+2022-06-15 18:21:33,305 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been generated successfully - FileName: C:\Desarrollos\Veslink\Docs\MANI_57_QUIMPAC.xlsx
