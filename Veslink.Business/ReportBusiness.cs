@@ -173,10 +173,10 @@ namespace Veslink.Business
             sheet.Cell("F18").Value = voyageItinerary[commencedPort].PortName.ToString();
             sheet.Cell("F20").Value = voyageItinerary[loadPort].PortName.ToString();
 
-            //Ballast Start Date
+            //Ballast Start  
             DateTime ballastStartDate = (DateTime)voyageItinerary[commencedPort].EtdGmt;
                         
-            sheet.Cell("F22").Value = ballastStartDate.ToString("dd/MM/yyyy");
+            sheet.Cell("F22").Value = $"'{ballastStartDate.ToString("dd-MM-yyyy", CultureInfo.InvariantCulture)}";
             sheet.Cell("F23").Value = ballastStartDate.ToString("hh:mm");
 
             //Ballast End Date
@@ -184,7 +184,7 @@ namespace Veslink.Business
                                                                      voyageItinerary[loadPort - 1].EtdGmt :
                                                                      voyageItinerary[loadPort].EtdGmt);
 
-            sheet.Cell("F24").Value = ballastEndDate.ToString("dd/MM/yyyy");
+            sheet.Cell("F24").Value = $"'{ballastEndDate.ToString("dd-MM-yyyy", CultureInfo.InvariantCulture)}";
             sheet.Cell("F25").Value = ballastEndDate.ToString("hh:mm");
 
             //Distancia
@@ -198,12 +198,12 @@ namespace Veslink.Business
             sheet.Cell("F32").Value = voyageItinerary[dischargePort].PortName.ToString();
 
             //Fecha de inicio del viaje, es la misma que la del primer puerto de carga
-            sheet.Cell("F34").Value = sheet.Cell("F24").Value;
+            sheet.Cell("F34").Value = $"'{ballastEndDate.ToString("dd-MM-yyyy", CultureInfo.InvariantCulture)}";
             sheet.Cell("F35").Value = sheet.Cell("F25").Value;
 
             //Fecha del ultimo puerto de descarga del viaje
             DateTime voyageEndDate = (DateTime)voyageItinerary[dischargePort].EtdGmt;
-            sheet.Cell("F36").Value = voyageEndDate.ToString("dd/MM/yyyy");
+            sheet.Cell("F36").Value = $"'{voyageEndDate.ToString("dd-MM-yyyy", CultureInfo.InvariantCulture)}";
             sheet.Cell("F37").Value = voyageEndDate.ToString("hh:mm");
 
             #endregion

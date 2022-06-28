@@ -1,0 +1,55 @@
+2022-06-28 18:48:23,289 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-06-28 18:51:10,240 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-06-28 18:51:12,556 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully
+2022-06-28 18:53:57,287 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: GGPA - Voyage:71
+2022-06-28 18:54:18,179 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been generated successfully - FileName: C:\Desarrollos\Veslink\Docs\GGPA_71_CARGILL AMERICAS  INC_test.xlsx
+2022-06-28 19:11:20,003 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-06-28 19:11:25,561 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-06-28 19:11:27,875 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully
+2022-06-28 19:11:46,592 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: GGPA - Voyage:71
+2022-06-28 19:12:05,792 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been generated successfully - FileName: C:\Desarrollos\Veslink\Docs\GGPA_71_CARGILL AMERICAS  INC_test.xlsx
+2022-06-28 19:13:33,343 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-06-28 19:13:54,094 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-06-28 19:13:56,353 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully
+2022-06-28 19:14:14,561 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: GGPA - Voyage:71
+2022-06-28 19:14:23,554 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been generated successfully - FileName: C:\Desarrollos\Veslink\Docs\GGPA_71_CARGILL AMERICAS  INC_test.xlsx
+2022-06-28 19:16:18,599 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-06-28 19:17:03,695 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-06-28 19:17:05,935 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully
+2022-06-28 19:17:23,567 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: GGPA - Voyage:71
+2022-06-28 19:17:38,396 [1] ERROR VeslinkReportExport.VesselReportForm [(null)] -  An error occurred while generating the excel file 
+Parameters:
+DateFrom: 01-01-2021 19:17:05 - DateTo: 28-06-2022 19:17:05 - Company: CHEM - Vessel: GGPA - Voyage: 71 - Charterer: CARGILL AMERICAS  INC - Cargo: 
+Error:    en System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   en System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   en System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access)
+   en System.Windows.Forms.SaveFileDialog.OpenFile()
+   en VeslinkReportExport.VesselReportForm.btnExcel_Click(Object sender, EventArgs e) en C:\Desarrollos\Veslink\Repos\ReportExport\VeslinkReportExport\VesselReportForm.cs:línea 84
+2022-06-28 19:17:43,667 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: GGPA - Voyage:71
+2022-06-28 19:17:50,417 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been generated successfully - FileName: C:\Desarrollos\Veslink\Docs\GGPA_71_CARGILL AMERICAS  INC_test.xlsx
+2022-06-28 19:24:20,760 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-06-28 19:24:27,133 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-06-28 19:24:29,912 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully
+2022-06-28 19:24:44,911 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: GGPA - Voyage:71
+2022-06-28 19:24:53,988 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been generated successfully - FileName: C:\Desarrollos\Veslink\Docs\GGPA_71_CARGILL AMERICAS  INC_test.xlsx
+2022-06-28 19:30:19,242 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: GGPA - Voyage:71
+2022-06-28 19:30:28,098 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been generated successfully - FileName: C:\Desarrollos\Veslink\Docs\GGPA_71_CARGILL AMERICAS  INC_test.xlsx
+2022-06-28 19:37:39,944 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-06-28 19:37:46,331 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-06-28 19:37:49,809 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully
+2022-06-28 19:38:04,632 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: GGPA - Voyage:71
+2022-06-28 19:38:13,042 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been generated successfully - FileName: C:\Desarrollos\Veslink\Docs\GGPA_71_CARGILL AMERICAS  INC_test.xlsx
+2022-06-28 19:39:35,316 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-06-28 19:39:42,779 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-06-28 19:39:45,754 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully
+2022-06-28 19:40:01,551 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: GGPA - Voyage:71
+2022-06-28 19:40:11,980 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been generated successfully - FileName: C:\Desarrollos\Veslink\Docs\GGPA_71_CARGILL AMERICAS  INC_test.xlsx
+2022-06-28 19:42:02,228 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-06-28 19:42:08,090 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-06-28 19:42:10,305 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully
+2022-06-28 19:42:29,300 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: GGPA - Voyage:71
+2022-06-28 19:42:42,974 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been generated successfully - FileName: C:\Desarrollos\Veslink\Docs\GGPA_71_CARGILL AMERICAS  INC_test.xlsx
+2022-06-28 19:46:29,900 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: BARB - Voyage:55
+2022-06-28 19:46:38,339 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been generated successfully - FileName: C:\Desarrollos\Veslink\Docs\BARB_55_WATERFRONT SHIPPING - CAYMAN ISL.xlsx
+2022-06-28 19:48:53,145 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: STPA - Voyage:1
+2022-06-28 19:49:03,597 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been generated successfully - FileName: C:\Desarrollos\Veslink\Docs\STPA_1_CARGILL INTERNATIONAL S.A..xlsx
