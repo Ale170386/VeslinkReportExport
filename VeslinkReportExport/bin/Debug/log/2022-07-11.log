@@ -1,0 +1,25 @@
+2022-07-11 09:16:25,525 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-07-11 09:16:37,599 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-07-11 09:21:45,687 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-07-11 09:21:50,603 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-07-11 09:21:52,906 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully
+2022-07-11 09:26:15,895 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: LUXE - Voyage:21
+2022-07-11 09:26:23,370 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been canceled - FileName: LUXE_21_SHELL TRADING U.S. COMPANY.xlsx
+2022-07-11 09:26:32,228 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: LUXE - Voyage:21
+2022-07-11 09:29:37,745 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been canceled - FileName: LUXE_21_SHELL TRADING U.S. COMPANY.xlsx
+2022-07-11 09:34:15,663 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: LUXE - Voyage:21
+2022-07-11 09:39:52,652 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-07-11 09:39:58,640 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-07-11 09:40:01,659 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully
+2022-07-11 09:40:30,149 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: LUXE - Voyage:21
+2022-07-11 09:42:36,141 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-07-11 09:42:43,111 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-07-11 09:43:01,875 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-07-11 09:43:21,847 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-07-11 09:43:24,826 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully
+2022-07-11 09:43:48,363 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: LUXE - Voyage:21
+2022-07-11 09:56:04,463 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-07-11 09:56:10,358 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-07-11 09:56:13,120 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully
+2022-07-11 09:56:32,689 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: LUXE - Voyage:21
+2022-07-11 09:56:44,059 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been generated successfully - FileName: C:\Desarrollos\Veslink\Docs\LUXE_21_SHELL TRADING U.S. COMPANY.xlsx

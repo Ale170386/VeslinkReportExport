@@ -465,7 +465,9 @@ namespace Veslink.Business
                         int nextPort = currentNode + 1;
 
                         consumed += ports[currentNode].RobDeparture - ports[nextPort].RobArrival;
-                        consumed += (ports[nextPort].RobArrival - ports[nextPort].RobDeparture) + ports[nextPort].OprQty;
+
+                        if (nextPort < lastNode)
+                            consumed += (ports[nextPort].RobArrival - ports[nextPort].RobDeparture) + ports[nextPort].OprQty;
 
                         currentNode++;
                     }
