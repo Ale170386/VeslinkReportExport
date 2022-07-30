@@ -1,0 +1,11 @@
+2022-07-30 17:15:06,447 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-07-30 17:15:43,578 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-07-30 17:15:51,585 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully
+2022-07-30 17:16:06,833 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: BARB - Voyage:63
+2022-07-30 17:17:58,741 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been generated successfully - FileName: C:\Desarrollos\Veslink\Docs\BARB_63_ANDES CONNECTIONS.xlsx
+2022-07-30 17:39:28,250 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: BARB - Voyage:63
+2022-07-30 17:39:45,971 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been canceled - FileName: BARB_63_CHEVRON MARINE LTD.xlsx
+2022-07-30 17:39:49,662 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: BARB - Voyage:63
+2022-07-30 17:39:58,264 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been canceled - FileName: BARB_63_FEEDCO (USA) LLC.xlsx
+2022-07-30 17:40:02,652 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: BARB - Voyage:62
+2022-07-30 17:40:14,020 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been generated successfully - FileName: C:\Desarrollos\Veslink\Docs\BARB_62_BUNGE LATIN AMERICA  LLC.xlsx

@@ -87,6 +87,7 @@
   <ItemGroup>
     <None Include="packages.config" />
     <None Include="Resources\reporttemplate.xlsx" />
+    <None Include="Resources\reporttemplate2.xlsx" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">

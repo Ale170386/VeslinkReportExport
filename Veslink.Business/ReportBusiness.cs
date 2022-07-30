@@ -145,7 +145,21 @@ namespace Veslink.Business
             formatInfo.NumberGroupSeparator = ",";
             // Set the decimal seperator
             formatInfo.NumberDecimalSeparator = ".";
-            MemoryStream stream = new MemoryStream(Properties.Resources.ReportTemplate);
+            //Obtienes itinerario a visualizar en detalle
+            List<VoyageItinerary> voyageItinerary = this.VesselSelected.VoyageSelected.DisplayItinerary;
+            //Primer puerto de carga del itinerario
+            int loadPort = voyageItinerary.FindIndex(i => i.PortFunc == "L");
+            //Itinerario de cargas y descargas sin ballast leg
+            List<VoyageItinerary> cargoItinerary = voyageItinerary.SkipWhile((i, index) => index < loadPort).ToList();
+            //Instancia stream del template
+            MemoryStream stream = null;
+            //Verifica que reporte utilizar
+            //si la cantidad de puertos es menor a la del config utiliza reporte1 sino reporte2
+            if (cargoItinerary.Count < int.Parse(ConfigurationManager.AppSettings["reportPortsCount"]))
+                stream = new MemoryStream(Properties.Resources.ReportTemplate);
+            else
+                stream = new MemoryStream(Properties.Resources.reporttemplate2);
+            
             workbook = new XLWorkbook(stream);
 
             //Assign the sheet
@@ -159,14 +173,11 @@ namespace Veslink.Business
             sheet.Cell("F11").Value = VesselSelected.VesselType.ToString();
             sheet.Cell("F12").Value = VesselSelected.Size;
             sheet.Cell("F14").Value = VesselSelected.VoyageSelected.VoyageNo.ToString();
-            #endregion
-
-            List<VoyageItinerary> voyageItinerary = this.VesselSelected.VoyageSelected.DisplayItinerary;
+            #endregion            
 
             #region Preceding Ballast Leg            
 
-            int commencedPort = 0;//El puerto de inicio del ballast es el primer puerto del itinerario
-            int loadPort = voyageItinerary.FindIndex(i => i.PortFunc == "L");
+            int commencedPort = 0;//El puerto de inicio del ballast es el primer puerto del itinerario            
 
             int distance = GetDistanceSailed(voyageItinerary[commencedPort], voyageItinerary[loadPort]);
 
@@ -217,8 +228,7 @@ namespace Veslink.Business
             int row = 45;
             VoyageItinerary nextPort = null;            
             int cargoQuantity = 0;
-            int charterCargoQuantity = 0;
-            List<VoyageItinerary> cargoItinerary = voyageItinerary.SkipWhile((i, index) => index < loadPort).ToList();
+            int charterCargoQuantity = 0;            
             int lastPort = cargoItinerary.Count - 1;
             List<Fuel> totalConsumedList = ConfigurationManager.AppSettings["Fuel"]
                                             .Split(';')
@@ -350,10 +360,21 @@ namespace Veslink.Business
             #region Contact Information
             if (this.VesselSelected.VoyageSelected.ContactInformation != null)
             {
-                sheet.Cell("E71").Value = 2;//Check de validación de información de contacto
-                sheet.Cell("G72").Value = this.VesselSelected.VoyageSelected.ContactInformation.UserFullName.ToString();
-                sheet.Cell("G73").Value = this.VesselSelected.VoyageSelected.ContactInformation.UserEmail.ToString();
-                sheet.Cell("G74").Value = "Yes";
+                //Verifica que reporte se esta utilizando
+                if (cargoItinerary.Count < int.Parse(ConfigurationManager.AppSettings["reportPortsCount"]))
+                {
+                    sheet.Cell("E71").Value = 2;//Check de validación de información de contacto
+                    sheet.Cell("G72").Value = this.VesselSelected.VoyageSelected.ContactInformation.UserFullName.ToString();
+                    sheet.Cell("G73").Value = this.VesselSelected.VoyageSelected.ContactInformation.UserEmail.ToString();
+                    sheet.Cell("G74").Value = "Yes";
+                }
+                else
+                {
+                    sheet.Cell("E108").Value = 2;//Check de validación de información de contacto
+                    sheet.Cell("G109").Value = this.VesselSelected.VoyageSelected.ContactInformation.UserFullName.ToString();
+                    sheet.Cell("G110").Value = this.VesselSelected.VoyageSelected.ContactInformation.UserEmail.ToString();
+                    sheet.Cell("G111").Value = "Yes";
+                }
             }
             #endregion
 

@@ -69,5 +69,15 @@ namespace Veslink.Business.Properties {
                 return ((byte[])(obj));
             }
         }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Byte[].
+        /// </summary>
+        internal static byte[] reporttemplate2 {
+            get {
+                object obj = ResourceManager.GetObject("reporttemplate2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
     }
 }

@@ -1,0 +1,85 @@
+2022-07-29 21:02:30,377 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-07-29 21:02:40,626 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-07-29 21:02:43,727 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully
+2022-07-29 21:03:08,897 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: CMAL - Voyage:63
+2022-07-29 21:04:00,474 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-07-29 21:04:08,795 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-07-29 21:04:11,472 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully
+2022-07-29 21:04:28,749 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: GGPA - Voyage:75
+2022-07-29 21:04:50,246 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been generated successfully - FileName: C:\Users\Alejandro Soto\Downloads\GGPA_75_ERGON REFINING.xlsx
+2022-07-29 21:05:20,760 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: GGPA - Voyage:76
+2022-07-29 21:05:29,553 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been canceled - FileName: GGPA_76_CARGILL INTERNATIONAL S.A..xlsx
+2022-07-29 21:05:33,919 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: GGPA - Voyage:77
+2022-07-29 21:06:03,631 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been generated successfully - FileName: C:\Users\Alejandro Soto\Downloads\GGPA_77_ARCHER DANIELS MIDLAND COMPANY.xlsx
+2022-07-29 21:10:02,296 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-07-29 21:10:09,919 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-07-29 21:10:12,362 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully
+2022-07-29 21:10:54,537 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: GGPA - Voyage:77
+2022-07-29 21:11:03,743 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been generated successfully - FileName: C:\Users\Alejandro Soto\Downloads\GGPA_77_ARCHER DANIELS MIDLAND COMPANY.xlsx
+2022-07-29 22:04:13,337 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: GGPA - Voyage:77
+2022-07-29 22:04:22,202 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been canceled - FileName: GGPA_77_CARGILL AMERICAS  INC.xlsx
+2022-07-29 22:04:24,483 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: GGPA - Voyage:77
+2022-07-29 22:04:31,667 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been canceled - FileName: GGPA_77_QUIMPAC.xlsx
+2022-07-29 22:04:35,942 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: GGPA - Voyage:75
+2022-07-29 22:04:45,732 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been canceled - FileName: GGPA_75_ERGON REFINING.xlsx
+2022-07-29 22:04:47,229 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: GGPA - Voyage:75
+2022-07-29 22:04:54,149 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been canceled - FileName: GGPA_75_SHELL TRADING U.S. COMPANY.xlsx
+2022-07-29 22:04:57,955 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: GGPA - Voyage:76
+2022-07-29 22:05:04,419 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been canceled - FileName: GGPA_76_CARGILL INTERNATIONAL S.A..xlsx
+2022-07-29 22:05:10,412 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: AMAK - Voyage:3
+2022-07-29 22:05:17,720 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been canceled - FileName: AMAK_3_CARGILL INTERNATIONAL S.A..xlsx
+2022-07-29 22:05:21,819 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: AMAK - Voyage:4
+2022-07-29 22:05:29,117 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been canceled - FileName: AMAK_4_OCCIDENTAL CHEMICAL EXPORT SALES.xlsx
+2022-07-29 22:05:32,335 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: AMAK - Voyage:5
+2022-07-29 22:05:39,971 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been canceled - FileName: AMAK_5_WATERFRONT SHIPPING - CAYMAN ISL.xlsx
+2022-07-29 22:05:43,473 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: AMAK - Voyage:6
+2022-07-29 22:06:22,166 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been generated successfully - FileName: C:\Users\Alejandro Soto\Downloads\AMAK_6_BUNGE LATIN AMERICA  LLC.xlsx
+2022-07-29 22:06:54,475 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: AMAK - Voyage:6
+2022-07-29 22:07:18,828 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been canceled - FileName: AMAK_6_CARGILL INTERNATIONAL S.A..xlsx
+2022-07-29 22:07:21,421 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: AMAK - Voyage:6
+2022-07-29 22:08:22,798 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been canceled - FileName: AMAK_6_DETEN QUIMICA S.A..xlsx
+2022-07-29 22:08:25,090 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: AMAK - Voyage:6
+2022-07-29 22:08:48,491 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been canceled - FileName: AMAK_6_INTEGRA PETROCHEMICALS PTE LTD..xlsx
+2022-07-29 22:08:50,388 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: AMAK - Voyage:6
+2022-07-29 22:08:57,049 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been canceled - FileName: AMAK_6_WATERFRONT SHIPPING - CAYMAN ISL.xlsx
+2022-07-29 22:09:00,723 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: AMAK - Voyage:7
+2022-07-29 22:09:13,723 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been canceled - FileName: AMAK_7_OCCIDENTAL CHEMICAL EXPORT SALES.xlsx
+2022-07-29 22:09:38,374 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: BARB - Voyage:60
+2022-07-29 22:09:47,961 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been canceled - FileName: BARB_60_BUNGE LATIN AMERICA  LLC.xlsx
+2022-07-29 22:09:49,729 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: BARB - Voyage:60
+2022-07-29 22:09:58,871 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been canceled - FileName: BARB_60_CLP CHEMICALS.xlsx
+2022-07-29 22:10:00,851 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: BARB - Voyage:60
+2022-07-29 22:10:08,215 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been canceled - FileName: BARB_60_COPAP INC.xlsx
+2022-07-29 22:10:10,442 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: BARB - Voyage:60
+2022-07-29 22:10:37,411 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been canceled - FileName: BARB_60_ICC CHEMICAL.xlsx
+2022-07-29 22:10:39,588 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: BARB - Voyage:60
+2022-07-29 22:10:46,865 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been canceled - FileName: BARB_60_LOUIS DREYFUS COMMODITIES SUISSE.xlsx
+2022-07-29 22:10:50,036 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: BARB - Voyage:61
+2022-07-29 22:10:58,024 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been canceled - FileName: BARB_61_ERGON REFINING.xlsx
+2022-07-29 22:10:59,966 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: BARB - Voyage:61
+2022-07-29 22:11:08,245 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been canceled - FileName: BARB_61_INTEGRA PETROCHEMICALS PTE LTD..xlsx
+2022-07-29 22:11:09,889 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: BARB - Voyage:61
+2022-07-29 22:11:16,361 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been canceled - FileName: BARB_61_SHELL TRADING U.S. COMPANY.xlsx
+2022-07-29 22:11:20,388 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: BARB - Voyage:62
+2022-07-29 22:11:26,888 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been canceled - FileName: BARB_62_BUNGE LATIN AMERICA  LLC.xlsx
+2022-07-29 22:11:28,915 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: BARB - Voyage:62
+2022-07-29 22:11:39,514 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been canceled - FileName: BARB_62_COMPANHIA BRASILEIRA DE ESTIRENO.xlsx
+2022-07-29 22:11:42,977 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: BARB - Voyage:63
+2022-07-29 22:12:01,565 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been generated successfully - FileName: C:\Users\Alejandro Soto\Downloads\BARB_63_ANDES CONNECTIONS.xlsx
+2022-07-29 22:15:24,420 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-07-29 22:15:30,850 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-07-29 22:15:33,570 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully
+2022-07-29 22:16:05,509 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: BARB - Voyage:63
+2022-07-29 22:16:32,786 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been generated successfully - FileName: C:\Users\Alejandro Soto\Downloads\BARB_63_ANDES CONNECTIONS.xlsx
+2022-07-29 22:28:40,457 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-07-29 22:28:46,732 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-07-29 22:28:51,304 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully
+2022-07-29 22:29:03,261 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: BARB - Voyage:63
+2022-07-29 22:29:24,242 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been generated successfully - FileName: C:\Users\Alejandro Soto\Downloads\BARB_63_ANDES CONNECTIONS.xlsx
+2022-07-29 22:44:46,913 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: BARB - Voyage:63
+2022-07-29 22:44:58,031 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been generated successfully - FileName: C:\Users\Alejandro Soto\Downloads\BARB_63_ANDES CONNECTIONS.xlsx
+2022-07-29 22:46:18,308 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-07-29 22:46:27,913 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-07-29 22:46:32,877 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully
+2022-07-29 22:46:44,058 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: BARB - Voyage:63
+2022-07-29 22:46:55,146 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been generated successfully - FileName: C:\Users\Alejandro Soto\Downloads\BARB_63_ANDES CONNECTIONS.xlsx
