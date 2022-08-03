@@ -286,38 +286,33 @@ namespace Veslink.Business
                     //Si la fila es Port Stay (Fila impar) se suma lo que se carga en el puerto
                     if (row % 2 != 0)
                     {
-                        if (itinerary.element.PortFunc == "L")
-                        {
-                            cargoQuantity += Convert.ToInt32(this.VesselSelected.VoyageSelected.VoyageCargos
-                                                            .Where(w => w.FunctionCode == itinerary.element.PortFunc
+                        //itinerary.element.PortFunc == "L"
+                        foreach (VoyageCargo voyageCargo in this.VesselSelected.VoyageSelected.VoyageCargos
+                                                            .Where(w => w.FunctionCode == "L"
                                                                         && w.PortNo == itinerary.element.PortNo
-                                                                        && w.VoyageSeqNo == itinerary.element.Seq)
-                                                            .Sum(s => s.BLQuantity));
+                                                                        && w.VoyageSeqNo == itinerary.element.Seq))
+                            cargoQuantity += Convert.ToInt32(voyageCargo.BLQuantity);
 
-                            charterCargoQuantity += Convert.ToInt32(this.VesselSelected.VoyageSelected.ChartererSelected.VoyageCargos
-                                                                    .Where(w => w.FunctionCode == itinerary.element.PortFunc
+                        foreach (VoyageCargo voyageCargo in this.VesselSelected.VoyageSelected.ChartererSelected.VoyageCargos
+                                                                    .Where(w => w.FunctionCode == "L"
                                                                                 && w.PortNo == itinerary.element.PortNo
-                                                                                && w.VoyageSeqNo == itinerary.element.Seq)
-                                                                    .Sum(s => s.BLQuantity));
-                        }
+                                                                                && w.VoyageSeqNo == itinerary.element.Seq))
+                            charterCargoQuantity += Convert.ToInt32(voyageCargo.BLQuantity);
                     }
                     //Si la fila es Leg (Fila par) se resta la descarga
                     else
                     {
-                        if (itinerary.element.PortFunc == "D")
-                        {
-                            cargoQuantity -= Convert.ToInt32(this.VesselSelected.VoyageSelected.VoyageCargos
-                                                            .Where(w => w.FunctionCode == itinerary.element.PortFunc
+                        foreach (VoyageCargo voyageCargo in this.VesselSelected.VoyageSelected.VoyageCargos
+                                                            .Where(w => w.FunctionCode == "D"
                                                                         && w.PortNo == itinerary.element.PortNo
-                                                                        && w.VoyageSeqNo == itinerary.element.Seq)
-                                                            .Sum(s => s.BLQuantity));
+                                                                        && w.VoyageSeqNo == itinerary.element.Seq))
+                            cargoQuantity -= Convert.ToInt32(voyageCargo.BLQuantity);
 
-                            charterCargoQuantity -= Convert.ToInt32(this.VesselSelected.VoyageSelected.ChartererSelected.VoyageCargos
-                                                                    .Where(w => w.FunctionCode == itinerary.element.PortFunc
+                        foreach (VoyageCargo voyageCargo in this.VesselSelected.VoyageSelected.ChartererSelected.VoyageCargos
+                                                                    .Where(w => w.FunctionCode == "D"
                                                                                 && w.PortNo == itinerary.element.PortNo
-                                                                                && w.VoyageSeqNo == itinerary.element.Seq)
-                                                                    .Sum(s => s.BLQuantity));
-                        }
+                                                                                && w.VoyageSeqNo == itinerary.element.Seq))
+                            charterCargoQuantity -= Convert.ToInt32(voyageCargo.BLQuantity);
                     }
 
                     if (row == 45 || nextPort != null)

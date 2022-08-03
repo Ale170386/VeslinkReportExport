@@ -1,0 +1,22 @@
+2022-08-02 19:30:14,456 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-08-02 19:33:03,137 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-08-02 19:33:09,876 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully
+2022-08-02 19:34:35,777 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: LOND - Voyage:2
+2022-08-02 19:34:45,540 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been generated successfully - FileName: C:\Desarrollos\Veslink\Docs\LOND_2_ARCHER DANIELS MIDLAND COMPANY.xlsx
+2022-08-02 19:42:52,120 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: LOND - Voyage:2
+2022-08-02 19:47:06,166 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been canceled - FileName: LOND_2_ARCHER DANIELS MIDLAND COMPANY.xlsx
+2022-08-02 19:47:34,996 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: LOND - Voyage:2
+2022-08-02 19:53:06,690 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been canceled - FileName: LOND_2_ARCHER DANIELS MIDLAND COMPANY.xlsx
+2022-08-02 19:53:07,585 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: LOND - Voyage:2
+2022-08-02 20:06:29,475 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-08-02 20:25:04,439 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-08-02 20:25:09,419 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-08-02 20:25:12,178 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully
+2022-08-02 20:25:29,312 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: LOND - Voyage:2
+2022-08-02 20:30:10,672 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been canceled - FileName: LOND_2_ARCHER DANIELS MIDLAND COMPANY.xlsx
+2022-08-02 20:30:11,584 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: LOND - Voyage:2
+2022-08-02 21:27:54,737 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-08-02 21:28:00,183 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-08-02 21:28:05,434 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully
+2022-08-02 21:28:22,818 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -   Generating report for the following parameters Vessel: LOND - Voyage:2
+2022-08-02 21:28:40,876 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Report has been generated successfully - FileName: C:\Desarrollos\Veslink\Docs\LOND_2_ARCHER DANIELS MIDLAND COMPANY.xlsx
