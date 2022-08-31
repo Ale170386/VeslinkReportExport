@@ -24,8 +24,8 @@ namespace Veslink.Business
 
         public void GetVessels(DateTime startDate, DateTime endDate, string company)
         {
-            List<Root> reportData = ReportData.GetVesselReportAsync(startDate.ToString("yyyy-MM-ddTHH:mm:ss"),
-                                                                    endDate.ToString("yyyy-MM-ddTHH:mm:ss"),
+            List<Root> reportData = ReportData.GetVesselReportAsync(startDate.ToString("yyyy-MM-ddT00:00:00"),
+                                                                    endDate.ToString("yyyy-MM-ddT23:59:59"),
                                                                     company);
 
             this.VesselsDB = ParseObjectToVessels(reportData);
