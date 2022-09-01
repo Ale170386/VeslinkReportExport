@@ -1,0 +1,10 @@
+2022-08-31 10:37:05,419 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-08-31 10:37:12,443 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-08-31 10:37:17,137 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully
+2022-08-31 15:34:33,205 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-08-31 16:32:02,815 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-08-31 16:32:11,431 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-08-31 16:32:16,121 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully
+2022-08-31 18:23:34,270 [1] INFO  VeslinkReportExport.Program [(null)] - Start App
+2022-08-31 18:23:46,786 [1] INFO  VeslinkReportExport.LoginForm [(null)] - Successfully logged in
+2022-08-31 18:23:50,834 [1] INFO  VeslinkReportExport.VesselReportForm [(null)] -  Vessel Report Generator has started successfully

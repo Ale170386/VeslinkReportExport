@@ -206,6 +206,9 @@ namespace VeslinkReportExport
 
         private void ddlVessel_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (ddlVessel.SelectedItem == null)
+                return;
+
             ComboItem comboItem = ddlVessel.SelectedItem as ComboItem;
             try
             {
@@ -238,6 +241,9 @@ namespace VeslinkReportExport
 
         private void ddlVoyage_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (ddlVoyage.SelectedItem == null)
+                return;
+
             ComboItem comboItem = ddlVoyage.SelectedItem as ComboItem;            
             try
             {
@@ -270,6 +276,9 @@ namespace VeslinkReportExport
 
         private void ddlCharterer_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (ddlCharterer.SelectedItem == null)
+                return;
+
             ComboItem comboItem = ddlCharterer.SelectedItem as ComboItem;
             try
             {
